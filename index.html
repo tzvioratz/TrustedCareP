@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -27,63 +29,11 @@
 </head>
 <body>
     <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include preloader.html %}
     <!-- Preloader Start -->
 <header>
     <!--? Header Start -->
-    <div class="header-area">
-        <div class="main-header header-sticky">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <!-- Logo -->
-                    <div class="col-xl-2 col-lg-2 col-md-1">
-                        <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-10 col-lg-10 col-md-10">
-                        <div class="menu-main d-flex align-items-center justify-content-end">
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="doctor.html">What We Treat</a></li>
-                                        <li><a href="department.html">Our Approach</a></li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog_details.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">929-554-2300</a>
-                            </div>
-                        </div>
-                    </div>   
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include header.html %}
     <!-- Header End -->
 </header>
 <main>
@@ -375,56 +325,7 @@ adults struggling with ADHD, Anxiety, Depression,and OCD.</p>
     </main>
     <footer>
         <!--? Footer Start-->
-        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
-            <div class="container">
-                <div class="footer-top footer-padding">
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
-                            <div class="single-footer-caption mb-50">
-                                <!-- logo -->
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
-                            <div class="single-footer-caption mb-50">
-                                <div class="footer-tittle">
-                                    <h4>About Us</h4>
-                                    <div class="footer-pera">
-                                        <p class="info1">Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod tempor cergelit rgh. </p>
-                                        <p class="info1">Lorem ipsum dolor sit amet, adipiscing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-                            <div class="single-footer-caption mb-50">
-                                <div class="footer-number mb-50">
-                                    <h4><span></span>929-554-2300</h4>
-                                    <p>youremail@gmail.com</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <div class="col-xl-9 col-lg-8">
-                            <div class="footer-copy-right">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       {% include footer.html %}
         <!-- Footer End-->
     </footer>
     <!-- Scroll Up -->
