@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?5cdd20');
+  src:  url('../fonts/icomoon.eot?5cdd20#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?5cdd20') format('truetype'),
+    url('../fonts/icomoon.woff?5cdd20') format('woff'),
+    url('../fonts/icomoon.svg?5cdd20#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icbt:before {
+  content: "\e900";
+  color: #66abc0;
+}
+.icon-DBT:before {
+  content: "\e901";
+  color: #7cc3c9;
+}
+.icon-ACT:before {
+  content: "\e902";
+  color: #5cb6e9;
+}
+.icon-ERP:before {
+  content: "\e903";
+  color: #76d7fa;
+}
+.icon-CBT2:before {
+  content: "\e904";
+  color: #3b7dc5;
+}

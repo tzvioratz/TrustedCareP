@@ -1,0 +1,55 @@
+.tab-custom-icon {
+    width: 40px;           /* Adjust size as needed */
+    height: auto;          /* Maintain original proportions */
+    margin-bottom: 10px;   /* Gap between image and the <h4> text */
+    display: block;        /* Places image on its own line above text */
+    margin-left: auto;     /* Centers the image horizontally */
+    margin-right: auto;
+    filter: brightness(0) invert(1); /* Optional: turns a black icon white if your tabs are dark */
+}
+
+/* Optional: change image look when the tab is active */
+.nav-link.active .tab-custom-icon {
+    filter: none; /* Shows original image colors for the active tab */
+    
+}
+.my-blue-accordion .accordion-button {
+  background: #d0e6ff;              /* soft light blue */
+  color: #d0e6ff;                    /* calm navy-ish */
+  font-weight: 600;
+    
+  border: none;
+  font-size: 3rem;   /* ~20px */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.my-blue-accordion .accordion-button:not(.collapsed) {
+ /* background: #cfe6ff;*/
+  color: #000000; 
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
+/* Text color when collapsed */
+.my-blue-accordion .accordion-button.collapsed {
+    color: #000000;   /* dark navy text */
+}
+
+.my-blue-accordion .accordion-item {
+    
+  border-radius: 10px;
+  overflow: hidden;
+  border: 10px solid #d0e6ff;
+  margin-bottom: 12px;
+    background: #d0e6ff;
+}
+
+.my-blue-accordion .accordion-body {
+  background: #f7fbff;
+  color: #043b6b;
+  font-size: 2rem;    /* ~18px */
+  line-height: 1.6;
+}
