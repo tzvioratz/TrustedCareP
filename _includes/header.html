@@ -16,8 +16,8 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="{{ include.source | default:'' | strip | append:index.html }}">Home</a></li>
-                                        <li><a href="{{ include.source | default:'' | strip | append:about.html }}">About</a></li>
+                                        <li><a href="{{ include.source | default:'' | strip | append:'index.html' }}">Home</a></li>
+                                        <li><a href="{{ include.source | default:'' | strip | append:'about.html' }}">About</a></li>
                                         <li><a href="{{ include.source | default:'' | strip | append:doctor.html }}">What We Treat</a></li>
                                         <li><a href="{{ include.source | default:'' | strip | append:department.html }}">Our Approach</a></li>
                                         <li><a href="{{ include.source | default:'' | strip | append:blog.html }}">Blog</a>
