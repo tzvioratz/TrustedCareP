@@ -1,91 +1,76 @@
 ---
 ---
+
 <!doctype html>
 <html class="no-js" lang="zxx">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Trusted Care Psychiatry - Home </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Trusted Care Psychiatry - Home</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
-	<!-- CSS here -->
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../assets/css/slicknav.css">
-    <link rel="stylesheet" href="../assets/css/flaticon.css">
-    <link rel="stylesheet" href="../assets/css/gijgo.css">
-    <link rel="stylesheet" href="../assets/css/animate.min.css">
-    <link rel="stylesheet" href="../assets/css/animated-headline.css">
-	<link rel="stylesheet" href="../assets/css/magnific-popup.css">
-	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="../assets/css/themify-icons.css">
-	<link rel="stylesheet" href="../assets/css/slick.css">
-	<link rel="stylesheet" href="../assets/css/nice-select.css">
-	<link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
-</head>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/slicknav.css" />
+    <link rel="stylesheet" href="../assets/css/flaticon.css" />
+    <link rel="stylesheet" href="../assets/css/gijgo.css" />
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <link rel="stylesheet" href="../assets/css/animated-headline.css" />
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="../assets/css/slick.css" />
+    <link rel="stylesheet" href="../assets/css/nice-select.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+  </head>
 
-<body>
+  <body>
     <!-- ? Preloader Start -->
     {% include preloader.html %}
     <!-- Preloader Start -->
-<header>
-    <!--? Header Start -->
-    {% include header.html source='../' %}
-  
-    <!-- Header End -->
-</header>
+    <header>
+      <!--? Header Start -->
+      {% include header.html source='../' %}
+
+      <!-- Header End -->
+    </header>
     <main>
-       
-        
-   <div class="container py-4">
-  <div class="accordion my-blue-accordion" id="blueAccordion">
+      <div class="team-area mb-200">
+        <div class="container">
+          <!-- Section Tittle -->
+          <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 text-center">
+                      <h2>Title</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#b1">
-          Section 1
-        </button>
-      </h2>
-      <div id="b1" class="accordion-collapse collapse " data-bs-parent="#blueAccordion">
-        <div class="accordion-body">
-          Your calming blue themed content here.
+          <div class="container py-4">
+            <div class="accordion my-blue-accordion" id="blueAccordion">{% include accordion.html title= main= %}</div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#b2">
-          Section 2
-        </button>
-      </h2>
-      <div id="b2" class="accordion-collapse collapse" data-bs-parent="#blueAccordion">
-        <div class="accordion-body">
-          More content here.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-        
-        
-        
-        
-        
     </main>
     <footer>
-        <!--? Footer Start-->
-       {% include footer.html %}
-        <!-- Footer End-->
+      <!--? Footer Start-->
+      {% include footer.html %}
+      <!-- Footer End-->
     </footer>
     <!-- Scroll Up -->
-    <div id="back-top" >
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    <div id="back-top">
+      <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
 
     <!-- JS here -->
@@ -111,7 +96,7 @@
     <!-- Nice-select, sticky -->
     <script src="../assets/js/jquery.nice-select.min.js"></script>
     <script src="../assets/js/jquery.sticky.js"></script>
-    
+
     <!-- counter , waypoint -->
     <script src="../assets/js/jquery.counterup.min.js"></script>
     <script src="../assets/js/waypoints.min.js"></script>
@@ -122,13 +107,12 @@
     <script src="../assets/js/jquery.validate.min.js"></script>
     <script src="../assets/js/mail-script.js"></script>
     <script src="../assets/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
+
+    <!-- Jquery Plugins, main Jquery -->
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/main.js"></script>
-    
+
     <!-- Custom drops-->
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    
-    </body>
+  </body>
 </html>
