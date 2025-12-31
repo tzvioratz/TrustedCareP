@@ -53,3 +53,15 @@
   font-size: 2rem;    /* ~18px */
   line-height: 1.6;
 }
+
+.gen-descrpt{
+      width: 90%;
+  margin: 40px auto 0;   /* ⬅️ pushes it downward */
+  border-radius: 18px;   /* rounder corners (increase for more) */
+  padding: 20px;         /* gives it breathing room */
+
+    background: #d0e6ff;
+  color: #043b6b;
+  font-size: 2rem;    /* ~18px */
+  line-height: 1.6;
+}
