@@ -5885,3 +5885,13 @@ del {
 .switch-wrap {
     margin-bottom: 10px;
 }
+.about-img,
+.about-back-img {
+    position: static !important;
+}
+
+.about-back-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
