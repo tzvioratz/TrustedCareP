@@ -101,6 +101,12 @@ select {
   <div id="micLevel" class="meter-fill"></div>
 </div>
 
+<button class="button" onclick="toggleRecording()" id="recordBtn">
+  Start Recording Test
+</button>
+
+<audio id="playback" controls style="width:100%; margin-top:10px; display:none;"></audio>
+    
 <h2>4. Speaker Test</h2>
 <button class="button" onclick="playSound()">Play Test Sound</button>
 
@@ -225,8 +231,51 @@ function checkReady(){
   }
 }
 
+let mediaRecorder;
+let audioChunks = [];
+let isRecording = false;
+
+async function toggleRecording() {
+  const btn = document.getElementById("recordBtn");
+
+  if (!isRecording) {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+      mediaRecorder = new MediaRecorder(stream);
+      audioChunks = [];
+
+      mediaRecorder.ondataavailable = e => {
+        audioChunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+        const audioUrl = URL.createObjectURL(audioBlob);
+
+        const playback = document.getElementById("playback");
+        playback.src = audioUrl;
+        playback.style.display = "block";
+      };
+
+      mediaRecorder.start();
+      isRecording = true;
+      btn.innerText = "Stop Recording";
+
+    } catch (err) {
+      alert("Microphone access is required.");
+      console.error(err);
+    }
+
+  } else {
+    mediaRecorder.stop();
+    isRecording = false;
+    btn.innerText = "Start Recording Test";
+  }
+}
 checkInternet();
 getDevices();
+
 </script>
 
 </body>
