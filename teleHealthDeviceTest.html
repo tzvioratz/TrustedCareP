@@ -233,44 +233,60 @@ function checkReady(){
 
 let mediaRecorder;
 let audioChunks = [];
-let isRecording = false;
+let stream;
 
 async function toggleRecording() {
   const btn = document.getElementById("recordBtn");
 
-  if (!isRecording) {
+  if (!mediaRecorder || mediaRecorder.state === "inactive") {
+
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+      if (!window.MediaRecorder) {
+        alert("Recording not supported on this browser.");
+        return;
+      }
 
       mediaRecorder = new MediaRecorder(stream);
       audioChunks = [];
 
       mediaRecorder.ondataavailable = e => {
-        audioChunks.push(e.data);
+        if (e.data.size > 0) {
+          audioChunks.push(e.data);
+        }
       };
 
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-        const audioUrl = URL.createObjectURL(audioBlob);
+        if (audioChunks.length === 0) {
+          alert("No audio recorded. Try speaking louder.");
+          return;
+        }
 
-        const playback = document.getElementById("playback");
-        playback.src = audioUrl;
-        playback.style.display = "block";
+        const blob = new Blob(audioChunks, { type: "audio/webm" });
+        const url = URL.createObjectURL(blob);
+
+        const audio = document.getElementById("playback");
+        audio.src = url;
+        audio.style.display = "block";
+
+        // stop mic completely (important!)
+        stream.getTracks().forEach(track => track.stop());
       };
 
       mediaRecorder.start();
-      isRecording = true;
       btn.innerText = "Stop Recording";
 
     } catch (err) {
-      alert("Microphone access is required.");
       console.error(err);
+      alert("Microphone access denied or not available.");
     }
 
-  } else {
+  } else if (mediaRecorder.state === "recording") {
+
     mediaRecorder.stop();
-    isRecording = false;
     btn.innerText = "Start Recording Test";
+
   }
 }
 checkInternet();
