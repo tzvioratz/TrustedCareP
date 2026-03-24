@@ -168,9 +168,19 @@ async function startTest() {
 }
 
 function monitorMic() {
-  analyser.getByteFrequencyData(dataArray);
-  let avg = dataArray.reduce((a,b)=>a+b,0)/dataArray.length;
-  document.getElementById("micLevel").style.width = Math.min(avg,100)+"%";
+  analyser.getByteTimeDomainData(dataArray);
+
+  let sum = 0;
+  for (let i = 0; i < dataArray.length; i++) {
+    let val = (dataArray[i] - 128) / 128; // normalize (-1 to 1)
+    sum += val * val;
+  }
+
+  let volume = Math.sqrt(sum / dataArray.length); // RMS volume
+  let percent = Math.min(100, volume * 300); // boost sensitivity
+
+  document.getElementById('micLevel').style.width = percent + "%";
+
   requestAnimationFrame(monitorMic);
 }
 
