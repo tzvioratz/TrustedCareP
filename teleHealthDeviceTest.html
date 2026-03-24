@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepare for Your Appointment</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef6fb;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h1 { text-align:center; color:#2a6f97; }
+h2 { color:#468faf; margin-top:30px; }
+
+.button {
+  background:#2a6f97;
+  color:white;
+  padding:10px 18px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin:5px 0;
+}
+
+.button:hover { background:#1f5c7a; }
+
+video {
+  width:100%;
+  max-height:260px;
+  background:black;
+  border-radius:8px;
+}
+
+select {
+  width:100%;
+  padding:8px;
+  margin-top:5px;
+}
+
+.meter {
+  height:10px;
+  background:#ddd;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.meter-fill {
+  height:100%;
+  width:0%;
+  background:#2a6f97;
+}
+
+.status {
+  padding:10px;
+  border-radius:6px;
+  margin:5px 0;
+}
+
+.good { background:#e6f7ec; color:#1b7f3a; }
+.bad { background:#fdecea; color:#b3261e; }
+
+.center { text-align:center; }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Test Your Device</h1>
+
+
+<h2>1. Select Your Devices</h2>
+
+<label>Camera</label>
+<select id="cameraSelect"></select>
+
+<label>Microphone</label>
+<select id="micSelect"></select>
+
+<button class="button" onclick="startTest()">Start Test</button>
+
+<h2>2. Camera Preview</h2>
+<video id="video" autoplay playsinline></video>
+
+<h2>3. Microphone Test</h2>
+<div class="meter">
+  <div id="micLevel" class="meter-fill"></div>
+</div>
+
+<h2>4. Speaker Test</h2>
+<button class="button" onclick="playSound()">Play Test Sound</button>
+
+<h2>5. System Check</h2>
+
+<div id="camStatus" class="status bad">Camera: Not tested</div>
+<div id="micStatus" class="status bad">Microphone: Not tested</div>
+<div id="permStatus" class="status bad">Permissions: Not granted</div>
+<div id="netStatus" class="status bad">Connection: Checking...</div>
+
+<h2 id="finalStatus" class="center"></h2>
+
+
+
+</div>
+
+<script>
+let stream, analyser, dataArray;
+
+async function getDevices() {
+  const devices = await navigator.mediaDevices.enumerateDevices();
+
+  const cams = devices.filter(d => d.kind === "videoinput");
+  const mics = devices.filter(d => d.kind === "audioinput");
+
+  const camSelect = document.getElementById("cameraSelect");
+  const micSelect = document.getElementById("micSelect");
+
+  camSelect.innerHTML = cams.map(d => `<option value="${d.deviceId}">${d.label || "Camera"}</option>`).join("");
+  micSelect.innerHTML = mics.map(d => `<option value="${d.deviceId}">${d.label || "Microphone"}</option>`).join("");
+}
+
+async function startTest() {
+  try {
+    const camId = cameraSelect.value;
+    const micId = micSelect.value;
+
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { deviceId: camId ? { exact: camId } : undefined },
+      audio: { deviceId: micId ? { exact: micId } : undefined }
+    });
+
+    permStatus("good", "Permissions granted");
+
+    video.srcObject = stream;
+    camStatus("good", "Camera working");
+
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const mic = audioContext.createMediaStreamSource(stream);
+    analyser = audioContext.createAnalyser();
+    mic.connect(analyser);
+
+    analyser.fftSize = 256;
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+    micStatus("good", "Microphone detected");
+
+    monitorMic();
+    checkReady();
+
+  } catch (e) {
+    permStatus("bad", "Permissions denied");
+    console.error(e);
+  }
+}
+
+function monitorMic() {
+  analyser.getByteFrequencyData(dataArray);
+  let avg = dataArray.reduce((a,b)=>a+b,0)/dataArray.length;
+  document.getElementById("micLevel").style.width = Math.min(avg,100)+"%";
+  requestAnimationFrame(monitorMic);
+}
+
+function playSound() {
+  new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3").play();
+}
+
+function camStatus(type, text){
+  setStatus("camStatus", type, "Camera: " + text);
+}
+function micStatus(type, text){
+  setStatus("micStatus", type, "Microphone: " + text);
+}
+function permStatus(type, text){
+  setStatus("permStatus", type, "Permissions: " + text);
+}
+
+function setStatus(id, type, text){
+  const el = document.getElementById(id);
+  el.className = "status " + type;
+  el.innerText = text;
+}
+
+function checkInternet(){
+  if(navigator.onLine){
+    setStatus("netStatus","good","Connection: Online");
+  } else {
+    setStatus("netStatus","bad","Connection: Offline");
+  }
+}
+
+function checkReady(){
+  const allGood = document.querySelectorAll(".good").length >= 3;
+  const final = document.getElementById("finalStatus");
+
+  if(allGood){
+    final.innerHTML = "✅ You're ready for your appointment!";
+    final.style.color = "#1b7f3a";
+  } else {
+    final.innerHTML = "⚠️ Please fix the issues above";
+    final.style.color = "#b3261e";
+  }
+}
+
+checkInternet();
+getDevices();
+</script>
+
+</body>
+</html>
