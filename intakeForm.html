@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intake Form - Section 1</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef6fb;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px 25px 25px 25px; /* extra top padding for number circle */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: #2a6f97;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h2 {
+  color: #2a6f97;
+  margin-bottom: 15px;
+}
+
+.section {
+  background: #f7fbff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #d6eaf8;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.field-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-wrapper input,
+.field-wrapper select,
+.field-wrapper textarea{
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  height: 36px;
+}
+
+.radio-group label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 2px;
+}
+
+button {
+  background-color: #2a6f97;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1f5571;
+}
+</style>
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+      <form method="POST">
+<div class="container">
+  <div class="step-number">1</div>
+  <h2>Basic information</h2>
+
+    <div class="section">
+      <!-- Name row -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName">
+        </div>
+        <div class="field-wrapper">
+          <label for="middleInitial">Middle Initial</label>
+          <input type="text" id="middleInitial" name="middleInitial">
+        </div>
+        <div class="field-wrapper">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName">
+        </div>
+      </div>
+
+      <!-- DOB / Gender / SSN -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+        
+        <div class="field-wrapper">
+          <label>Gender</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" id="genderMale" value="Male"> Male</label>
+            <label><input type="radio" name="gender" id="genderFemale" value="Female"> Female</label>
+          </div>
+        </div>
+
+        <div class="field-wrapper">
+          
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="street">Mailing Address</label>
+          <input type="text" id="street" name="street">
+        </div>
+        <div class="field-wrapper">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city">
+        </div>
+        <div class="field-wrapper">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state">
+        </div>
+        <div class="field-wrapper">
+          <label for="zip">Zip Code</label>
+          <input type="text" id="zip" name="zip">
+        </div>
+      </div>
+
+      <!-- Phones -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="homePhone">Home Phone</label>
+          <input type="text" id="homePhone" name="homePhone">
+        </div>
+        <div class="field-wrapper">
+          <label for="cellPhone">Cell Phone</label>
+          <input type="text" id="cellPhone" name="cellPhone">
+        </div>
+        <div class="field-wrapper">
+          <label for="workPhone">Work Phone</label>
+          <input type="text" id="workPhone" name="workPhone">
+        </div>
+          <div class="field-wrapper">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+
+      <!-- Language -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="primaryLanguage">Preferred Language</label>
+          <select id="primaryLanguage" name="primaryLanguage">
+            <option>Select</option>
+            <option>English</option>
+            <option>Yiddish</option>
+            <option>Other</option>
+          </select>
+        </div>
+             <div class="field-wrapper">
+          <label for="email">Who were you referred by?</label>
+          <input type="text" id="ref" name="ref">
+        </div>
+      </div>
+
+      </div>
+    </div>
+          <div class="row">
+          </div>
+      <div class="container">
+  <div class="step-number">2</div>
+  <h2>Emergency Contact Information</h2>
+    <div class="section">
+      <!-- Emergency Contact Name / Relationship -->
+      <div class="row">
+        <div class="field-wrapper">
+          <h3 for="emergencyName">Please list an individual that we can contact in the event of an emergency, and if necessary, disclose any information.</h3>
+        </div>
+                  
+      </div>
+        <div class="row">
+        <div class="field-wrapper">
+          <label for="emergencyName">Emergency Contact Name</label>
+          <input type="text" id="emergencyName" name="emergencyName">
+        </div>
+        <div class="field-wrapper">
+          <label for="relationship">Relationship</label>
+          <input type="text" id="relationship" name="relationship">
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="emergencyStreet">Address</label>
+          <input type="text" id="emergencyStreet" name="emergencyStreet" placeholder="Start typing the address...">
+        </div>
+      </div>
+
+      <!-- Phone Numbers -->
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="emergencyPhone">Phone Number</label>
+          <input type="text" id="emergencyPhone" name="emergencyPhone">
+        </div>
+        <div class="field-wrapper">
+          <label for="emergencyAltPhone">Alt Phone Number</label>
+          <input type="text" id="emergencyAltPhone" name="emergencyAltPhone">
+        </div>
+      </div>
+
+
+    </div>
+  
+</div>
+           <div class="row">
+          </div>
+          <div class="container">
+          <div class="row">
+              <div class="field-wrapper">
+      <button type="submit">Submit</button>
+              </div>
+          </div>
+          </div>
+  </form>
+
+
+</body>
+</html>
