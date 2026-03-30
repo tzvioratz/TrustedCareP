@@ -356,31 +356,40 @@
                 <div class="step-number">4</div>
                 <h2>Medical and Health History</h2>
                 <div class="section">
-                    <!-- Sleep concerns -->
-                    <div class="row">
-                        <div class="field-wrapper">
-                            <label>Do you have any concerns about sleep?</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="sleepConcern" value="Yes" /> Yes</label>
-                                <label><input type="radio" name="sleepConcern" value="No" /> No</label>
-                            </div>
-                        </div>
-                        <div class="field-wrapper">
-                            <label>How would you rate your physical health?</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="healthRating" value="Excellent" /> Excellent</label>
-                                <label><input type="radio" name="healthRating" value="Good" /> Good</label>
-                                <label><input type="radio" name="healthRating" value="Fair" /> Fair</label>
-                                <label><input type="radio" name="healthRating" value="Poor" /> Poor</label>
-                            </div>
-                        </div>
-                        <div class="field-wrapper"></div>
-                    </div>
-                </div>
-                <div class="section">
-                    <!-- Physical health -->
-                    <div class="row"></div>
-                </div>
+
+
+  <!-- Sleep Concern -->
+  <div class="row">
+    <div class="field-wrapper">
+      <label>Do you have any concerns about sleep?</label>
+    </div>
+    <div class="field-wrapper">
+      <select name="sleepConcern">
+        <option>Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Physical Health Rating -->
+  <div class="row">
+    <div class="field-wrapper">
+      <label>How would you rate your physical health?</label>
+    </div>
+    <div class="field-wrapper">
+      <select name="healthRating">
+        <option>Select...</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Fair</option>
+        <option>Poor</option>
+      </select>
+    </div>
+  </div>
+
+</div>
+              
 <div class="section">
   <h3>Do you have any of the following:</h3>
 
@@ -531,40 +540,25 @@
                 <div class="section">
                   <div class="row">
                         <div class="field-wrapper">
-                            <label>List all medications you are taking (including OTC, herbs, vitamins):</label>
+                            <h3>List all medications you are taking, the dosage,and why you take it (including OTC, herbs, vitamins):</h3>
                         </div>
                     </div>
 
-                    <!-- Medication table header -->
                     <div class="row">
-                        <div class="field-wrapper"><label>Medication</label></div>
-                        <div class="field-wrapper"><label>Dosage</label></div>
-                        <div class="field-wrapper"><label>Reason for Taking</label></div>
-                    </div>
-
-                    <!-- Row 1 -->
-                    <div class="row">
-                        <div class="field-wrapper"><input type="text" name="med1" /></div>
-                        <div class="field-wrapper"><input type="text" name="dose1" /></div>
-                        <div class="field-wrapper"><input type="text" name="reason1" /></div>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <div class="row">
-                        <div class="field-wrapper"><input type="text" name="med2" /></div>
-                        <div class="field-wrapper"><input type="text" name="dose2" /></div>
-                        <div class="field-wrapper"><input type="text" name="reason2" /></div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div class="row">
-                        <div class="field-wrapper"><input type="text" name="med3" /></div>
-                        <div class="field-wrapper"><input type="text" name="dose3" /></div>
-                        <div class="field-wrapper"><input type="text" name="reason3" /></div>
+                        <div class="field-wrapper">
+                            <textarea style="height: 150px"></textarea>
+                        </div>
+                    
                     </div>
                 </div>
-
+            </div>
+            <div class="row"></div>
+                <div class="container">
+                <div class="step-number">5</div>
+                <h2>Mental Health History </h2>
                 <div class="section">
+                    
+                    
                     <div class="row">
                         <div class="field-wrapper">
                             <label>Have you been diagnosed with a psychiatric condition?</label>
@@ -856,7 +850,7 @@
             </div>
             <div class="row"></div>
             <div class="container">
-                <div class="step-number">5</div>
+                <div class="step-number">6</div>
                 <h2>Family Psychiatric History</h2>
                 <div class="section">
                     <!-- ADHD -->
