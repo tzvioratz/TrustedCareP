@@ -1,674 +1,1048 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intake Form - Section 1</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #eef6fb;
-  margin: 0;
-  padding: 20px;
-}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intake Form - Section 1</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #eef6fb;
+                margin: 0;
+                padding: 20px;
+            }
 
-.container {
-  position: relative;
-  max-width: 900px;
-  margin: auto;
-  background: #fff;
-  padding: 40px 25px 25px 25px; /* extra top padding for number circle */
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+            .container {
+                position: relative;
+                max-width: 900px;
+                margin: auto;
+                background: #fff;
+                padding: 40px 25px 25px 25px; /* extra top padding for number circle */
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
 
-.step-number {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 40px;
-  height: 40px;
-  background-color: #2a6f97;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
+            .step-number {
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 40px;
+                height: 40px;
+                background-color: #2a6f97;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 18px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
 
-h2 {
-  color: #2a6f97;
-  margin-bottom: 15px;
-}
+            h2 {
+                color: #2a6f97;
+                margin-bottom: 15px;
+            }
 
-.section {
-  background: #f7fbff;
-  padding: 15px 20px;
-  border-radius: 8px;
-  border: 1px solid #d6eaf8;
-  margin-bottom: 20px;
-}
+            .section {
+                background: #f7fbff;
+                padding: 15px 20px;
+                border-radius: 8px;
+                border: 1px solid #d6eaf8;
+                margin-bottom: 20px;
+            }
 
-.row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
+            .row {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+            }
 
-.field-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+            .field-wrapper {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
 
-.field-wrapper input,
-.field-wrapper select,
-.field-wrapper textarea{
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-top: 4px;
-  height: 36px;
-  box-sizing: border-box;
-}
+            .field-wrapper input,
+            .field-wrapper select,
+            .field-wrapper textarea {
+                padding: 8px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-top: 4px;
+                height: 36px;
+                box-sizing: border-box;
+            }
 
-.radio-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  height: 36px;
-}
+            .radio-group {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                height: 36px;
+            }
 
-.radio-group label {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+            .radio-group label {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
 
-label {
-  font-size: 13px;
-  color: #444;
-  margin-bottom: 2px;
-}
+            label {
+                font-size: 13px;
+                color: #444;
+                margin-bottom: 2px;
+            }
 
-button {
-  background-color: #2a6f97;
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  font-size: 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+            button {
+                background-color: #2a6f97;
+                color: #fff;
+                border: none;
+                padding: 10px 18px;
+                font-size: 14px;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
 
-button:hover {
-  background-color: #1f5571;
-}
-</style>
-    <meta name="robots" content="noindex, nofollow">
-</head>
-<body>
-
-      <form method="POST">
-<div class="container">
-  <div class="step-number">1</div>
-  <h2>Basic information</h2>
-
-    <div class="section">
-      <!-- Name row -->
-      <div class="row">
-        <div class="field-wrapper" >
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName">
-        </div>
-        <div class="field-wrapper">
-          <label for="middleInitial">Middle Initial</label>
-          <input type="text" id="middleInitial" name="middleInitial">
-        </div>
-        <div class="field-wrapper">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName">
-        </div>
-      </div>
-
-      <!-- DOB / Gender -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="dob">Date of Birth</label>
-          <input type="date" id="dob" name="dob">
-        </div>
-        
-        <div class="field-wrapper">
-          <label>Gender</label>
-          <div class="radio-group">
-            <label><input type="radio" name="gender" id="genderMale" value="Male"> Male</label>
-            <label><input type="radio" name="gender" id="genderFemale" value="Female"> Female</label>
-          </div>
-        </div>
-
-        <div class="field-wrapper">
-          
-        </div>
-      </div>
-
-      <!-- Address -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="street">Mailing Address</label>
-          <input type="text" id="street" name="street">
-        </div>
-        <div class="field-wrapper">
-          <label for="city">City</label>
-          <input type="text" id="city" name="city">
-        </div>
-        <div class="field-wrapper">
-          <label for="state">State</label>
-          <input type="text" id="state" name="state">
-        </div>
-        <div class="field-wrapper">
-          <label for="zip">Zip Code</label>
-          <input type="text" id="zip" name="zip">
-        </div>
-      </div>
-
-      <!-- Phones -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="homePhone">Home Phone</label>
-          <input type="text" id="homePhone" name="homePhone">
-        </div>
-        <div class="field-wrapper">
-          <label for="cellPhone">Cell Phone</label>
-          <input type="text" id="cellPhone" name="cellPhone">
-        </div>
-        <div class="field-wrapper">
-          <label for="workPhone">Work Phone</label>
-          <input type="text" id="workPhone" name="workPhone">
-        </div>
-          <div class="field-wrapper">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email">
-        </div>
-      </div>
-
-
-      <!-- Language -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="primaryLanguage">Preferred Language</label>
-          <select id="primaryLanguage" name="primaryLanguage">
-            <option></option>
-            <option>English</option>
-            <option>Yiddish</option>
-            <option>Other</option>
-          </select>
-        </div>
-             <div class="field-wrapper">
-          <label for="email">Who were you referred by?</label>
-          <input type="text" id="ref" name="ref">
-        </div>
-      </div>
-        
-      <div class="row">
-        <div class="field-wrapper">
-            <label for="job">What are you doing?</label>
-            <select id="job" name="job">
-            <option></option>
-            <option>Kollel</option>
-            <option>Yeshiva</option>
-            <option>School</option>
-            <option>Working</option>
-            <option>Other</option>
-          </select>
-          </div>
-        <div class="field-wrapper">
-            <label for="jobname">Whats it called?</label>
-          <input type="text" id="jobname" name="jobname">
-          </div>
-        <div class="field-wrapper">
-            <label for="years">How many years where you there?</label>
-          <input type="text" id="years" name="years">
-          </div>
-        </div>
-
-      </div>
-    </div>
-          <div class="row">
-          </div>
-      <div class="container">
-  <div class="step-number">2</div>
-  <h2>Emergency Contact Information</h2>
-    <div class="section">
-      <!-- Emergency Contact Name / Relationship -->
-      <div class="row">
-        <div class="field-wrapper">
-          <h3 for="emergencyName">Please list an individual that we can contact in the event of an emergency, and if necessary, disclose any information.</h3>
-        </div>
-                  
-      </div>
-        <div class="row">
-        <div class="field-wrapper">
-          <label for="emergencyName">Emergency Contact Name</label>
-          <input type="text" id="emergencyName" name="emergencyName">
-        </div>
-        <div class="field-wrapper">
-          <label for="relationship">Relationship</label>
-          <input type="text" id="relationship" name="relationship">
-        </div>
-      </div>
-
-      <!-- Address -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="emergencyStreet">Address</label>
-          <input type="text" id="emergencyStreet" name="emergencyStreet" placeholder="Start typing the address...">
-        </div>
-      </div>
-
-      <!-- Phone Numbers -->
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="emergencyPhone">Phone Number</label>
-          <input type="text" id="emergencyPhone" name="emergencyPhone">
-        </div>
-        <div class="field-wrapper">
-          <label for="emergencyAltPhone">Alt Phone Number</label>
-          <input type="text" id="emergencyAltPhone" name="emergencyAltPhone">
-        </div>
-      </div>
-    </div>
-  
-</div>
-          <div class="row"></div>
-          
+            button:hover {
+                background-color: #1f5571;
+            }
+        </style>
+        <meta name="robots" content="noindex, nofollow" />
+    </head>
+    <body>
+        <form method="POST">
             <div class="container">
-    <div class="step-number">3</div>
-    <div class="section">
-         <h2>Problem Details</h2>
-      <div class="row">
-        <div class="field-wrapper">
-          <label for="concern">What concern brings you in today?</label>
-            <textarea  id="concern" name="concern" style=height:100px ></textarea>
-        </div>
-      </div>
-        
-        <div class="row">
-      
-    </div>
+                <div class="step-number">1</div>
+                <h2>Basic information</h2>
 
-    <!-- Tried anything -->
-    <div class="row">
-      <div class="field-wrapper">
-        <label for="problemTried">Please list anything that you have done to help with this problem, including previous psych, psychiatrist, and therapist.</label>
-        <textarea style="min-height: 100px;" id="problemTried" name="problemTried"></textarea>
-      </div>
-    </div>
+                <div class="section">
+                    <!-- Name row -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="middleInitial">Middle Initial</label>
+                            <input type="text" id="middleInitial" name="middleInitial" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" />
+                        </div>
+                    </div>
 
-    <!-- Severity -->
-    <div class="row">
-        <div class="field-wrapper">
-        <label for="problemDuration">How long have you had this problem?</label>
-        <input type="text" id="problemDuration" name="problemDuration">
-      </div>
-      <div class="field-wrapper">
-        <label for="severe">How severe is this problem?</label>
-        <select id="severe" name="severe">
-            <option></option>
-            <option>Minor</option>
-            <option>Mildly</option>
-            <option>Moderate</option>
-            <option>Severe</option>
-            <option>Very severe</option>
-          </select>
-      </div>
-        <div class="field-wrapper" style="flex:1.5">
-        <label>Is this problem affecting your family life, work or sleep?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="affectingLife" value="Yes"> Yes</label>
-          <label><input type="radio" name="affectingLife" value="No"> No</label>
-        </div>
-      </div>
-        
-    </div>
+                    <!-- DOB / Gender -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" />
+                        </div>
 
+                        <div class="field-wrapper">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" id="genderMale" value="Male" /> Male</label>
+                                <label
+                                    ><input type="radio" name="gender" id="genderFemale" value="Female" /> Female</label
+                                >
+                            </div>
+                        </div>
 
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Explanation -->
-    <div class="row">
-        
-      <div class="field-wrapper">
-        <label for="affectExplain">If yes, please explain:</label>
-        <textarea style="min-height: 100px;" id="affectExplain" name="affectExplain"></textarea>
-      </div>
-    </div>
+                    <!-- Address -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="street">Mailing Address</label>
+                            <input type="text" id="street" name="street" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="zip">Zip Code</label>
+                            <input type="text" id="zip" name="zip" />
+                        </div>
+                    </div>
 
-    </div>
-  </div>
-           <div class="row">
-          </div>
-          <div class="container">
-  <div class="step-number">4</div>
-  <h2>Medical and Health History</h2>
-  <div class="section">
+                    <!-- Phones -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="homePhone">Home Phone</label>
+                            <input type="text" id="homePhone" name="homePhone" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="cellPhone">Cell Phone</label>
+                            <input type="text" id="cellPhone" name="cellPhone" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="workPhone">Work Phone</label>
+                            <input type="text" id="workPhone" name="workPhone" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" />
+                        </div>
+                    </div>
 
-    <!-- Sleep concerns -->
-    <div class="row">
-      <div class="field-wrapper">
-        <label>Do you have any concerns about sleep?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="sleepConcern" value="Yes"> Yes</label>
-          <label><input type="radio" name="sleepConcern" value="No"> No</label>
-        </div>
-      </div>
-           <div class="field-wrapper">
-        <label>How would you rate your physical health?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="healthRating" value="Excellent"> Excellent</label>
-          <label><input type="radio" name="healthRating" value="Good"> Good</label>
-          <label><input type="radio" name="healthRating" value="Fair"> Fair</label>
-          <label><input type="radio" name="healthRating" value="Poor"> Poor</label>
-        </div>
-      </div>
-        <div class="field-wrapper"></div>
+                    <!-- Language -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="primaryLanguage">Preferred Language</label>
+                            <select id="primaryLanguage" name="primaryLanguage">
+                                <option></option>
+                                <option>English</option>
+                                <option>Yiddish</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="email">Who were you referred by?</label>
+                            <input type="text" id="ref" name="ref" />
+                        </div>
+                    </div>
 
-    </div>
-              </div>
-  <div class="section">
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="job">What are you doing?</label>
+                            <select id="job" name="job">
+                                <option></option>
+                                <option>Kollel</option>
+                                <option>Yeshiva</option>
+                                <option>School</option>
+                                <option>Working</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="jobname">Whats it called?</label>
+                            <input type="text" id="jobname" name="jobname" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="years">How many years where you there?</label>
+                            <input type="text" id="years" name="years" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="container">
+                <div class="step-number">2</div>
+                <h2>Emergency Contact Information</h2>
+                <div class="section">
+                    <!-- Emergency Contact Name / Relationship -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <h3 for="emergencyName">
+                                Please list an individual that we can contact in the event of an emergency, and if
+                                necessary, disclose any information.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyName">Emergency Contact Name</label>
+                            <input type="text" id="emergencyName" name="emergencyName" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="relationship">Relationship</label>
+                            <input type="text" id="relationship" name="relationship" />
+                        </div>
+                    </div>
 
-    <!-- Physical health -->
-    <div class="row">
-   
-    </div>
+                    <!-- Address -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyStreet">Address</label>
+                            <input
+                                type="text"
+                                id="emergencyStreet"
+                                name="emergencyStreet"
+                                placeholder="Start typing the address..." />
+                        </div>
+                    </div>
 
-    <!-- Conditions -->
-      <h4>Do you have any of the following: </h4>
-    <!-- Diabetes -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Diabetes</label>
-    <div class="radio-group">
-      <label><input type="radio" name="diabetes" value="Yes"> Yes</label>
-      <label><input type="radio" name="diabetes" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="diabetesDetails">If yes, details:</label>
-    <input type="text" id="diabetesDetails" name="diabetesDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Phone Numbers -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyPhone">Phone Number</label>
+                            <input type="text" id="emergencyPhone" name="emergencyPhone" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="emergencyAltPhone">Alt Phone Number</label>
+                            <input type="text" id="emergencyAltPhone" name="emergencyAltPhone" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
 
-<!-- Cancer -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Cancer</label>
-    <div class="radio-group">
-      <label><input type="radio" name="cancer" value="Yes"> Yes</label>
-      <label><input type="radio" name="cancer" value="No"> No</label>
-    </div>
-      
-  </div>
-  <div class="field-wrapper">
-    <label for="cancerDetails">If yes, details:</label>
-    <input type="text" id="cancerDetails" name="cancerDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+            <div class="container">
+                <div class="step-number">3</div>
+                <h2>Problem Details</h2>
+                <div class="section">
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="concern">What concern brings you in today?</label>
+                            <textarea id="concern" name="concern" style="height: 100px"></textarea>
+                        </div>
+                    </div>
 
-<!-- Headaches / Migraines -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Headache / Migraines</label>
-    <div class="radio-group">
-      <label><input type="radio" name="headaches" value="Yes"> Yes</label>
-      <label><input type="radio" name="headaches" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="headachesDetails">If yes, details:</label>
-    <input type="text" id="headachesDetails" name="headachesDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <div class="row"></div>
 
-<!-- Heart Disease / Stroke -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Heart Disease / Stroke</label>
-    <div class="radio-group">
-      <label><input type="radio" name="heartDisease" value="Yes"> Yes</label>
-      <label><input type="radio" name="heartDisease" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="heartDiseaseDetails">If yes, details:</label>
-    <input type="text" id="heartDiseaseDetails" name="heartDiseaseDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Tried anything -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="problemTried"
+                                >Please list anything that you have done to help with this problem, including previous
+                                psych, psychiatrist, and therapist.</label
+                            >
+                            <textarea style="min-height: 100px" id="problemTried" name="problemTried"></textarea>
+                        </div>
+                    </div>
 
-<!-- High Blood Pressure -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>High Blood Pressure</label>
-    <div class="radio-group">
-      <label><input type="radio" name="highBP" value="Yes"> Yes</label>
-      <label><input type="radio" name="highBP" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="highBPDetails">If yes, details:</label>
-    <input type="text" id="highBPDetails" name="highBPDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Severity -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="problemDuration">How long have you had this problem?</label>
+                            <input type="text" id="problemDuration" name="problemDuration" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="severe">How severe is this problem?</label>
+                            <select id="severe" name="severe">
+                                <option></option>
+                                <option>Minor</option>
+                                <option>Mildly</option>
+                                <option>Moderate</option>
+                                <option>Severe</option>
+                                <option>Very severe</option>
+                            </select>
+                        </div>
+                        <div class="field-wrapper" style="flex: 1.5">
+                            <label>Is this problem affecting your family life, work or sleep?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="affectingLife" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="affectingLife" value="No" /> No</label>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Liver Disease -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Liver Disease</label>
-    <div class="radio-group">
-      <label><input type="radio" name="liverDisease" value="Yes"> Yes</label>
-      <label><input type="radio" name="liverDisease" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="liverDiseaseDetails">If yes, details:</label>
-    <input type="text" id="liverDiseaseDetails" name="liverDiseaseDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Explanation -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="affectExplain">If yes, please explain:</label>
+                            <textarea style="min-height: 100px" id="affectExplain" name="affectExplain"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="container">
+                <div class="step-number">4</div>
+                <h2>Medical and Health History</h2>
+                <div class="section">
+                    <!-- Sleep concerns -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Do you have any concerns about sleep?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="sleepConcern" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="sleepConcern" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label>How would you rate your physical health?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="healthRating" value="Excellent" /> Excellent</label>
+                                <label><input type="radio" name="healthRating" value="Good" /> Good</label>
+                                <label><input type="radio" name="healthRating" value="Fair" /> Fair</label>
+                                <label><input type="radio" name="healthRating" value="Poor" /> Poor</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+                </div>
+                <div class="section">
+                    <!-- Physical health -->
+                    <div class="row"></div>
 
-<!-- Thyroid Disease -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Thyroid Disease</label>
-    <div class="radio-group">
-      <label><input type="radio" name="thyroidDisease" value="Yes"> Yes</label>
-      <label><input type="radio" name="thyroidDisease" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="thyroidDetails">If yes, details:</label>
-    <input type="text" id="thyroidDetails" name="thyroidDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Conditions -->
+                    <h4>Do you have any of the following:</h4>
+                    <!-- Diabetes -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Diabetes</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="diabetes" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="diabetes" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="diabetesDetails">If yes, details:</label>
+                            <input type="text" id="diabetesDetails" name="diabetesDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-<!-- Substance Abuse -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Substance Abuse</label>
-    <div class="radio-group">
-      <label><input type="radio" name="substanceAbuse" value="Yes"> Yes</label>
-      <label><input type="radio" name="substanceAbuse" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="substanceDetails">If yes, details:</label>
-    <input type="text" id="substanceDetails" name="substanceDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Cancer -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Cancer</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="cancer" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="cancer" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="cancerDetails">If yes, details:</label>
+                            <input type="text" id="cancerDetails" name="cancerDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-<!-- Chronic Pain -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Chronic Pain</label>
-    <div class="radio-group">
-      <label><input type="radio" name="chronicPain" value="Yes"> Yes</label>
-      <label><input type="radio" name="chronicPain" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="chronicPainDetails">If yes, details:</label>
-    <input type="text" id="chronicPainDetails" name="chronicPainDetails">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Headaches / Migraines -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Headache / Migraines</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="headaches" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="headaches" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="headachesDetails">If yes, details:</label>
+                            <input type="text" id="headachesDetails" name="headachesDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    
+                    <!-- Heart Disease / Stroke -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Heart Disease / Stroke</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="heartDisease" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="heartDisease" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="heartDiseaseDetails">If yes, details:</label>
+                            <input type="text" id="heartDiseaseDetails" name="heartDiseaseDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Other conditions -->
-    <div class="row">
-      <div class="field-wrapper">
-        <label>Any other medical conditions?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="otherConditions" value="Yes"> Yes</label>
-          <label><input type="radio" name="otherConditions" value="No"> No</label>
-        </div>
-      </div>
-          <div class="field-wrapper">
-    <label for="otherConditionsDetails">If yes, details:</label>
-    <input type="text" id="otherConditionsDetails" name="otherConditionsDetails">
-  </div>
-        <div class="field-wrapper"></div>
-    </div>
+                    <!-- High Blood Pressure -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>High Blood Pressure</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="highBP" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="highBP" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="highBPDetails">If yes, details:</label>
+                            <input type="text" id="highBPDetails" name="highBPDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
+                    <!-- Liver Disease -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Liver Disease</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="liverDisease" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="liverDisease" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="liverDiseaseDetails">If yes, details:</label>
+                            <input type="text" id="liverDiseaseDetails" name="liverDiseaseDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Medications -->
-    <div class="row">
-      <div class="field-wrapper">
-        <label>List all medications you are taking (including OTC, herbs, vitamins):</label>
-      </div>
-    </div>
+                    <!-- Thyroid Disease -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Thyroid Disease</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="thyroidDisease" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="thyroidDisease" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="thyroidDetails">If yes, details:</label>
+                            <input type="text" id="thyroidDetails" name="thyroidDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Medication table header -->
-    <div class="row">
-      <div class="field-wrapper"><label>Medication</label></div>
-      <div class="field-wrapper"><label>Dosage</label></div>
-      <div class="field-wrapper"><label>Reason for Taking</label></div>
-    </div>
+                    <!-- Substance Abuse -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Substance Abuse</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="substanceAbuse" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="substanceAbuse" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="substanceDetails">If yes, details:</label>
+                            <input type="text" id="substanceDetails" name="substanceDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Row 1 -->
-    <div class="row">
-      <div class="field-wrapper"><input type="text" name="med1"></div>
-      <div class="field-wrapper"><input type="text" name="dose1"></div>
-      <div class="field-wrapper"><input type="text" name="reason1"></div>
-    </div>
+                    <!-- Chronic Pain -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Chronic Pain</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="chronicPain" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="chronicPain" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="chronicPainDetails">If yes, details:</label>
+                            <input type="text" id="chronicPainDetails" name="chronicPainDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Row 2 -->
-    <div class="row">
-      <div class="field-wrapper"><input type="text" name="med2"></div>
-      <div class="field-wrapper"><input type="text" name="dose2"></div>
-      <div class="field-wrapper"><input type="text" name="reason2"></div>
-    </div>
+                    <!-- Other conditions -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Any other medical conditions?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="otherConditions" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="otherConditions" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="otherConditionsDetails">If yes, details:</label>
+                            <input type="text" id="otherConditionsDetails" name="otherConditionsDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-    <!-- Row 3 -->
-    <div class="row">
-      <div class="field-wrapper"><input type="text" name="med3"></div>
-      <div class="field-wrapper"><input type="text" name="dose3"></div>
-      <div class="field-wrapper"><input type="text" name="reason3"></div>
-    </div>
+                    <!-- Medications -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>List all medications you are taking (including OTC, herbs, vitamins):</label>
+                        </div>
+                    </div>
 
-    <!-- Allergies -->
-    <div class="row">
-  <div class="field-wrapper">
-    <label>Do you have any known allergies?</label>
-    <div class="radio-group">
-      <label><input type="radio" name="allergies" value="Yes"> Yes</label>
-      <label><input type="radio" name="allergies" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="allergyDetails">If yes, details:</label>
-    <input type="text" id="allergyDetails" name="allergyDetails">
-  </div>
-        <div class="field-wrapper"></div>
-</div>
+                    <!-- Medication table header -->
+                    <div class="row">
+                        <div class="field-wrapper"><label>Medication</label></div>
+                        <div class="field-wrapper"><label>Dosage</label></div>
+                        <div class="field-wrapper"><label>Reason for Taking</label></div>
+                    </div>
 
-    <!-- Smoking -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Do you smoke or vape?</label>
-    <div class="radio-group">
-      <label><input type="radio" name="smoke" value="Yes"> Yes</label>
-      <label><input type="radio" name="smoke" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="smokeAmount">If yes, how much?</label>
-    <input type="text" id="smokeAmount" name="smokeAmount">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <div class="field-wrapper"><input type="text" name="med1" /></div>
+                        <div class="field-wrapper"><input type="text" name="dose1" /></div>
+                        <div class="field-wrapper"><input type="text" name="reason1" /></div>
+                    </div>
 
-<!-- Alcohol -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Do you drink alcohol?</label>
-    <div class="radio-group">
-      <label><input type="radio" name="alcohol" value="Yes"> Yes</label>
-      <label><input type="radio" name="alcohol" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="alcoholAmount">If yes, how much?</label>
-    <input type="text" id="alcoholAmount" name="alcoholAmount">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <div class="field-wrapper"><input type="text" name="med2" /></div>
+                        <div class="field-wrapper"><input type="text" name="dose2" /></div>
+                        <div class="field-wrapper"><input type="text" name="reason2" /></div>
+                    </div>
 
-<!-- Caffeine -->
-<div class="row">
-  <div class="field-wrapper">
-    <label>Do you drink caffeine?</label>
-    <div class="radio-group">
-      <label><input type="radio" name="caffeine" value="Yes"> Yes</label>
-      <label><input type="radio" name="caffeine" value="No"> No</label>
-    </div>
-  </div>
-  <div class="field-wrapper">
-    <label for="caffeineAmount">If yes, Cups/day:</label>
-    <input type="text" id="caffeineAmount" name="caffeineAmount">
-  </div>
-    <div class="field-wrapper"></div>
-</div>
-              </div>
-      
-      <div class="section">
-          
+                    <!-- Row 3 -->
+                    <div class="row">
+                        <div class="field-wrapper"><input type="text" name="med3" /></div>
+                        <div class="field-wrapper"><input type="text" name="dose3" /></div>
+                        <div class="field-wrapper"><input type="text" name="reason3" /></div>
+                    </div>
 
+                    <!-- Allergies -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Do you have any known allergies?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="allergies" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="allergies" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="allergyDetails">If yes, details:</label>
+                            <input type="text" id="allergyDetails" name="allergyDetails" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-  </div>
-</div>
-          <div class="container">
-          <div class="row">
-              <div class="field-wrapper">
-      <button type="submit">Submit</button>
-              </div>
-          </div>
-          </div>
-  </form>
+                    <!-- Smoking -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Do you smoke or vape?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="smoke" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="smoke" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="smokeAmount">If yes, how much?</label>
+                            <input type="text" id="smokeAmount" name="smokeAmount" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
+                    <!-- Alcohol -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Do you drink alcohol?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="alcohol" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="alcohol" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="alcoholAmount">If yes, how much?</label>
+                            <input type="text" id="alcoholAmount" name="alcoholAmount" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
 
-</body>
+                    <!-- Caffeine -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Do you drink caffeine?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="caffeine" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="caffeine" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="caffeineAmount">If yes, Cups/day:</label>
+                            <input type="text" id="caffeineAmount" name="caffeineAmount" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+                    <!-- Psychiatric Diagnosis -->
+                </div>
+
+                <div class="section">
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Have you been diagnosed with a psychiatric condition?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="psychDiagnosed" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="psychDiagnosed" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="psychDiagnosisDetails">If yes, what:</label>
+                            <input type="text" id="psychDiagnosisDetails" name="psychDiagnosisDetails" />
+                        </div>
+                    </div>
+
+                    <!-- Mental Health Services -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Have you received mental health service(s) in the past?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mentalHealthServices" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="mentalHealthServices" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="mentalHealthDetails">If yes, what:</label>
+                            <input type="text" id="mentalHealthDetails" name="mentalHealthDetails" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Do you have (or have you had) any of these concerns:
+
+</h3>
+                    <!-- Difficulty falling or staying asleep -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Difficulty falling or staying asleep</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="sleepIssues" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="sleepIssues" value="No" /> No</label>
+                                <label><input type="radio" name="sleepIssues" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="sleepIssuesNotes">Notes / Comments</label>
+                            <input type="text" id="sleepIssuesNotes" name="sleepIssuesNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Sleeping too little or too much -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Sleeping too little or too much</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="sleepAmount" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="sleepAmount" value="No" /> No</label>
+                                <label><input type="radio" name="sleepAmount" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="sleepAmountNotes">Notes / Comments</label>
+                            <input type="text" id="sleepAmountNotes" name="sleepAmountNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Daily sadness -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Daily feeling of sadness that doesn’t go away</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="sadness" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="sadness" value="No" /> No</label>
+                                <label><input type="radio" name="sadness" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="sadnessNotes">Notes / Comments</label>
+                            <input type="text" id="sadnessNotes" name="sadnessNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Panic/Anxiety -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Panic / Anxiety attacks</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="anxiety" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="anxiety" value="No" /> No</label>
+                                <label><input type="radio" name="anxiety" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="anxietyNotes">Notes / Comments</label>
+                            <input type="text" id="anxietyNotes" name="anxietyNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Concentration -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Problems concentrating</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="concentration" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="concentration" value="No" /> No</label>
+                                <label><input type="radio" name="concentration" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="concentrationNotes">Notes / Comments</label>
+                            <input type="text" id="concentrationNotes" name="concentrationNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Mood fluctuations -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Mood fluctuates up and down</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mood" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="mood" value="No" /> No</label>
+                                <label><input type="radio" name="mood" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="moodNotes">Notes / Comments</label>
+                            <input type="text" id="moodNotes" name="moodNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Remembering upsetting things -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Remembering upsetting things constantly</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="intrusiveMemories" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="intrusiveMemories" value="No" /> No</label>
+                                <label><input type="radio" name="intrusiveMemories" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="intrusiveMemoriesNotes">Notes / Comments</label>
+                            <input type="text" id="intrusiveMemoriesNotes" name="intrusiveMemoriesNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Intrusive thoughts -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Upsetting thoughts I can’t get out of my head</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="intrusiveThoughts" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="intrusiveThoughts" value="No" /> No</label>
+                                <label><input type="radio" name="intrusiveThoughts" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="intrusiveThoughtsNotes">Notes / Comments</label>
+                            <input type="text" id="intrusiveThoughtsNotes" name="intrusiveThoughtsNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Repetitive behaviors -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Repetitive behaviors I can’t stop</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="repetitiveBehaviors" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="repetitiveBehaviors" value="No" /> No</label>
+                                <label><input type="radio" name="repetitiveBehaviors" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="repetitiveBehaviorsNotes">Notes / Comments</label>
+                            <input type="text" id="repetitiveBehaviorsNotes" name="repetitiveBehaviorsNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Constant worrying -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Constant worrying</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="worrying" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="worrying" value="No" /> No</label>
+                                <label><input type="radio" name="worrying" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="worryingNotes">Notes / Comments</label>
+                            <input type="text" id="worryingNotes" name="worryingNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Disordered eating -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Disordered eating / purging</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="eatingDisorder" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="eatingDisorder" value="No" /> No</label>
+                                <label><input type="radio" name="eatingDisorder" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="eatingDisorderNotes">Notes / Comments</label>
+                            <input type="text" id="eatingDisorderNotes" name="eatingDisorderNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Abuse -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Physical / Verbal Abuse</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="abuse" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="abuse" value="No" /> No</label>
+                                <label><input type="radio" name="abuse" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="abuseNotes">Notes / Comments</label>
+                            <input type="text" id="abuseNotes" name="abuseNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Fatigue -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Feeling tired almost every day</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="fatigue" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="fatigue" value="No" /> No</label>
+                                <label><input type="radio" name="fatigue" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="fatigueNotes">Notes / Comments</label>
+                            <input type="text" id="fatigueNotes" name="fatigueNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Low self-worth -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Feelings of low self-worth</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="selfWorth" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="selfWorth" value="No" /> No</label>
+                                <label><input type="radio" name="selfWorth" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="selfWorthNotes">Notes / Comments</label>
+                            <input type="text" id="selfWorthNotes" name="selfWorthNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Risky behavior -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Risky behaviors</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="riskyBehavior" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="riskyBehavior" value="No" /> No</label>
+                                <label><input type="radio" name="riskyBehavior" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="riskyBehaviorNotes">Notes / Comments</label>
+                            <input type="text" id="riskyBehaviorNotes" name="riskyBehaviorNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Temper -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Difficulty controlling my temper</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="temper" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="temper" value="No" /> No</label>
+                                <label><input type="radio" name="temper" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="temperNotes">Notes / Comments</label>
+                            <input type="text" id="temperNotes" name="temperNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Job -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Difficulty maintaining a job</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="jobDifficulty" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="jobDifficulty" value="No" /> No</label>
+                                <label><input type="radio" name="jobDifficulty" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="jobDifficultyNotes">Notes / Comments</label>
+                            <input type="text" id="jobDifficultyNotes" name="jobDifficultyNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Expenses -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Difficulty paying for basic expenses</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="expenses" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="expenses" value="No" /> No</label>
+                                <label><input type="radio" name="expenses" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="expensesNotes">Notes / Comments</label>
+                            <input type="text" id="expensesNotes" name="expensesNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Self-harm thoughts -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Thoughts of killing or harming myself</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="selfHarmThoughts" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="selfHarmThoughts" value="No" /> No</label>
+                                <label><input type="radio" name="selfHarmThoughts" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="selfHarmThoughtsNotes">Notes / Comments</label>
+                            <input type="text" id="selfHarmThoughtsNotes" name="selfHarmThoughtsNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Self-harm attempts -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Attempts to kill or harm myself</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="selfHarmAttempts" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="selfHarmAttempts" value="No" /> No</label>
+                                <label><input type="radio" name="selfHarmAttempts" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="selfHarmAttemptsNotes">Notes / Comments</label>
+                            <input type="text" id="selfHarmAttemptsNotes" name="selfHarmAttemptsNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+
+                    <!-- Hallucinations -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Hear or see things that other people do not</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="hallucinations" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="hallucinations" value="No" /> No</label>
+                                <label><input type="radio" name="hallucinations" value="Past" /> Past</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="hallucinationsNotes">Notes / Comments</label>
+                            <input type="text" id="hallucinationsNotes" name="hallucinationsNotes" />
+                        </div>
+                        <div class="field-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="field-wrapper">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
 </html>
