@@ -125,7 +125,7 @@ button:hover {
     <div class="section">
       <!-- Name row -->
       <div class="row">
-        <div class="field-wrapper">
+        <div class="field-wrapper" >
           <label for="firstName">First Name</label>
           <input type="text" id="firstName" name="firstName">
         </div>
@@ -139,7 +139,7 @@ button:hover {
         </div>
       </div>
 
-      <!-- DOB / Gender / SSN -->
+      <!-- DOB / Gender -->
       <div class="row">
         <div class="field-wrapper">
           <label for="dob">Date of Birth</label>
@@ -205,7 +205,7 @@ button:hover {
         <div class="field-wrapper">
           <label for="primaryLanguage">Preferred Language</label>
           <select id="primaryLanguage" name="primaryLanguage">
-            <option>Select</option>
+            <option></option>
             <option>English</option>
             <option>Yiddish</option>
             <option>Other</option>
@@ -216,6 +216,28 @@ button:hover {
           <input type="text" id="ref" name="ref">
         </div>
       </div>
+        
+      <div class="row">
+        <div class="field-wrapper">
+            <label for="job">What are you doing?</label>
+            <select id="job" name="job">
+            <option></option>
+            <option>Kollel</option>
+            <option>Yeshiva</option>
+            <option>School</option>
+            <option>Working</option>
+            <option>Other</option>
+          </select>
+          </div>
+        <div class="field-wrapper">
+            <label for="jobname">Whats it called?</label>
+          <input type="text" id="jobname" name="jobname">
+          </div>
+        <div class="field-wrapper">
+            <label for="years">How many years where you there?</label>
+          <input type="text" id="years" name="years">
+          </div>
+        </div>
 
       </div>
     </div>
@@ -262,13 +284,381 @@ button:hover {
           <input type="text" id="emergencyAltPhone" name="emergencyAltPhone">
         </div>
       </div>
-
-
     </div>
   
 </div>
+          
+            <div class="container">
+    <div class="step-number">3</div>
+    <div class="section">
+         <h2>Problem Details</h2>
+      <div class="row">
+        <div class="field-wrapper">
+          <label for="concern">What concern brings you in today?</label>
+            <textarea  id="concern" name="concern" style=height:100px ></textarea>
+        </div>
+      </div>
+        
+        <div class="row">
+      
+    </div>
+
+    <!-- Tried anything -->
+    <div class="row">
+      <div class="field-wrapper">
+        <label for="problemTried">Please list anything that you have done to help with this problem, including previous psych, psychiatrist, and therapist.</label>
+        <textarea style="min-height: 100px;" id="problemTried" name="problemTried"></textarea>
+      </div>
+    </div>
+
+    <!-- Severity -->
+    <div class="row">
+        <div class="field-wrapper">
+        <label for="problemDuration">How long have you had this problem?</label>
+        <input type="text" id="problemDuration" name="problemDuration">
+      </div>
+      <div class="field-wrapper">
+        <label for="severe">How severe is this problem?</label>
+        <select id="severe" name="severe">
+            <option></option>
+            <option>Minor</option>
+            <option>Mildly</option>
+            <option>Moderate</option>
+            <option>Severe</option>
+            <option>Very severe</option>
+          </select>
+      </div>
+        <div class="field-wrapper" style="flex:1.5">
+        <label>Is this problem affecting your family life, work or sleep?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="affectingLife" value="Yes"> Yes</label>
+          <label><input type="radio" name="affectingLife" value="No"> No</label>
+        </div>
+      </div>
+        
+    </div>
+
+
+
+    <!-- Explanation -->
+    <div class="row">
+        
+      <div class="field-wrapper">
+        <label for="affectExplain">If yes, please explain:</label>
+        <textarea style="min-height: 100px;" id="affectExplain" name="affectExplain"></textarea>
+      </div>
+    </div>
+
+    </div>
+  </div>
            <div class="row">
           </div>
+          <div class="container">
+  <div class="step-number">4</div>
+  <h2>Medical and Health History</h2>
+  <div class="section">
+
+    <!-- Sleep concerns -->
+    <div class="row">
+      <div class="field-wrapper">
+        <label>Do you have any concerns about sleep?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="sleepConcern" value="Yes"> Yes</label>
+          <label><input type="radio" name="sleepConcern" value="No"> No</label>
+        </div>
+      </div>
+           <div class="field-wrapper">
+        <label>How would you rate your physical health?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="healthRating" value="Excellent"> Excellent</label>
+          <label><input type="radio" name="healthRating" value="Good"> Good</label>
+          <label><input type="radio" name="healthRating" value="Fair"> Fair</label>
+          <label><input type="radio" name="healthRating" value="Poor"> Poor</label>
+        </div>
+      </div>
+        <div class="field-wrapper"></div>
+
+    </div>
+              </div>
+  <div class="section">
+
+    <!-- Physical health -->
+    <div class="row">
+   
+    </div>
+
+    <!-- Conditions -->
+      <h4>Do you have any of the following: </h4>
+    <!-- Diabetes -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Diabetes</label>
+    <div class="radio-group">
+      <label><input type="radio" name="diabetes" value="Yes"> Yes</label>
+      <label><input type="radio" name="diabetes" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="diabetesDetails">If yes, details:</label>
+    <input type="text" id="diabetesDetails" name="diabetesDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Cancer -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Cancer</label>
+    <div class="radio-group">
+      <label><input type="radio" name="cancer" value="Yes"> Yes</label>
+      <label><input type="radio" name="cancer" value="No"> No</label>
+    </div>
+      
+  </div>
+  <div class="field-wrapper">
+    <label for="cancerDetails">If yes, details:</label>
+    <input type="text" id="cancerDetails" name="cancerDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Headaches / Migraines -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Headache / Migraines</label>
+    <div class="radio-group">
+      <label><input type="radio" name="headaches" value="Yes"> Yes</label>
+      <label><input type="radio" name="headaches" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="headachesDetails">If yes, details:</label>
+    <input type="text" id="headachesDetails" name="headachesDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Heart Disease / Stroke -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Heart Disease / Stroke</label>
+    <div class="radio-group">
+      <label><input type="radio" name="heartDisease" value="Yes"> Yes</label>
+      <label><input type="radio" name="heartDisease" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="heartDiseaseDetails">If yes, details:</label>
+    <input type="text" id="heartDiseaseDetails" name="heartDiseaseDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- High Blood Pressure -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>High Blood Pressure</label>
+    <div class="radio-group">
+      <label><input type="radio" name="highBP" value="Yes"> Yes</label>
+      <label><input type="radio" name="highBP" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="highBPDetails">If yes, details:</label>
+    <input type="text" id="highBPDetails" name="highBPDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Liver Disease -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Liver Disease</label>
+    <div class="radio-group">
+      <label><input type="radio" name="liverDisease" value="Yes"> Yes</label>
+      <label><input type="radio" name="liverDisease" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="liverDiseaseDetails">If yes, details:</label>
+    <input type="text" id="liverDiseaseDetails" name="liverDiseaseDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Thyroid Disease -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Thyroid Disease</label>
+    <div class="radio-group">
+      <label><input type="radio" name="thyroidDisease" value="Yes"> Yes</label>
+      <label><input type="radio" name="thyroidDisease" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="thyroidDetails">If yes, details:</label>
+    <input type="text" id="thyroidDetails" name="thyroidDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Substance Abuse -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Substance Abuse</label>
+    <div class="radio-group">
+      <label><input type="radio" name="substanceAbuse" value="Yes"> Yes</label>
+      <label><input type="radio" name="substanceAbuse" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="substanceDetails">If yes, details:</label>
+    <input type="text" id="substanceDetails" name="substanceDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Chronic Pain -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Chronic Pain</label>
+    <div class="radio-group">
+      <label><input type="radio" name="chronicPain" value="Yes"> Yes</label>
+      <label><input type="radio" name="chronicPain" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="chronicPainDetails">If yes, details:</label>
+    <input type="text" id="chronicPainDetails" name="chronicPainDetails">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+    
+
+    <!-- Other conditions -->
+    <div class="row">
+      <div class="field-wrapper">
+        <label>Any other medical conditions?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="otherConditions" value="Yes"> Yes</label>
+          <label><input type="radio" name="otherConditions" value="No"> No</label>
+        </div>
+      </div>
+          <div class="field-wrapper">
+    <label for="otherConditionsDetails">If yes, details:</label>
+    <input type="text" id="otherConditionsDetails" name="otherConditionsDetails">
+  </div>
+        <div class="field-wrapper"></div>
+    </div>
+
+
+    <!-- Medications -->
+    <div class="row">
+      <div class="field-wrapper">
+        <label>List all medications you are taking (including OTC, herbs, vitamins):</label>
+      </div>
+    </div>
+
+    <!-- Medication table header -->
+    <div class="row">
+      <div class="field-wrapper"><label>Medication</label></div>
+      <div class="field-wrapper"><label>Dosage</label></div>
+      <div class="field-wrapper"><label>Reason for Taking</label></div>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="field-wrapper"><input type="text" name="med1"></div>
+      <div class="field-wrapper"><input type="text" name="dose1"></div>
+      <div class="field-wrapper"><input type="text" name="reason1"></div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row">
+      <div class="field-wrapper"><input type="text" name="med2"></div>
+      <div class="field-wrapper"><input type="text" name="dose2"></div>
+      <div class="field-wrapper"><input type="text" name="reason2"></div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row">
+      <div class="field-wrapper"><input type="text" name="med3"></div>
+      <div class="field-wrapper"><input type="text" name="dose3"></div>
+      <div class="field-wrapper"><input type="text" name="reason3"></div>
+    </div>
+
+    <!-- Allergies -->
+    <div class="row">
+  <div class="field-wrapper">
+    <label>Do you have any known allergies?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="allergies" value="Yes"> Yes</label>
+      <label><input type="radio" name="allergies" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="allergyDetails">If yes, details:</label>
+    <input type="text" id="allergyDetails" name="allergyDetails">
+  </div>
+        <div class="field-wrapper"></div>
+</div>
+
+    <!-- Smoking -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Do you smoke or vape?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="smoke" value="Yes"> Yes</label>
+      <label><input type="radio" name="smoke" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="smokeAmount">If yes, how much?</label>
+    <input type="text" id="smokeAmount" name="smokeAmount">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Alcohol -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Do you drink alcohol?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="alcohol" value="Yes"> Yes</label>
+      <label><input type="radio" name="alcohol" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="alcoholAmount">If yes, how much?</label>
+    <input type="text" id="alcoholAmount" name="alcoholAmount">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+
+<!-- Caffeine -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Do you drink caffeine?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="caffeine" value="Yes"> Yes</label>
+      <label><input type="radio" name="caffeine" value="No"> No</label>
+    </div>
+  </div>
+  <div class="field-wrapper">
+    <label for="caffeineAmount">If yes, Cups/day:</label>
+    <input type="text" id="caffeineAmount" name="caffeineAmount">
+  </div>
+    <div class="field-wrapper"></div>
+</div>
+              </div>
+      
+      <div class="section">
+          
+
+
+  </div>
+</div>
           <div class="container">
           <div class="row">
               <div class="field-wrapper">
