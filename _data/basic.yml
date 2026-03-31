@@ -1,7 +1,6 @@
 title: Basic Information
 
 sections:
-  - title: Personal Info
     rows:
       - fields:
           - label: First Name
@@ -12,7 +11,7 @@ sections:
           - label: Middle Initial
             name: entry.1112
             type: text
-            required: true
+            
 
           - label: Last Name
             name: entry.1113
