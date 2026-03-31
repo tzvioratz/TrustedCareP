@@ -1,7 +1,8 @@
 title: Basic Information
 
 sections:
-    rows:
+
+    -rows:
       - fields:
           - label: First Name
             name: entry.1111
