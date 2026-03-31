@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="step-number">{{ include.step }}</div>
+  <h2>{{ include.data.title }}</h2>
+
+  {% for section in include.data.sections %}
+
+    <div class="section">
+
+      {% if section.title %}
+        <h3>{{ section.title }}</h3>
+      {% endif %}
+
+      {% for row in section.rows %}
+        <div class="row">
+
+          {% for field in row.fields %}
+            <div class="field-wrapper">
+
+              {% if field.label %}
+                <label>{{ field.label }}</label>
+              {% endif %}
+
+              {% if field.type == "select" %}
+                <select name="{{ field.name }}">
+                  <option>Select...</option>
+                  {% for opt in field.options %}
+                    <option>{{ opt }}</option>
+                  {% endfor %}
+                </select>
+
+              {% elsif field.type == "textarea" %}
+                <textarea name="{{ field.name }}" placeholder="{{ field.placeholder }}"></textarea>
+
+              {% else %}
+                <input 
+                  type="{{ field.type | default: 'text' }}" 
+                  name="{{ field.name }}" 
+                  placeholder="{{ field.placeholder }}"
+                >
+              {% endif %}
+
+            </div>
+          {% endfor %}
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- spacing between sections -->
+    <div class="row"></div>
+
+  {% endfor %}
+</div>
+
+<!-- spacing between containers -->
+<div class="row"></div>

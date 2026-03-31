@@ -1,0 +1,48 @@
+title: Basic Information
+
+sections:
+  - title: Personal Info
+    rows:
+      - fields:
+          - label: First Name
+            name: entry.1111
+            type: text
+
+          - label: Middle Initial
+            name: entry.1112
+            type: text
+
+          - label: Last Name
+            name: entry.1113
+            type: text
+
+      - fields:
+          - label: Date of Birth
+            name: entry.1114
+            type: date
+
+          - label: Gender
+            name: entry.1115
+            type: select
+            options: [Male, Female]
+
+          - label: SSN
+            name: entry.1116
+            type: text
+
+  - title: Contact Info
+    rows:
+      - fields:
+          - label: Email
+            name: entry.1117
+            type: email
+
+          - label: Phone
+            name: entry.1118
+            type: text
+
+      - fields:
+          - label: Preferred Contact
+            name: entry.1119
+            type: select
+            options: [Mobile, Home, Work, Email]

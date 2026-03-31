@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intake Form - Section 1</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #eef6fb;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                position: relative;
+                max-width: 900px;
+                margin: auto;
+                background: #fff;
+                padding: 40px 25px 25px 25px; /* extra top padding for number circle */
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .step-number {
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 40px;
+                height: 40px;
+                background-color: #2a6f97;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 18px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                color: #2a6f97;
+                margin-bottom: 15px;
+            }
+
+            .section {
+                background: #f7fbff;
+                padding: 15px 20px;
+                border-radius: 8px;
+                border: 1px solid #d6eaf8;
+                margin-bottom: 20px;
+            }
+
+            .row {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+                align-items: flex-end; 
+
+            }
+
+            .field-wrapper {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .field-wrapper input,
+            .field-wrapper select,
+            .field-wrapper textarea {
+                padding: 8px;
+                font-size: 14px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-top: 4px;
+                height: 36px;
+                box-sizing: border-box;
+            }
+
+            .radio-group {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                height: 36px;
+            }
+
+            .radio-group label {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            label {
+                font-size: 13px;
+                color: #444;
+                margin-bottom: 2px;
+            }
+
+            button {
+                background-color: #2a6f97;
+                color: #fff;
+                border: none;
+                padding: 10px 18px;
+                font-size: 14px;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                background-color: #1f5571;
+            }
+        </style>
+        <meta name="robots" content="noindex, nofollow" />
+    </head>
+    <body>
+        <form method="POST">
+            {% include form-container.html step="1" data=site.data.basic %}
+            <div class="container">
+                <div class="step-number">2</div>
+                <h2>Emergency Contact Information</h2>
+                <div class="section">
+                    <!-- Emergency Contact Name / Relationship -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <h3 for="emergencyName">
+                                Please list an individual that we can contact in the event of an emergency, and if
+                                necessary, disclose any information.
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyName">Emergency Contact Name</label>
+                            <input type="text" id="emergencyName" name="emergencyName" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="relationship">Relationship</label>
+                            <input type="text" id="relationship" name="relationship" />
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyStreet">Address</label>
+                            <input
+                                type="text"
+                                id="emergencyStreet"
+                                name="emergencyStreet"
+                                placeholder="Start typing the address..." />
+                        </div>
+                    </div>
+
+                    <!-- Phone Numbers -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="emergencyPhone">Phone Number</label>
+                            <input type="text" id="emergencyPhone" name="emergencyPhone" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="emergencyAltPhone">Alt Phone Number</label>
+                            <input type="text" id="emergencyAltPhone" name="emergencyAltPhone" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+
+            <div class="container">
+                <div class="step-number">3</div>
+                <h2>Problem Details</h2>
+                <div class="section">
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="concern">What concern brings you in today?</label>
+                            <textarea id="concern" name="concern" style="height: 100px"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row"></div>
+
+                    <!-- Tried anything -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="problemTried"
+                                >Please list anything that you have done to help with this problem, including previous
+                                psych, psychiatrist, and therapist.</label
+                            >
+                            <textarea style="min-height: 100px" id="problemTried" name="problemTried"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Severity -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="problemDuration">How long have you had this problem?</label>
+                            <input type="text" id="problemDuration" name="problemDuration" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="severe">How severe is this problem?</label>
+                            <select id="severe" name="severe">
+                                <option></option>
+                                <option>Minor</option>
+                                <option>Mildly</option>
+                                <option>Moderate</option>
+                                <option>Severe</option>
+                                <option>Very severe</option>
+                            </select>
+                        </div>
+                        <div class="field-wrapper" style="flex: 1.5">
+                            <label>Is this problem affecting your family life, work or sleep?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="affectingLife" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="affectingLife" value="No" /> No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Explanation -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label for="affectExplain">If yes, please explain:</label>
+                            <textarea style="min-height: 100px" id="affectExplain" name="affectExplain"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="container">
+                <div class="step-number">4</div>
+                <h2>Medical and Health History</h2>
+                <div class="section">
+
+
+  <!-- Sleep Concern -->
+  <div class="row">
+    <div class="field-wrapper">
+      <label>Do you have any concerns about sleep?</label>
+    </div>
+    <div class="field-wrapper">
+      <select name="sleepConcern">
+        <option>Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Physical Health Rating -->
+  <div class="row">
+    <div class="field-wrapper">
+      <label>How would you rate your physical health?</label>
+    </div>
+    <div class="field-wrapper">
+      <select name="healthRating">
+        <option>Select...</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Fair</option>
+        <option>Poor</option>
+      </select>
+    </div>
+  </div>
+
+</div>
+              
+<div class="section">
+  <h3>Do you have any of the following:</h3>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Diabetes</label></div>
+    <div class="field-wrapper">
+      <select name="diabetes"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="diabetesDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Cancer</label></div>
+    <div class="field-wrapper">
+      <select name="cancer"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="cancerDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Headache / Migraines</label></div>
+    <div class="field-wrapper">
+      <select name="headaches"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="headachesDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Heart Disease / Stroke</label></div>
+    <div class="field-wrapper">
+      <select name="heart"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="heartDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>High Blood Pressure</label></div>
+    <div class="field-wrapper">
+      <select name="bp"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="bpDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Liver Disease</label></div>
+    <div class="field-wrapper">
+      <select name="liver"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="liverDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Thyroid Disease</label></div>
+    <div class="field-wrapper">
+      <select name="thyroid"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="thyroidDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Substance Abuse</label></div>
+    <div class="field-wrapper">
+      <select name="substance"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="substanceDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Chronic Pain</label></div>
+    <div class="field-wrapper">
+      <select name="chronicPain"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="chronicPainDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Any other medical conditions?</label></div>
+    <div class="field-wrapper">
+      <select name="otherConditions"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="otherConditionsDetails" placeholder="If yes, details">
+    </div>
+  </div>
+   
+    </div>
+                 <div class="section">
+
+  <div class="row">
+    <div class="field-wrapper"><label>Do you have any known allergies?</label></div>
+    <div class="field-wrapper">
+      <select name="allergies"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="allergiesDetails" placeholder="If yes, details">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Do you smoke or vape?</label></div>
+    <div class="field-wrapper">
+      <select name="smoke"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="smokeAmount" placeholder="If yes, how much">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Do you drink alcohol?</label></div>
+    <div class="field-wrapper">
+      <select name="alcohol"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="alcoholAmount" placeholder="If yes, how much">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Do you drink caffeine?</label></div>
+    <div class="field-wrapper">
+      <select name="caffeine"><option>Select...</option><option>Yes</option><option>No</option></select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="caffeineAmount" placeholder="If yes, cups/day">
+    </div>
+  </div>
+
+</div>
+                <div class="section">
+                  <div class="row">
+                        <div class="field-wrapper">
+                            <h3>List all medications you are taking, the dosage,and why you take it (including OTC, herbs, vitamins):</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <textarea style="height: 150px"></textarea>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+                <div class="container">
+                <div class="step-number">5</div>
+                <h2>Mental Health History </h2>
+                <div class="section">
+                    
+                    
+                
+
+                    <!-- Mental Health Services -->
+                    <div class="row">
+                        <div class="field-wrapper">
+                            <label>Have you received mental health service(s) in the past?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mentalHealthServices" value="Yes" /> Yes</label>
+                                <label><input type="radio" name="mentalHealthServices" value="No" /> No</label>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="mentalHealthDetails">If yes, what:</label>
+                            <input type="text" id="mentalHealthDetails" name="mentalHealthDetails" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+  <h3>Do you have (or have you had) any of these concerns:</h3>
+
+  <!-- Template Row Pattern Applied Everywhere -->
+
+  <div class="row">
+    <div class="field-wrapper"><label>Difficulty falling or staying asleep</label></div>
+    <div class="field-wrapper">
+      <select name="sleepIssues">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="sleepIssuesNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Sleeping too little or too much</label></div>
+    <div class="field-wrapper">
+      <select name="sleepAmount">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="sleepAmountNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Daily feeling of sadness that doesn’t go away</label></div>
+    <div class="field-wrapper">
+      <select name="sadness">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="sadnessNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Panic / Anxiety attacks</label></div>
+    <div class="field-wrapper">
+      <select name="anxiety">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="anxietyNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Problems concentrating</label></div>
+    <div class="field-wrapper">
+      <select name="concentration">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="concentrationNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Mood fluctuates up and down</label></div>
+    <div class="field-wrapper">
+      <select name="mood">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="moodNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Remembering upsetting things constantly</label></div>
+    <div class="field-wrapper">
+      <select name="intrusiveMemories">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="intrusiveMemoriesNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Upsetting thoughts I can’t get out of my head</label></div>
+    <div class="field-wrapper">
+      <select name="intrusiveThoughts">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="intrusiveThoughtsNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Repetitive behaviors I can’t stop</label></div>
+    <div class="field-wrapper">
+      <select name="repetitiveBehaviors">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="repetitiveBehaviorsNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Constant worrying</label></div>
+    <div class="field-wrapper">
+      <select name="worrying">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="worryingNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Disordered eating / purging</label></div>
+    <div class="field-wrapper">
+      <select name="eatingDisorder">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="eatingDisorderNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Physical / Verbal Abuse</label></div>
+    <div class="field-wrapper">
+      <select name="abuse">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="abuseNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Feeling tired almost every day</label></div>
+    <div class="field-wrapper">
+      <select name="fatigue">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="fatigueNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Feelings of low self-worth</label></div>
+    <div class="field-wrapper">
+      <select name="selfWorth">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="selfWorthNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Risky behaviors</label></div>
+    <div class="field-wrapper">
+      <select name="riskyBehavior">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="riskyBehaviorNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Difficulty controlling my temper</label></div>
+    <div class="field-wrapper">
+      <select name="temper">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="temperNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Difficulty maintaining a job</label></div>
+    <div class="field-wrapper">
+      <select name="jobDifficulty">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="jobDifficultyNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Difficulty paying for basic expenses</label></div>
+    <div class="field-wrapper">
+      <select name="expenses">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="expensesNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Thoughts of killing or harming myself</label></div>
+    <div class="field-wrapper">
+      <select name="selfHarmThoughts">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="selfHarmThoughtsNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Attempts to kill or harm myself</label></div>
+    <div class="field-wrapper">
+      <select name="selfHarmAttempts">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="selfHarmAttemptsNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field-wrapper"><label>Hear or see things that other people do not</label></div>
+    <div class="field-wrapper">
+      <select name="hallucinations">
+        <option>Select...</option><option>Yes</option><option>No</option><option>Past</option>
+      </select>
+    </div>
+    <div class="field-wrapper">
+      <input type="text" name="hallucinationsNotes" placeholder="Notes / Comments">
+    </div>
+  </div>
+
+</div>
+            </div>
+            <div class="row"></div>
+            <div class="container">
+                <div class="step-number">6</div>
+                <h2>Family Psychiatric History</h2>
+                <div class="section">
+                    <!-- ADHD -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>ADHD</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyADHD">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyADHDWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Anxiety -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Anxiety</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyAnxiety">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyAnxietyWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Depression -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Depression</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyDepression">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyDepressionWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- OCD -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Obsessive Compulsive Disorder</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyOCD">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyOCDWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Eating Disorder -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Eating Disorder</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyEating">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyEatingWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Schizophrenia -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Schizophrenia</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familySchizophrenia">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familySchizophreniaWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Bipolar -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Bipolar</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyBipolar">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyBipolarWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Substance Abuse -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Alcohol / Substance Abuse</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familySubstance">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familySubstanceWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Suicide -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Suicide</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familySuicide">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familySuicideWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Other -->
+<div class="row">
+  <div class="field-wrapper">
+    <label>Other</label>
+  </div>
+  <div class="field-wrapper">
+    <select name="familyOther">
+      <option>Select...</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="field-wrapper">
+    <input type="text" name="familyOtherWho" placeholder="If yes, who">
+  </div>
+</div>
+
+<!-- Specify Other -->
+<div class="row">
+  <div class="field-wrapper">
+    <label for="familyOtherSpecify">If other, please specify:</label>
+  </div>
+  <div class="field-wrapper" style="flex: 2">
+    <input type="text" id="familyOtherSpecify" name="familyOtherSpecify" >
+  </div>
+  
+</div>
+                </div>
+            </div>
+            <div class="row"></div>
+              <div class="container">
+                  <div class="step-number">7</div>
+                  <h2>Pharmacy Information </h2>
+                  <div class="section">
+                  <div class="row">
+                    <div class="field-wrapper">
+                            <label for="pharmacy">Pharmacy Name</label>
+                            <input type="text" id="pharmacy" name="pharmacy" />
+                    </div>
+                      <div class="field-wrapper">
+                       <label for="pharmacyNumber">Pharmacy Phone Number</label>
+                            <input type="text" id="pharmacyNumber" name="pharmacyNumber" />
+                      </div>
+                </div>
+                  
+                  </div>
+                
+            </div>
+            
+            
+            <div class="row"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="field-wrapper">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
