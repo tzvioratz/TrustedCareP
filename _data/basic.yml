@@ -6,6 +6,7 @@ sections:
           - label: First Name
             name: entry.1111
             type: text
+            flex: 2
             required: true
 
           - label: Middle Initial
@@ -16,6 +17,7 @@ sections:
           - label: Last Name
             name: entry.1113
             type: text
+            flex: 2
             required: true
 
       - fields:
