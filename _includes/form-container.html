@@ -14,14 +14,14 @@
         <div class="row">
 
           {% for field in row.fields %}
-            <div class="field-wrapper">
+            <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
 
               {% if field.label %}
-                <label>{{ field.label }}</label>
+                <label>{{ field.label }}  {% if field.required %} <span style="color:red;">*</span>  {% endif %} </label>
               {% endif %}
 
               {% if field.type == "select" %}
-                <select name="{{ field.name }}">
+                <select name="{{ field.name }}" {% if field.required %}required{% endif %} >
                   <option>Select...</option>
                   {% for opt in field.options %}
                     <option>{{ opt }}</option>
@@ -29,13 +29,35 @@
                 </select>
 
               {% elsif field.type == "textarea" %}
-                <textarea name="{{ field.name }}" placeholder="{{ field.placeholder }}"></textarea>
+                <textarea name="{{ field.name }}" placeholder="{{ field.placeholder }}" {% if field.required %}required{% endif %}></textarea>
 
+              {% elsif field.type == "yesno_with_details" %}
+                <div style="display:flex; gap:10px;">
+
+                  <select name="{{ field.name }}" class="yesno-trigger" data-details="{{ field.detailsName }}" style="flex:1;" {% if field.required %}required{% endif %}>
+                    <option>Select...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+
+                  <input 
+                    type="text" 
+                    name="{{ field.detailsName }}" 
+                    placeholder="{{ field.placeholder | default: 'If yes, details' }}"
+                    style="flex:2;"
+                    disabled
+                  >
+
+                </div>
+              
+              {% elsif field.type == "empty" %}
+              
               {% else %}
                 <input 
                   type="{{ field.type | default: 'text' }}" 
                   name="{{ field.name }}" 
                   placeholder="{{ field.placeholder }}"
+                  {% if field.required %}required{% endif %}
                 >
               {% endif %}
 

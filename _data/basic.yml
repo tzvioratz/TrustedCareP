@@ -7,42 +7,99 @@ sections:
           - label: First Name
             name: entry.1111
             type: text
+            required: true
 
           - label: Middle Initial
             name: entry.1112
             type: text
+            required: true
 
           - label: Last Name
             name: entry.1113
             type: text
+            required: true
 
       - fields:
           - label: Date of Birth
             name: entry.1114
             type: date
+            required: true
 
           - label: Gender
             name: entry.1115
             type: select
             options: [Male, Female]
+            required: true
 
-          - label: SSN
-            name: entry.1116
-            type: text
-
-  - title: Contact Info
-    rows:
+          - type: empty
+          
       - fields:
+          - label: Mailing Address
+            name: entry.1111
+            type: text
+            required: true
+
+          - label: City
+            name: entry.1111
+            type: text
+            required: true
+            
+          - label: State
+            name: entry.1111
+            type: text
+            required: true
+
+          - label: Zip Code
+            name: entry.1111
+            type: text
+            required: true
+            
+      - fields:
+          - label: Home Phone
+            name: entry.1111
+            type: text
+            required: true
+
+          - label: Cell Phone
+            name: entry.1111
+            type: text
+            
+          - label: Work Phone
+            name: entry.1111
+            type: text
+            
+
           - label: Email
-            name: entry.1117
-            type: email
-
-          - label: Phone
-            name: entry.1118
+            name: entry.1111
             type: text
-
+            required: true
+            
       - fields:
-          - label: Preferred Contact
-            name: entry.1119
+          - label: Preferred Language
+            name: entry.1111
             type: select
-            options: [Mobile, Home, Work, Email]
+            options: [English, Yiddish, Other]
+            required: true
+
+          - label: Who were you referred by?
+            name: entry.1111
+            type: text
+            required: true
+            
+      - fields:
+          - label: What are you doing?
+            name: entry.1111
+            type: select
+            options: [Kollel, Yeshiva, Work, School, Other]
+            required: true
+
+          - label: Whats it called?
+            name: entry.1111
+            type: text
+            required: true
+            
+          - label: How many years have you been there? 
+            name: entry.1111
+            type: number
+            required: true
+            

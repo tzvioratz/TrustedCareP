@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Intake Form - Section 1</title>
+        <title>Intake Form</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -934,5 +934,33 @@
                 </div>
             </div>
         </form>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".yesno-trigger").forEach(select => {
+    const detailsName = select.dataset.details;
+    const detailsInput = document.querySelector(`input[name="${detailsName}"]`);
+
+    if (!detailsInput) return;
+
+    function update() {
+      if (select.value === "Yes") {
+        detailsInput.disabled = false;
+        detailsInput.required = true;
+      } else {
+        detailsInput.disabled = true;
+        detailsInput.required = false;
+        detailsInput.value = "";
+      }
+    }
+
+    select.addEventListener("change", update);
+
+    // run once on load (important for prefilled forms)
+    update();
+  });
+
+});
+</script>
     </body>
 </html>
