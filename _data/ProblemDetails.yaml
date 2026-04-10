@@ -1,0 +1,50 @@
+title: Problem Details
+
+sections:
+  - title: null
+    rows:
+      - fields:
+          - label: What concern brings you in today?
+            name: concern
+            type: textarea
+            flex: 1
+            placeholder: null
+
+      - fields: []
+
+      - fields:
+          - label: Please list anything that you have done to help with this problem, including previous psych, psychiatrist, and therapist.
+            name: problemTried
+            type: textarea
+            flex: 1
+
+      - fields:
+          - label: How long have you had this problem?
+            name: problemDuration
+            type: text
+            flex: 1
+
+          - label: How severe is this problem?
+            name: severe
+            type: select
+            flex: 1
+            options:
+              - Minor
+              - Mildly
+              - Moderate
+              - Severe
+              - Very severe
+
+          - label: Is this problem affecting your family life, work or sleep?
+            name: affectingLife
+            type: select
+            flex: 1.5
+            options:
+              - Yes
+              - No
+
+      - fields:
+          - label: If yes, please explain:
+            name: affectExplain
+            type: textarea
+            flex: 1
