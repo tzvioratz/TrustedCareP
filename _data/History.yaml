@@ -23,7 +23,7 @@ sections:
               - Fair
               - Poor
 
-  - title: Do you have any of the following:
+  - title: Do you have any of the following
     rows:
       - fields:
           - label: Diabetes
