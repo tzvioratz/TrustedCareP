@@ -124,68 +124,7 @@
             {% include form-container.html step="1" data=site.data.basic %}
             {% include form-container.html step="2" data=site.data.EmergencyContact %}
             {% include form-container.html step="3" data=site.data.ProblemDetails %}
-
-            
-            <div class="container">
-                <div class="step-number">3</div>
-                <h2>Problem Details</h2>
-                <div class="section">
-                    <div class="row">
-                        <div class="field-wrapper">
-                            <label for="concern">What concern brings you in today?</label>
-                            <textarea id="concern" name="concern" style="height: 100px"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row"></div>
-
-                    <!-- Tried anything -->
-                    <div class="row">
-                        <div class="field-wrapper">
-                            <label for="problemTried"
-                                >Please list anything that you have done to help with this problem, including previous
-                                psych, psychiatrist, and therapist.</label
-                            >
-                            <textarea style="min-height: 100px" id="problemTried" name="problemTried"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Severity -->
-                    <div class="row">
-                        <div class="field-wrapper">
-                            <label for="problemDuration">How long have you had this problem?</label>
-                            <input type="text" id="problemDuration" name="problemDuration" />
-                        </div>
-                        <div class="field-wrapper">
-                            <label for="severe">How severe is this problem?</label>
-                            <select id="severe" name="severe">
-                                <option></option>
-                                <option>Minor</option>
-                                <option>Mildly</option>
-                                <option>Moderate</option>
-                                <option>Severe</option>
-                                <option>Very severe</option>
-                            </select>
-                        </div>
-                        <div class="field-wrapper" style="flex: 1.5">
-                            <label>Is this problem affecting your family life, work or sleep?</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="affectingLife" value="Yes" /> Yes</label>
-                                <label><input type="radio" name="affectingLife" value="No" /> No</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Explanation -->
-                    <div class="row">
-                        <div class="field-wrapper">
-                            <label for="affectExplain">If yes, please explain:</label>
-                            <textarea style="min-height: 100px" id="affectExplain" name="affectExplain"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row"></div>
+            {% include form-container.html step="4" data=site.data.History %}
             <div class="container">
                 <div class="step-number">4</div>
                 <h2>Medical and Health History</h2>

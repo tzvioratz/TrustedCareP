@@ -1,0 +1,135 @@
+title: Medical and Health History
+
+sections:
+  - title: null
+    rows:
+      - fields:
+          - label: Do you have any concerns about sleep?
+            name: sleepConcern
+            type: select
+            flex: 1
+            options:
+              - Yes
+              - No
+
+      - fields:
+          - label: How would you rate your physical health?
+            name: healthRating
+            type: select
+            flex: 1
+            options:
+              - Excellent
+              - Good
+              - Fair
+              - Poor
+
+  - title: Do you have any of the following:
+    rows:
+      - fields:
+          - label: Diabetes
+            name: diabetes
+            type: yesno_with_details
+            flex: 1
+            detailsName: diabetesDetails
+
+      - fields:
+          - label: Cancer
+            name: cancer
+            type: yesno_with_details
+            flex: 1
+            detailsName: cancerDetails
+
+      - fields:
+          - label: Headache / Migraines
+            name: headaches
+            type: yesno_with_details
+            flex: 1
+            detailsName: headachesDetails
+
+      - fields:
+          - label: Heart Disease / Stroke
+            name: heart
+            type: yesno_with_details
+            flex: 1
+            detailsName: heartDetails
+
+      - fields:
+          - label: High Blood Pressure
+            name: bp
+            type: yesno_with_details
+            flex: 1
+            detailsName: bpDetails
+
+      - fields:
+          - label: Liver Disease
+            name: liver
+            type: yesno_with_details
+            flex: 1
+            detailsName: liverDetails
+
+      - fields:
+          - label: Thyroid Disease
+            name: thyroid
+            type: yesno_with_details
+            flex: 1
+            detailsName: thyroidDetails
+
+      - fields:
+          - label: Substance Abuse
+            name: substance
+            type: yesno_with_details
+            flex: 1
+            detailsName: substanceDetails
+
+      - fields:
+          - label: Chronic Pain
+            name: chronicPain
+            type: yesno_with_details
+            flex: 1
+            detailsName: chronicPainDetails
+
+      - fields:
+          - label: Any other medical conditions?
+            name: otherConditions
+            type: yesno_with_details
+            flex: 1
+            detailsName: otherConditionsDetails
+            
+  - title: null
+    rows:
+      - fields:
+          - label: Do you have any known allergies?
+            name: allergies
+            type: yesno_with_details
+            flex: 1
+            detailsName: allergiesDetails
+
+      - fields:
+          - label: Do you smoke or vape?
+            name: smoke
+            type: yesno_with_details
+            flex: 1
+            detailsName: smokeAmount
+
+      - fields:
+          - label: Do you drink alcohol?
+            name: alcohol
+            type: yesno_with_details
+            flex: 1
+            detailsName: alcoholAmount
+
+      - fields:
+          - label: Do you drink caffeine?
+            name: caffeine
+            type: yesno_with_details
+            flex: 1
+            detailsName: caffeineAmount
+
+  - title: null
+    rows:
+      - fields:
+          - label: List all medications you are taking, the dosage, and why you take it (including OTC, herbs, vitamins):
+            name: medications
+            type: textarea
+            flex: 1
+            placeholder: null
