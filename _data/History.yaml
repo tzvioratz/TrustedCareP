@@ -128,7 +128,7 @@ sections:
   - title: null
     rows:
       - fields:
-          - label: List all medications you are taking, the dosage, and why you take it (including OTC, herbs, vitamins):
+          - label: List all medications you are taking, the dosage, and why you take it (including OTC, herbs, vitamins)
             name: medications
             type: textarea
             flex: 1
