@@ -44,7 +44,7 @@ sections:
               - No
 
       - fields:
-          - label: If yes, please explain:
+          - label: If yes, please explain
             name: affectExplain
             type: textarea
             flex: 1
