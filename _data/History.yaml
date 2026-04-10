@@ -8,9 +8,8 @@ sections:
             name: sleepConcern
             type: select
             flex: 1
-            options:
-              - Yes
-              - No
+            options: [Yes, No]
+
 
       - fields:
           - label: How would you rate your physical health?

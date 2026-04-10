@@ -1,0 +1,15 @@
+title: Pharmacy Information
+
+sections:
+  - title: null
+    rows:
+      - fields:
+          - label: Pharmacy Name
+            name: pharmacy
+            type: text
+            flex: 1
+
+          - label: Pharmacy Phone Number
+            name: pharmacyNumber
+            type: tel
+            flex: 1

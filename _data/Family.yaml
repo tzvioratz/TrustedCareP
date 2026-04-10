@@ -1,0 +1,80 @@
+title: Family Psychiatric History
+
+sections:
+  - title: null
+    rows:
+      - fields:
+          - label: ADHD
+            name: familyADHD
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyADHDWho
+
+      - fields:
+          - label: Anxiety
+            name: familyAnxiety
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyAnxietyWho
+
+      - fields:
+          - label: Depression
+            name: familyDepression
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyDepressionWho
+
+      - fields:
+          - label: Obsessive Compulsive Disorder
+            name: familyOCD
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyOCDWho
+
+      - fields:
+          - label: Eating Disorder
+            name: familyEating
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyEatingWho
+
+      - fields:
+          - label: Schizophrenia
+            name: familySchizophrenia
+            type: yesno_with_details
+            flex: 1
+            detailsName: familySchizophreniaWho
+
+      - fields:
+          - label: Bipolar
+            name: familyBipolar
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyBipolarWho
+
+      - fields:
+          - label: Alcohol / Substance Abuse
+            name: familySubstance
+            type: yesno_with_details
+            flex: 1
+            detailsName: familySubstanceWho
+
+      - fields:
+          - label: Suicide
+            name: familySuicide
+            type: yesno_with_details
+            flex: 1
+            detailsName: familySuicideWho
+
+      - fields:
+          - label: Other
+            name: familyOther
+            type: yesno_with_details
+            flex: 1
+            detailsName: familyOtherWho
+
+      - fields:
+          - label: If other, please specify
+            name: familyOtherSpecify
+            type: text
+            flex: 2

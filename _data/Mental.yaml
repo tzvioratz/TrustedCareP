@@ -1,0 +1,272 @@
+title: Mental Health History
+
+sections:
+  - title: null
+    rows:
+      - fields:
+          - label: Have you received mental health service(s) in the past?
+            name: mentalHealthServices
+            type: select
+            flex: 1
+            options:
+              - Yes
+              - No
+
+          - label: If yes, what
+            name: mentalHealthDetails
+            type: text
+            flex: 1
+            
+  - title: Do you have (or have you had) any of these concerns
+    rows:
+      - fields:
+          - label: Difficulty falling or staying asleep
+            name: sleepIssues
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: sleepIssuesNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Sleeping too little or too much
+            name: sleepAmount
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: sleepAmountNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Daily feeling of sadness that doesn’t go away
+            name: sadness
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: sadnessNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Panic / Anxiety attacks
+            name: anxiety
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: anxietyNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Problems concentrating
+            name: concentration
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: concentrationNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Mood fluctuates up and down
+            name: mood
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: moodNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Remembering upsetting things constantly
+            name: intrusiveMemories
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: intrusiveMemoriesNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Upsetting thoughts I can’t get out of my head
+            name: intrusiveThoughts
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: intrusiveThoughtsNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Repetitive behaviors I can’t stop
+            name: repetitiveBehaviors
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: repetitiveBehaviorsNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Constant worrying
+            name: worrying
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: worryingNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Disordered eating / purging
+            name: eatingDisorder
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: eatingDisorderNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Physical / Verbal Abuse
+            name: abuse
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: abuseNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Feeling tired almost every day
+            name: fatigue
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: fatigueNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Feelings of low self-worth
+            name: selfWorth
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: selfWorthNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Risky behaviors
+            name: riskyBehavior
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: riskyBehaviorNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Difficulty controlling my temper
+            name: temper
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: temperNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Difficulty maintaining a job
+            name: jobDifficulty
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: jobDifficultyNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Difficulty paying for basic expenses
+            name: expenses
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: expensesNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Thoughts of killing or harming myself
+            name: selfHarmThoughts
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: selfHarmThoughtsNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Attempts to kill or harm myself
+            name: selfHarmAttempts
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: selfHarmAttemptsNotes
+            type: text
+            flex: 1
+
+      - fields:
+          - label: Hear or see things that other people do not
+            name: hallucinations
+            type: select
+            flex: 1
+            options: [Yes, No, Past]
+
+          - label: Notes / Comments
+            name: hallucinationsNotes
+            type: text
+            flex: 1
