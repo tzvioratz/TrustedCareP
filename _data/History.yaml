@@ -5,6 +5,8 @@ sections:
     rows:
       - fields:
           - label2: Do you have any concerns about sleep?
+          
+          - label: 
             name: sleepConcern
             type: yesno_with_details
             flex: 1
