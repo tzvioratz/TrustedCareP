@@ -1,4 +1,4 @@
-title: Medical and Health History
+title: Medical History
 
 sections:
   - title: null
@@ -6,9 +6,9 @@ sections:
       - fields:
           - label: Do you have any concerns about sleep?
             name: sleepConcern
-            type: select
+            type: yesno_with_details
             flex: 1
-            options: [Yes, No]
+            detailsName: sleep
 
 
       - fields:
@@ -21,6 +21,34 @@ sections:
               - Good
               - Fair
               - Poor
+
+      - fields:
+          - label: Do you have any known allergies?
+            name: allergies
+            type: yesno_with_details
+            flex: 1
+            detailsName: allergiesDetails
+
+      - fields:
+          - label: Do you smoke or vape?
+            name: smoke
+            type: yesno_with_details
+            flex: 1
+            detailsName: smokeAmount
+
+      - fields:
+          - label: Do you drink alcohol?
+            name: alcohol
+            type: yesno_with_details
+            flex: 1
+            detailsName: alcoholAmount
+
+      - fields:
+          - label: Do you drink caffeine?
+            name: caffeine
+            type: yesno_with_details
+            flex: 1
+            detailsName: caffeineAmount
 
   - title: Do you have any of the following
     rows:
@@ -93,41 +121,11 @@ sections:
             type: yesno_with_details
             flex: 1
             detailsName: otherConditionsDetails
-            
-  - title: null
-    rows:
-      - fields:
-          - label: Do you have any known allergies?
-            name: allergies
-            type: yesno_with_details
-            flex: 1
-            detailsName: allergiesDetails
-
-      - fields:
-          - label: Do you smoke or vape?
-            name: smoke
-            type: yesno_with_details
-            flex: 1
-            detailsName: smokeAmount
-
-      - fields:
-          - label: Do you drink alcohol?
-            name: alcohol
-            type: yesno_with_details
-            flex: 1
-            detailsName: alcoholAmount
-
-      - fields:
-          - label: Do you drink caffeine?
-            name: caffeine
-            type: yesno_with_details
-            flex: 1
-            detailsName: caffeineAmount
 
   - title: null
     rows:
       - fields:
-          - label: List all medications you are taking, the dosage, and why you take it (including OTC, herbs, vitamins)
+          - label: List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
             name: medications
             type: textarea
             flex: 1

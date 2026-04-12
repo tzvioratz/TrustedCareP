@@ -1,4 +1,4 @@
-title: Basic Information
+title: Patient Demographics
 
 sections:
     - rows:
@@ -88,18 +88,18 @@ sections:
             required: true
             
       - fields:
-          - label: What are you doing?
+          - label: Patient Occupation/School
             name: entry.1111
             type: select
             options: [Kollel, Yeshiva, Work, School, Other]
             required: true
 
-          - label: Whats it called?
+          - label: Name of Business/School
             name: entry.1111
             type: text
             required: true
             
-          - label: How many years have you been there? 
+          - label: For how many years? 
             name: entry.1111
             type: number
             required: true

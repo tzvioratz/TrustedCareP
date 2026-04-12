@@ -1,4 +1,4 @@
-title: Problem Details
+title: Concerns
 
 sections:
   - title: null
@@ -13,7 +13,7 @@ sections:
       - fields: []
 
       - fields:
-          - label: Please list anything that you have done to help with this problem, including previous psych, psychiatrist, and therapist.
+          - label: Please list anything that you have done to help with this. (Please including previous psycholgests, psychiatrists, and therapists.)
             name: problemTried
             type: textarea
             flex: 1

@@ -1,7 +1,7 @@
 title: Emergency Contact Information
 
 sections:
-  - title: Please list an individual that we can contact in the event of an emergency, and if necessary, disclose any information.
+  - title: Please provide the name of a person we can contact in case of an emergency. Please note that your personal information may be shared if an emergency arises.
     rows:
       - fields:
           - label: Emergency Contact Name
@@ -10,7 +10,7 @@ sections:
             required: true
             
           - label: Relationship
-            name: 123
+            name: entry.1111
             type: text
             required: true
             
