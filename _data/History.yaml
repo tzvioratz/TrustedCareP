@@ -4,9 +4,10 @@ sections:
   - title: null
     rows:
       - fields:
-          - label2: Do you have any concerns about sleep?
+          - label: Do you have any concerns about sleep?
             name: sleepConcern
             type: yesno_with_details
+            layout: inline
             flex: 1
             detailsName: sleep
 

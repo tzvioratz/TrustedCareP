@@ -11,16 +11,20 @@
     <div class="row">
       {% for field in row.fields %}
       
-        {% if field.label2 %}
-      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
-        <label>{{ field.label2 }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> </div>
-        {% endif %} 
+ 
       
-       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+       <div class="field-wrapper {% if field.layout == 'inline' %}inline-field{% endif %}"   style="flex: {{ field.flex | default: 1 }}">
 
+         {% if field.layout == "inline" %}
+  <label class="inline-label">
+    {{ field.label }}
+    {% if field.required %}<span style="color:red">*</span>{% endif %}
+  </label>
+{% else %}
         {% if field.label %}
         <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
         {% endif %} 
+         {% endif %} 
       
         {% if field.type == "select" %}
 
