@@ -13,18 +13,12 @@
       
  
       
-       <div class="field-wrapper {% if field.layout == 'inline' %}inline-field{% endif %}"   style="flex: {{ field.flex | default: 1 }}">
+       <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
 
-         {% if field.layout == "inline" %}
-  <label class="inline-label">
-    {{ field.label }}
-    {% if field.required %}<span style="color:red">*</span>{% endif %}
-  </label>
-{% else %}
         {% if field.label %}
         <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
         {% endif %} 
-         {% endif %} 
+
       
         {% if field.type == "select" %}
 
@@ -59,7 +53,7 @@
             <option>No</option>
           </select>
       </div>
-               <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
 
           <input
             type="text"
