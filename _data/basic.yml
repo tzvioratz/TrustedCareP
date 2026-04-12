@@ -41,66 +41,66 @@ sections:
             required: true
 
           - label: City
-            name: entry.1111
+            name: entry.1587024577
             type: text
             required: true
             
           - label: State
-            name: entry.1111
+            name: entry.702093942
             type: text
             required: true
 
           - label: Zip Code
-            name: entry.1111
+            name: entry.317684973
             type: text
             required: true
             
       - fields:
           - label: Home Phone
-            name: entry.1111
+            name: entry.501984800
             type: text
             required: true
 
           - label: Cell Phone
-            name: entry.1111
+            name: entry.120404958
             type: text
             
           - label: Work Phone
-            name: entry.1111
+            name: entry.1633198483
             type: text
             
 
           - label: Email
-            name: entry.1111
+            name: entry.462332856
             type: text
             required: true
             
       - fields:
           - label: Preferred Language
-            name: entry.1111
+            name: entry.1032150399
             type: select
             options: [English, Yiddish, Other]
             required: true
 
           - label: Who were you referred by?
-            name: entry.1111
+            name: entry.1298639015
             type: text
             required: true
             
       - fields:
           - label: Patient Occupation/School
-            name: entry.1111
+            name: entry.1772836588
             type: select
             options: [Kollel, Yeshiva, Work, School, Other]
             required: true
 
           - label: Name of Business/School
-            name: entry.1111
+            name: entry.2146549529
             type: text
             required: true
             
           - label: For how many years? 
-            name: entry.1111
+            name: entry.746552786
             type: number
             required: true
             
