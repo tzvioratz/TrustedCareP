@@ -13,6 +13,7 @@
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         {% if field.label %}
         <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span> {% endif %} </label>
+      </div>
         {% endif %} {% if field.type == "select" %}
         <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
@@ -21,7 +22,8 @@
           <option value="{{ opt }}">{{ opt }}</option>
           {% endfor %}
         </select>
-        </div>
+        
+        
 
         {% elsif field.type == "textarea" %}
         <textarea
