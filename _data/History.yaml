@@ -130,10 +130,10 @@ sections:
             flex: 1
             detailsName: otherConditionsDetails
 
-  - title: null
+  - title:  List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
     rows:
       - fields:
-          - label: List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
+          - label:
             name: medications
             type: textarea
             flex: 1
