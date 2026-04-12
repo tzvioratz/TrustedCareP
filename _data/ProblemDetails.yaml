@@ -5,7 +5,7 @@ sections:
     rows:
       - fields:
           - label: What concern brings you in today?
-            name: entry.1234
+            name: entry.756772564
             type: textarea
             flex: 1
             placeholder: null
@@ -20,12 +20,12 @@ sections:
 
       - fields:
           - label: How long have you had this problem?
-            name: entry.1234
+            name: entry.1378499156
             type: text
             flex: 1
 
           - label: How severe is this problem?
-            name: entry.1234
+            name: entry.910977624
             type: select
             flex: 1
             options:
@@ -36,7 +36,7 @@ sections:
               - Very severe
 
           - label: Is this problem affecting your family life, work or sleep?
-            name: entry.1234
+            name: entry.267924568
             type: select
             flex: 1.5
             options:
@@ -45,6 +45,6 @@ sections:
 
       - fields:
           - label: If yes, please explain
-            name: entry.1234
+            name: entry.1573097778
             type: textarea
             flex: 1

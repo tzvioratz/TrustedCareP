@@ -44,7 +44,9 @@
           {% if field.required %}required{% endif %}></textarea>
 
         {% elsif field.type == "yesno_with_details" %}
-        <div style="display: flex; gap: 10px">
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+        
           <select
             name="{{ field.name }}"
             id="{{ field.name | replace: '.', '_' }}"
