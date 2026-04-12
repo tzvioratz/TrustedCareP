@@ -242,7 +242,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - placeholder: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: selfHarmThoughtsNotes
             type: text
             flex: 1
