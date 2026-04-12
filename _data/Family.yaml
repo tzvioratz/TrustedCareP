@@ -74,6 +74,8 @@ sections:
             detailsName: familyOtherWho
 
       - fields:
+
+      - fields:
           - label: If other, please specify
             name: familyOtherSpecify
             type: text
