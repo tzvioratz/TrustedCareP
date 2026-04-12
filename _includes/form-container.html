@@ -12,16 +12,17 @@
       {% for field in row.fields %}
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         {% if field.label %}
-        <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label>
+        <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> </div>
         {% endif %} 
         {% if field.type == "select" %}
+      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
           <option value="" disabled selected>Select...</option>
           {% for opt in field.options %}
           <option value="{{ opt }}">{{ opt }}</option>
           {% endfor %}
         </select>
-        
+      </div>
         
 
         {% elsif field.type == "textarea" %}
@@ -50,7 +51,7 @@
             name="{{ field.detailsName }}"
             id="{{ field.detailsName | replace: '.', '_' }}"
             placeholder="{{ field.placeholder | default: 'If yes, details' }}"
-            style="flex: 2"
+            style="flex: 1"
             disabled />
         </div>
 
@@ -66,7 +67,6 @@
       {% endfor %}
     </div>
     {% endfor %}
-  </div>
 
   <!-- spacing between sections -->
   <div class="row"></div>
