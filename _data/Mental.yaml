@@ -26,7 +26,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: sleepIssuesNotes
             type: text
             flex: 1
@@ -38,7 +39,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: sleepAmountNotes
             type: text
             flex: 1
@@ -50,7 +52,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: sadnessNotes
             type: text
             flex: 1
@@ -62,7 +65,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: anxietyNotes
             type: text
             flex: 1
@@ -74,7 +78,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: concentrationNotes
             type: text
             flex: 1
@@ -86,7 +91,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: moodNotes
             type: text
             flex: 1
@@ -98,7 +104,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: intrusiveMemoriesNotes
             type: text
             flex: 1
@@ -110,7 +117,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: intrusiveThoughtsNotes
             type: text
             flex: 1
@@ -122,7 +130,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: repetitiveBehaviorsNotes
             type: text
             flex: 1
@@ -134,7 +143,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: worryingNotes
             type: text
             flex: 1
@@ -146,7 +156,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: eatingDisorderNotes
             type: text
             flex: 1
@@ -158,7 +169,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: abuseNotes
             type: text
             flex: 1
@@ -170,7 +182,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: fatigueNotes
             type: text
             flex: 1
@@ -182,7 +195,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: selfWorthNotes
             type: text
             flex: 1
@@ -194,7 +208,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: riskyBehaviorNotes
             type: text
             flex: 1
@@ -206,7 +221,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: temperNotes
             type: text
             flex: 1
@@ -218,7 +234,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: jobDifficultyNotes
             type: text
             flex: 1
@@ -230,7 +247,10 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: expensesNotes
             type: text
             flex: 1
@@ -255,7 +275,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: selfHarmAttemptsNotes
             type: text
             flex: 1
@@ -267,7 +288,8 @@ sections:
             flex: 1
             options: [Yes, No, Past]
 
-          - label: Notes / Comments
+          - label:
+            placeholder: Notes / Comments
             name: hallucinationsNotes
             type: text
             flex: 1
