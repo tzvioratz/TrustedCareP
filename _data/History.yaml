@@ -16,6 +16,7 @@ sections:
           - label: How would you rate your physical health?
             name: healthRating
             type: select
+            layout: inline
             flex: 1
             options:
               - Excellent
