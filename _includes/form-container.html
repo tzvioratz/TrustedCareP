@@ -35,6 +35,7 @@
           name="{{ field.name }}"
           {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
           id="{{ field.name | replace: '.', '_' }}"
+          style="height: 100px"
           {% if field.required %}required{% endif %}></textarea>
 
         {% elsif field.type == "yesno_with_details" %}
@@ -87,7 +88,7 @@
             type="text"
             name="{{ field.detailsName }}"
             id="{{ field.detailsName | replace: '.', '_' }}"
-            placeholder="{{ field.placeholder | default: 'If yes, details' }}"
+            placeholder="{{ field.placeholder | default: 'If yes or past, details' }}"
             style="flex: 1"
             disabled />
 
