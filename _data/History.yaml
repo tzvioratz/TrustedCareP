@@ -23,6 +23,9 @@ sections:
               - Good
               - Fair
               - Poor
+              
+          - type: empty
+
 
       - fields:
           - label: Do you have any known allergies?
