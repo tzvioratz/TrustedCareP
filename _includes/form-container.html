@@ -12,7 +12,7 @@
       {% for field in row.fields %}
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         {% if field.label %}
-        <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> </div>
+        <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
         {% endif %} 
         {% if field.type == "select" %}
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
@@ -64,6 +64,7 @@
           {% if field.required %}required{% endif %} />
         {% endif %}
       </div>
+    </div>
       {% endfor %}
     </div>
     {% endfor %}
