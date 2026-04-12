@@ -10,14 +10,13 @@
     {% endif %} {% for row in section.rows %}
     <div class="row">
       {% for field in row.fields %}
-        
+       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+
         {% if field.label %}
-      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
         {% endif %} 
       
         {% if field.type == "select" %}
-        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
 
         <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
           <option value="" disabled selected>Select...</option>
@@ -28,7 +27,6 @@
         
 
         {% elsif field.type == "textarea" %}
-      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <textarea
           name="{{ field.name }}"
           {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
@@ -36,7 +34,6 @@
           {% if field.required %}required{% endif %}></textarea>
 
         {% elsif field.type == "yesno_with_details" %}
-        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
           <select
             name="{{ field.name }}"
             id="{{ field.name | replace: '.', '_' }}"
@@ -59,7 +56,6 @@
         
 
         {% elsif field.type == "empty" %} {% else %}
-        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
 
         <input
           type="{{ field.type | default: 'text' }}"
