@@ -5,7 +5,7 @@ sections:
     rows:
       - fields:
           - label: What concern brings you in today?
-            name: concern
+            name: entry.1234
             type: textarea
             flex: 1
             placeholder: null
@@ -14,18 +14,18 @@ sections:
 
       - fields:
           - label: Please list anything that you have done to help with this. (Please including previous psycholgests, psychiatrists, and therapists.)
-            name: problemTried
+            name: entry.1234
             type: textarea
             flex: 1
 
       - fields:
           - label: How long have you had this problem?
-            name: problemDuration
+            name: entry.1234
             type: text
             flex: 1
 
           - label: How severe is this problem?
-            name: severe
+            name: entry.1234
             type: select
             flex: 1
             options:
@@ -36,7 +36,7 @@ sections:
               - Very severe
 
           - label: Is this problem affecting your family life, work or sleep?
-            name: affectingLife
+            name: entry.1234
             type: select
             flex: 1.5
             options:
@@ -45,6 +45,6 @@ sections:
 
       - fields:
           - label: If yes, please explain
-            name: affectExplain
+            name: entry.1234
             type: textarea
             flex: 1
