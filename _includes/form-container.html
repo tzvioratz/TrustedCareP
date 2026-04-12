@@ -17,6 +17,8 @@
         {% endif %} 
       
         {% if field.type == "select" %}
+        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+
         <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
           <option value="" disabled selected>Select...</option>
           {% for opt in field.options %}
@@ -32,10 +34,9 @@
           {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
           id="{{ field.name | replace: '.', '_' }}"
           {% if field.required %}required{% endif %}></textarea>
-      </div>
 
         {% elsif field.type == "yesno_with_details" %}
-        
+        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
           <select
             name="{{ field.name }}"
             id="{{ field.name | replace: '.', '_' }}"
@@ -58,6 +59,8 @@
         
 
         {% elsif field.type == "empty" %} {% else %}
+        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+
         <input
           type="{{ field.type | default: 'text' }}"
           name="{{ field.name }}"
