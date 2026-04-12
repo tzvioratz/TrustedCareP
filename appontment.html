@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book an Appointment</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    width: 350px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  input, textarea, button, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+
+  button {
+    background-color: #4da6ff;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #3399ff;
+  }
+
+</style>
+</head>
+<body>
+
+<form  id="bookingForm" method="POST">
+  <h2>Book an Appointment</h2>
+
+  <label for="firstName">First Name</label>
+  <input name="firstName" placeholder="John" required>
+
+  <label for="lastName">Last Name</label>
+  <input name="lastName" placeholder="Doe" required>
+
+  <label for="phone">Phone</label>
+  <input type="tel" name="phone" placeholder="123-456-7890" required>
+
+  <label for="email">Email</label>
+  <input name="email" type="email" placeholder="email@example.com" required>
+
+  
+  <label for="appointmentDate">Appointment Date</label>
+<input type="date" name="appointmentDate" id="appointmentDate" required>
+  
+  
+  
+
+<label for="appointmentTime">Time</label>
+<select name="appointmentTime" id="appointmentTime" required>
+  <option value="">Select a time</option>
+</select>
+  
+  
+  
+  <label for="teleHealth">Tele-Health</label>
+  <select name="teleHealth" id="teleHealth" required>
+    <option ></option>
+    <option value="No">No</option>
+    <option value="Yes">Yes</option>
+    
+  </select>
+
+
+  <label for="lengthMinutes">Appointment Type</label>
+  <select name="lengthMinutes" required>
+    <option ></option>
+    <option value="20">Follow Up (20 min)</option>
+    <option value="60">Initial Appointment (60 min)</option>
+  </select>
+
+  <label for="extraNotes">Additional Notes</label>
+  <textarea name="extraNotes" placeholder="Any extra notes..."></textarea>
+
+  <button type="submit">Book Appointment</button>
+</form>
+
+<script>
+  const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyKI_OenABBLSNc3Vx2rSQ4v_ZHizF7MMIO4GV37VVwtyI2dLE-jEpmlVgHGCDlw3G5/exec";
+
+  document.getElementById("bookingForm").action = SCRIPT_URL;
+  
+document.getElementById("appointmentDate").addEventListener("change", loadTimes);
+document.querySelector("input[name='lengthMinutes']").addEventListener("change", loadTimes);
+
+function loadTimes() {
+  const date = document.getElementById("appointmentDate").value;
+  const length = document.querySelector("input[name='lengthMinutes']").value;
+  
+  document.getElementById("appointmentTime").innerHTML = '<option value="">Select a time</option>';
+  document.getElementById("appointmentTime").disabled = true;
+  
+ 
+
+  if (!date || !length) return;
+
+
+  const url = `${SCRIPT_URL}?action=getTimes&date=${date}&length=${length}&key=${encodeURIComponent(API_KEY)}`;
+  
+  fetch(url)
+    .then(res => res.json())
+    .then(times => {
+      const select = document.getElementById("appointmentTime");
+      select.innerHTML = '<option value="">Select a time</option>';
+      
+        document.getElementById("appointmentTime").disabled = false;
+
+      
+      times.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = formatTime(t);
+        select.appendChild(opt);
+      });
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Error loading available times");
+    });
+}
+  
+  function formatTime(t) {
+  const [hour, minute] = t.split(":").map(Number);
+
+  let suffix = "AM";
+  let displayHour = hour;
+
+  if (hour >= 12) {
+    suffix = "PM";
+    if (hour > 12) displayHour = hour - 12;
+  }
+
+  if (hour === 0) displayHour = 12;
+
+  return `${displayHour}:${minute.toString().padStart(2, "0")} ${suffix}`;
+}
+    
+</script>
+
+</body>
+  
+  
+</html>
