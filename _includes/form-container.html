@@ -10,12 +10,12 @@
     {% endif %} {% for row in section.rows %}
     <div class="row">
       {% for field in row.fields %}
-      
+        
         {% if field.label %}
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
-      </div>
         {% endif %} 
+      
         {% if field.type == "select" %}
       <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
         <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
@@ -37,8 +37,8 @@
       </div>
 
         {% elsif field.type == "yesno_with_details" %}
-      <div class="field-wrapper" style="flex: {{ field.flex | default: 2 }}">
-        <div style="display: flex; gap: 10px">
+      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+        
           <select
             name="{{ field.name }}"
             id="{{ field.name | replace: '.', '_' }}"
@@ -50,6 +50,8 @@
             <option>Yes</option>
             <option>No</option>
           </select>
+      </div>
+      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
 
           <input
             type="text"
@@ -58,7 +60,7 @@
             placeholder="{{ field.placeholder | default: 'If yes, details' }}"
             style="flex: 1"
             disabled />
-        </div>
+        
       </div>
 
         {% elsif field.type == "empty" %} {% else %}
@@ -71,7 +73,8 @@
           {% if field.required %}required{% endif %} />
       </div>
         {% endif %}
-      <!-- </div> -->
+      <!--here -->
+      </div>
       {% endfor %}
     </div>
     {% endfor %}
