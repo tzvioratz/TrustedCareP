@@ -64,8 +64,10 @@
             disabled />
                  
                  
-         {% elsif field.type == "yesnopast_with_details" %}
-        <div style="display: flex; gap: 10px">
+ {% elsif field.type == "yesnopast_with_details" %}
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+        
           <select
             name="{{ field.name }}"
             id="{{ field.name | replace: '.', '_' }}"
@@ -78,6 +80,8 @@
             <option>No</option>
             <option>Past</option>
           </select>
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
 
           <input
             type="text"
@@ -86,7 +90,6 @@
             placeholder="{{ field.placeholder | default: 'If yes, details' }}"
             style="flex: 1"
             disabled />
-         </div>
 
 
         {% elsif field.type == "empty" %} {% else %}

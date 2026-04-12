@@ -6,70 +6,40 @@ sections:
       - fields:
           - label: Have you received mental health service(s) in the past?
             name: mentalHealthServices
-            type: select
+            type: yesno_with_details
             flex: 1
-            options:
-              - Yes
-              - No
-
-          - label: If yes, what
-            name: mentalHealthDetails
-            type: text
-            flex: 1
+            detailsName: mentalHealthDetails
             
   - title: Do you have (or have you had) any of these concerns
     rows:
       - fields:
           - label: Difficulty falling or staying asleep
             name: sleepIssues
-            type: select
+            type: yesno_with_details
             flex: 1
-            options: [Yes, No, Past]
-
-          - label:
-            placeholder: Notes / Comments
-            name: sleepIssuesNotes
-            type: text
-            flex: 1
+            detailsName: 
 
       - fields:
           - label: Sleeping too little or too much
             name: sleepAmount
             type: select
             flex: 1
-            options: [Yes, No, Past]
+            detailsName: 
 
-          - label:
-            placeholder: Notes / Comments
-            name: sleepAmountNotes
-            type: text
-            flex: 1
 
       - fields:
           - label: Daily feeling of sadness that doesn’t go away
             name: sadness
             type: select
             flex: 1
-            options: [Yes, No, Past]
-
-          - label:
-            placeholder: Notes / Comments
-            name: sadnessNotes
-            type: text
-            flex: 1
+            detailsName: 
 
       - fields:
           - label: Panic / Anxiety attacks
             name: anxiety
             type: select
             flex: 1
-            options: [Yes, No, Past]
-
-          - label:
-            placeholder: Notes / Comments
-            name: anxietyNotes
-            type: text
-            flex: 1
+            detailsName: 
 
       - fields:
           - label: Problems concentrating

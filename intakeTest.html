@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!detailsInput) return;
 
     function update() {
-      if (select.value === "Yes") {
+      if (select.value === "Yes" || select.value === "Past") {
         detailsInput.disabled = false;
         detailsInput.required = true;
       } else {
