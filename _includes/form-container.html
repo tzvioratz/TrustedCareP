@@ -10,6 +10,13 @@
     {% endif %} {% for row in section.rows %}
     <div class="row">
       {% for field in row.fields %}
+      
+        {% if field.label2 %}
+      <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
+        <label>{{ field.label2 }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
+      </div>
+        {% endif %} 
+      
        <div class="field-wrapper" style="flex: {{ field.flex | default: 1 }}">
 
         {% if field.label %}
