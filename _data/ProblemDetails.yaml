@@ -40,8 +40,8 @@ sections:
             type: select
             flex: 1.5
             options:
-              - Yes
-              - No
+              - "Yes"
+              - "No"
 
       - fields:
           - label: If yes, please explain
