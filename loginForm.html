@@ -1,0 +1,327 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Form</title>
+
+<style>
+/* =========================
+   YOUR EXISTING CSS (UNCHANGED)
+   ========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef6fb;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 40px 25px 25px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: #2a6f97;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 { color: #2a6f97; margin-bottom: 15px; }
+
+.section {
+    background: #f7fbff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #d6eaf8;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.field-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.field-wrapper input,
+.field-wrapper select,
+.field-wrapper textarea {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 36px;
+}
+
+.radio-group label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inline-field {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.inline-label {
+    white-space: nowrap;
+    margin: 0;
+    min-width: 180px;
+}
+
+label {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 2px;
+}
+
+button {
+    background-color: #2a6f97;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1f5571;
+}
+
+/* =========================
+   ONLY ADDITIONS (SAFE)
+   ========================= */
+
+#loginBox {
+    max-width: 400px;
+    margin: auto;
+}
+
+#formContainer {
+    display: none;
+}
+
+#error {
+    color: red;
+    margin-top: 10px;
+    font-size: 13px;
+}
+  /* Loading state button */
+button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Spinner */
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     LOGIN SCREEN
+     ========================= -->
+<div id="loginBox" class="container">
+    <h2>Login</h2>
+
+    <div class="section">
+        <div class="row">
+            <div class="field-wrapper">
+                <label>First Name</label>
+                <input id="firstName" type="text">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-wrapper">
+                <label>Last Name</label>
+                <input id="lastName" type="text">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-wrapper">
+                <label>Password</label>
+                <input id="password" type="password">
+            </div>
+        </div>
+
+        <button id="loginBtn" onclick="login()">Login</button>
+        <div id="error"></div>
+    </div>
+</div>
+
+
+<!-- =========================
+     REAL FORM (HIDDEN INITIALLY)
+     ========================= -->
+<div id="formContainer" class="container">
+    
+    <form id="mainForm" method="POST">
+      <input type="hidden" name="password" id="hiddenPassword">
+            {% include form-container.html step="1" data=site.data.basic %}
+            {% include form-container.html step="2" data=site.data.EmergencyContact %}
+            {% include form-container.html step="3" data=site.data.ProblemDetails %}
+            {% include form-container.html step="4" data=site.data.History %}
+            {% include form-container.html step="5" data=site.data.Mental %}
+            {% include form-container.html step="6" data=site.data.Family %}
+            {% include form-container.html step="7" data=site.data.Pharmacy %}
+
+           
+                
+
+            <div class="container">
+                <div class="row">
+                    <div class="field-wrapper">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
+
+<script>
+  function setLoading(isLoading) {
+    const btn = document.getElementById("loginBtn");
+
+    if (isLoading) {
+        btn.classList.add("loading");
+        btn.innerHTML = `<span class="spinner"></span>Logging in...`;
+    } else {
+        btn.classList.remove("loading");
+        btn.innerHTML = `Login`;
+    }
+}
+  document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // stops form submit / page reload
+        login();
+    }
+});
+  
+async function login() {
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const password = document.getElementById("password").value;
+
+    const error = document.getElementById("error");
+    error.innerText = "";
+
+    setLoading(true);
+  
+    const url =
+        `https://script.google.com/macros/s/AKfycbz0d9yFSvwQUkeTiUy912bPTw6VkxdsBX8n3Q0h0nSNyc9sdKRs0PMHr29e06HrCeZsSg/exec?action=login` +
+        `&firstName=${encodeURIComponent(firstName)}` +
+        `&lastName=${encodeURIComponent(lastName)}` +
+        `&password=${encodeURIComponent(password)}`;
+
+    try {
+        const res = await fetch(url);
+        const text = await res.text();
+
+        if (text.trim().toLowerCase() === "unauthorized") {
+            error.innerText = "Incorrect password";
+          setLoading(false);
+            return;
+        }
+      
+        document.getElementById("hiddenPassword").value = password;
+        document.getElementById("mainForm").action = text.trim();
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("formContainer").style.display = "block";
+
+    } catch (e) {
+        error.innerText = "Server error";
+        console.log(e);
+      setLoading(false);
+    }
+}
+  
+  document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".yesno-trigger").forEach(select => {
+    const detailsName = select.dataset.details;
+    const detailsInput = document.querySelector(`input[name="${detailsName}"]`);
+
+    if (!detailsInput) return;
+
+    function update() {
+      if (select.value === "Yes" || select.value === "Past") {
+        detailsInput.disabled = false;
+        detailsInput.required = true;
+      } else {
+        detailsInput.disabled = true;
+        detailsInput.required = false;
+        detailsInput.value = "";
+      }
+    }
+
+    select.addEventListener("change", update);
+
+    // run once on load (important for prefilled forms)
+    update();
+  });
+
+});
+</script>
+
+</body>
+</html>
