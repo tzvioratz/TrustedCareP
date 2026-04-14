@@ -98,7 +98,7 @@
         <input
           type="{{ field.type | default: 'text' }}"
           name="{{ field.name }}"
-          id="{{ field.detailsName | replace: '.', '_' }}"
+          id="{{ field.name | replace: '.', '_' }}"
           {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
           {% if field.required %}required{% endif %} />
         {% endif %}
