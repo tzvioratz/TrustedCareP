@@ -237,6 +237,8 @@ sections:
           name: information
           buttonText: View & Accept
           modalText: |
+           Permission for information
+           
            I give permission to Aryeh Schonfeld PMHNP to speak with the following individuals regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
           required: true
 
