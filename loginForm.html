@@ -243,6 +243,7 @@ button.loading {
     
     <form id="mainForm" method="POST">
       <input type="hidden" name="password" id="hiddenPassword">
+            {% include form-container.html step=".5" data=site.data.Forms %}
             {% include form-container.html step="1" data=site.data.basic %}
             {% include form-container.html step="2" data=site.data.EmergencyContact %}
             {% include form-container.html step="3" data=site.data.ProblemDetails %}
