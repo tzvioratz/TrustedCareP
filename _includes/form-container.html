@@ -97,8 +97,8 @@
       </div>
   <div class="modal-field">
 
-    <button type="button" class="open-modal" data-target="{{ field.name }}">
-      {{ field.buttonText | default: "View" }}
+    <button type="button" class="open-modal" data-target="{{ field.name }}" id="btn-{{ field.name | replace: '.', '_' }}">
+      {{ field.buttonText | default: "View & Accept" }}
     </button>
 
     <input 

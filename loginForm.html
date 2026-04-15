@@ -368,16 +368,42 @@ async function login() {
   });
 
   // accept
-  document.querySelectorAll(".accept-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const name = btn.dataset.target;
+document.querySelectorAll(".accept-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const name = btn.dataset.target;
 
-      const input = document.querySelector(`input[name="${name}"]`);
-      if (input) input.value = "TRUE";
+    const input = document.querySelector(`input[name="${name}"]`);
+    const button = document.getElementById("btn-" + name.replaceAll('.', '_'));
 
-      const modal = document.getElementById("modal-" + name.replaceAll('.', '_'));
-      if (modal) modal.style.display = "none";
-    });
+    if (input) {
+      const timestamp = new Date().toISOString();
+      input.value = timestamp;
+
+      //  update UI state
+      if (button) {
+        button.textContent = "Accepted ✓";
+        button.style.backgroundColor = "#4CAF50";
+      }
+    }
+
+    const modal = document.getElementById("modal-" + name.replaceAll('.', '_'));
+    if (modal) modal.style.display = "none";
+  });
+});
+
+});
+  document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll("input[type='hidden']").forEach(input => {
+    if (input.value) {
+      const name = input.name;
+      const button = document.getElementById("btn-" + name.replaceAll('.', '_'));
+
+      if (button) {
+        button.textContent = "Accepted ✓";
+        button.style.backgroundColor = "#4CAF50";
+      }
+    }
   });
 
 });
