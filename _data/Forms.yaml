@@ -5,7 +5,7 @@ sections:
       - fields:
           - label: Consent for Counseling
             type: modal_accept
-            name: consentAccepted
+            name: Counseling
             buttonText: View & Accept
             modalText: |
              I hereby authorize Aryeh Schonfeld to provide counseling and/or psychotherapy as explained to me. I understand that while this therapy may be beneficial, as with any treatment, there are inherent risks. During counseling, I will discuss personal issues which may bring up uncomfortable emotions such as anger, guilt, and sadness. The benefits of counseling can far outweigh this discomfort and can lead to benefits such as improved personal relationships and reduced feelings of emotional distress. I acknowledge, however, that no warranty or guarantee can be made as to the results of therapy.
@@ -33,7 +33,7 @@ sections:
       - fields:
         - label: HIPAA Privacy Notice
           type: modal_accept
-          name: consentAccepted
+          name: HIPAA
           buttonText: View & Accept
           modalText: |
            HIPAA Notice of Privacy Practices
@@ -140,7 +140,7 @@ sections:
       - fields:
         - label: Telehealth Consent
           type: modal_accept
-          name: consentAccepted
+          name: Telehealth
           buttonText: View & Accept
           modalText: |
            Telehealth Consent
@@ -205,7 +205,7 @@ sections:
       - fields:
         - label: Permission for information
           type: modal_accept
-          name: consentAccepted
+          name: information
           buttonText: View & Accept
           modalText: |
            I give permission to Aryeh Schonfeld PMHNP to speak with the following individuals regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
