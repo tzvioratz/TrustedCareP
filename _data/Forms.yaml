@@ -3,7 +3,7 @@ title: Please compleate the documents below.
 sections:
     - rows:
       - fields:
-          - label: Review Consent
+          - label: Consent for Counseling
             type: modal_accept
             name: consentAccepted
             buttonText: View & Accept
@@ -12,29 +12,85 @@ sections:
 
 
 
-             CONFIDENTIALITY: I understand that discussions between myself and my therapist as well as any records are confidential with the exceptions noted below and in the Notice of Privacy Practices provided to me. No information will be released without my written consent unless mandated by law. Possible exceptions to confidentiality include but are not limited to the following: abuse of any other person, sexual exploitation, AIDS/HIV infection and possible transmission, criminal prosecutions, child custody cases, suits in which the mental health of a party is in issue, situations where the therapist has a duty to disclose, or where, in the therapist’s judgment, it is necessary to warn or disclose, a negligence suit brought by the client against the therapist, or the filing of a complaint with the licensing or certifying board. If I have any questions regarding confidentiality, I will bring them to the attention of my therapist. By signing this Information and Consent Form, I am giving consent to the undersigned therapist to share confidential information with all persons mandated by law and with the agency that referred me and the insurance carrier responsible for providing my mental health care services and payment for those services. I am also releasing and holding harmless the undersigned therapist from any departure from my right of confidentiality that may result.
+             CONFIDENTIALITY:
+             I understand that discussions between myself and my therapist as well as any records are confidential with the exceptions noted below and in the Notice of Privacy Practices provided to me. No information will be released without my written consent unless mandated by law. Possible exceptions to confidentiality include but are not limited to the following: abuse of any other person, sexual exploitation, AIDS/HIV infection and possible transmission, criminal prosecutions, child custody cases, suits in which the mental health of a party is in issue, situations where the therapist has a duty to disclose, or where, in the therapist’s judgment, it is necessary to warn or disclose, a negligence suit brought by the client against the therapist, or the filing of a complaint with the licensing or certifying board. If I have any questions regarding confidentiality, I will bring them to the attention of my therapist. By signing this Information and Consent Form, I am giving consent to the undersigned therapist to share confidential information with all persons mandated by law and with the agency that referred me and the insurance carrier responsible for providing my mental health care services and payment for those services. I am also releasing and holding harmless the undersigned therapist from any departure from my right of confidentiality that may result.
 
 
 
-             DUTY TO WARN/DUTY TO PROTECT: If my therapist believes that I am in physical or emotional danger or I am a danger to another human being, I understand that my therapist is required by law to contact medical or law enforcement personnel to prevent harm to me or another person, and may contact the person in danger.
+             DUTY TO WARN/DUTY TO PROTECT: 
+             If my therapist believes that I am in physical or emotional danger or I am a danger to another human being, I understand that my therapist is required by law to contact medical or law enforcement personnel to prevent harm to me or another person, and may contact the person in danger.
 
 
 
-             CONSENT TO TREATMENT: Counseling and/or psychotherapy as stated, including the possible risks, complications, options, and expectations have been explained to me or my representative and consent for treatment is thus given as noted by signature. I am voluntarily agreeing to receiving mental health assessment, treatment and services for me, and I understand that I may stop such treatment or services at any time.
+             CONSENT TO TREATMENT: 
+             Counseling and/or psychotherapy as stated, including the possible risks, complications, options, and expectations have been explained to me or my representative and consent for treatment is thus given as noted by signature. I am voluntarily agreeing to receiving mental health assessment, treatment and services for me, and I understand that I may stop such treatment or services at any time.
              
              
              By clicking ACCEPT you are agreeing to the terms stated herein.
             required: true
-  
-          - label: Middle Initial
-            name: entry.1026473721
-            type: text
-            
 
-          - label: Last Name
-            name: entry.23368150
-            type: text
-            flex: 2
-            required: true
 
       - fields:
+        - label: HIPAA Privacy Notice
+          type: modal_accept
+          name: consentAccepted
+          buttonText: View & Accept
+          modalText: |
+           HIPAA Notice of Privacy Practices
+
+           THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW CAREFULLY.
+
+           Our Obligations
+           We are required by law to:
+           . Maintain the privacy of protected health information
+           . Give you the notice of your legal duties and privacy practices regarding health information about you
+           . Follow the terms of our notice that is currently in effect
+           
+           How We May Use and Disclose Health Information
+           Described as follows are the ways we may use and disclose health information that identifies you ("Health Information"). Except for the following purposes, we will use and disclose health information only with your written permission. You may revoke such permissions at any time by writing to our practice's privacy officer.
+           
+           Treatment. 
+           We may use and disclose Health Information for your treatment and to provide you with treatment-related health care services. For example, we may disclose Health Information to doctors, nurses, technicians, or other personnel, including people outside our office, who are involved in your medical care and need the information to provide you with medical care.
+           
+           Payment. 
+           We may use and disclose Health Information so that we or others may bill and receive payment from you, an insurance company, or a third party for treatment and services you receive. For example, we may give your health plan information so that they will pay for your treatment.
+
+           Health Care Operations. 
+           We may use and disclose Health Information for health care operation purposes. These uses and disclosures are necessary to make sure that all of our patients receive quality care to operate and manage our office. For example, we may use and disclose information to make sure the obstetric or gynecologic care you receive is of the highest quality. We also may share information with our entities that have a relationship with you (for example, your health plan) for their health care operation activities.
+
+           Appointment Reminders, Treatment Alternatives, and Health Related Benefits and Services.
+           We may use and disclose Health Information to contact you and remind you that you have an appointment with us. We also may use and disclose Health Information to tell you about treatment alternatives or health related benefits and services that may be of interest to you.
+
+           Individuals Involved in Your Care or Payment for Your Care. 
+           When appropriate, we may share Health Information with a person who is involved in your medical care or payment for your care, such as your family or a close friend. We
+           also may notify your family about your location or general condition or disclose such information to an entity assisting in a disaster relief effort.
+
+           Research. 
+           Under certain circumstances, we may use and disclose Health Information for research. For example, a research project may involve comparing the health of patients who receive one treatment to those who receive another for the same condition. Before we use or disclose Health Information for research, the project will go through a special approval process. Even without special approval, we may permit researchers to look at records to help them identify patients who may be included in their research project or for other similar purposes.
+
+           Special Situations
+           As required by law. We will disclose Health Information when required to do so by international, federal, state, or local law.
+           
+           
+          required: true
+          
+          
+      - fields:
+        - label: Telehealth Consent
+          type: modal_accept
+          name: consentAccepted
+          buttonText: View & Accept
+          modalText: |
+           I
+          required: true
+
+
+      - fields:
+        - label: Permission for information
+          type: modal_accept
+          name: consentAccepted
+          buttonText: View & Accept
+          modalText: |
+           I
+          required: true
+
