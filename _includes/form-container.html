@@ -92,9 +92,43 @@
             style="flex: 1"
             disabled />
 
+           
+           {% elsif field.type == "modal_accept" %}
+
+  <div class="modal-field">
+
+    <button type="button" class="open-modal" data-target="{{ field.name }}">
+      {{ field.buttonText | default: "View" }}
+    </button>
+
+    <input 
+      type="hidden" 
+      name="{{ field.name }}" 
+      id="{{ field.name | replace: '.', '_' }}"
+      {% if field.required %}required{% endif %}
+    />
+
+    <div class="modal" id="modal-{{ field.name | replace: '.', '_' }}">
+      <div class="modal-content">
+
+        <div class="modal-text">
+          {{ field.modalText }}
+        </div>
+
+        <button type="button" class="accept-btn" data-target="{{ field.name }}">
+          Accept
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endif %}
 
         {% elsif field.type == "empty" %} {% else %}
-
+        
+           
         <input
           type="{{ field.type | default: 'text' }}"
           name="{{ field.name }}"

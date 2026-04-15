@@ -1,0 +1,40 @@
+title: Please compleate the documents below.
+
+sections:
+    - rows:
+      - fields:
+          - label: Review Consent
+            type: modal_accept
+            name: consentAccepted
+            buttonText: View & Accept
+            modalText: |
+             I hereby authorize Aryeh Schonfeld to provide counseling and/or psychotherapy as explained to me. I understand that while this therapy may be beneficial, as with any treatment, there are inherent risks. During counseling, I will discuss personal issues which may bring up uncomfortable emotions such as anger, guilt, and sadness. The benefits of counseling can far outweigh this discomfort and can lead to benefits such as improved personal relationships and reduced feelings of emotional distress. I acknowledge, however, that no warranty or guarantee can be made as to the results of therapy.
+
+
+
+             CONFIDENTIALITY: I understand that discussions between myself and my therapist as well as any records are confidential with the exceptions noted below and in the Notice of Privacy Practices provided to me. No information will be released without my written consent unless mandated by law. Possible exceptions to confidentiality include but are not limited to the following: abuse of any other person, sexual exploitation, AIDS/HIV infection and possible transmission, criminal prosecutions, child custody cases, suits in which the mental health of a party is in issue, situations where the therapist has a duty to disclose, or where, in the therapist’s judgment, it is necessary to warn or disclose, a negligence suit brought by the client against the therapist, or the filing of a complaint with the licensing or certifying board. If I have any questions regarding confidentiality, I will bring them to the attention of my therapist. By signing this Information and Consent Form, I am giving consent to the undersigned therapist to share confidential information with all persons mandated by law and with the agency that referred me and the insurance carrier responsible for providing my mental health care services and payment for those services. I am also releasing and holding harmless the undersigned therapist from any departure from my right of confidentiality that may result.
+
+
+
+             DUTY TO WARN/DUTY TO PROTECT: If my therapist believes that I am in physical or emotional danger or I am a danger to another human being, I understand that my therapist is required by law to contact medical or law enforcement personnel to prevent harm to me or another person, and may contact the person in danger.
+
+
+
+             CONSENT TO TREATMENT: Counseling and/or psychotherapy as stated, including the possible risks, complications, options, and expectations have been explained to me or my representative and consent for treatment is thus given as noted by signature. I am voluntarily agreeing to receiving mental health assessment, treatment and services for me, and I understand that I may stop such treatment or services at any time.
+             
+             
+             By clicking ACCEPT you are agreeing to the terms stated herein.
+            required: true
+  
+          - label: Middle Initial
+            name: entry.1026473721
+            type: text
+            
+
+          - label: Last Name
+            name: entry.23368150
+            type: text
+            flex: 2
+            required: true
+
+      - fields:
