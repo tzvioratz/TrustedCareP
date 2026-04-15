@@ -199,6 +199,20 @@ button.loading {
   line-height: 1.5;
 }
   
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-close:hover {
+  color: #000;
+}
 </style>
 </head>
 
@@ -363,9 +377,25 @@ async function login() {
     btn.addEventListener("click", () => {
       const name = btn.dataset.target;
       const modal = document.getElementById("modal-" + name.replaceAll('.', '_'));
-      if (modal) modal.style.display = "block";
+      if (modal){
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      } 
     });
   });
+    
+    // close modal via x buttom 
+    document.querySelectorAll(".modal-close").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.target;
+      const modal = document.getElementById("modal-" + name.replaceAll('.', '_'));
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  });
+    
 
   // accept
 document.querySelectorAll(".accept-btn").forEach(btn => {
