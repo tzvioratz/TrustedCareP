@@ -407,6 +407,18 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
   });
 
 });
+  
+  document.querySelector("form").addEventListener("submit", function(e) {
+  const required = document.querySelectorAll("input[type='hidden'][required]");
+
+  for (let input of required) {
+    if (!input.value) {
+      alert("Please accept required agreements.");
+      e.preventDefault();
+      return;
+    }
+  }
+});
 </script>
 
 </body>

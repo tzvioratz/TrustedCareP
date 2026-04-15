@@ -128,9 +128,11 @@ sections:
            Right to a Paper Copy of This Notice. 
            You have the right to a paper copy of this notice. You must ask us to give you a copy of this notice at any time. Even if you have agreed to receive this notice electronically, you are still entitled to a paper copy of this notice. You may obtain a copy of this notice by contacting our office.
 
-           Changes to This Notice We reserve the right to change this notice and make the new notice apply to Health Information we already have as well as any information we receive in the future. We will post a current copy of our notice at our office. The notice will contain the effective date on the first page, in the top right hand corner.
+           Changes to This Notice 
+           We reserve the right to change this notice and make the new notice apply to Health Information we already have as well as any information we receive in the future. We will post a current copy of our notice at our office. The notice will contain the effective date on the first page, in the top right hand corner.
 
-           Complaints If you believe your privacy has been violated, you may file a complaint with our office or with the Secretary of the Department of Health and Human Services. To file a complaint with our office, contact our Privacy Officer. All complaints must be made in writing. You will not be penalized for filing a complaint.
+           Complaints 
+           If you believe your privacy has been violated, you may file a complaint with our office or with the Secretary of the Department of Health and Human Services. To file a complaint with our office, contact our Privacy Officer. All complaints must be made in writing. You will not be penalized for filing a complaint.
 
            By clicking accept below, I acknowledge receipt of a copy of this notice, and my understanding and my agreement to its terms.
            
@@ -152,41 +154,61 @@ sections:
            Electronic transmission of clinical records, photo images, personal health information or other data between a client and a Provider;  
            Interactions between a client and Provider via audio, video and/or data communications; 
            and Use of output data from clinical devices, sound and video files.  
-           The vendor of the electronic systems used in the provision of Video Therapy Services (Zoom) has represented that it incorporates industry standard network and software security protocols to protect the privacy and security of health information.  
+           The vendor of the electronic systems used in the provision of Video Therapy Services has represented that it incorporates industry standard network and software security protocols to protect the privacy and security of health information.  
            
            
            
            STATEMENT OF POTENTIAL RISKS AND BENEFITS 
            
            Potential Benefits of Telehealth Services:
-           
+            
            Can be easier and more efficient for you to access clinical care and treatment from a Provider. 
+           
            You can obtain clinical care and treatment at times that are convenient for you. 
+           
            You can interact with a Provider without the necessity of an in-office appointment.  
+           
            Potential Risks of Telehealth Services:
            
            Information transmitted to your Provider may not be sufficient to allow for appropriate clinical decision making by the Provider. 
+           
            The inability of your Provider to conduct certain tests or assessments in-person may in some cases prevent the Provider from providing a diagnosis or treatment or from identifying the need for emergency clinical care or treatment for you. 
+           
            Your Provider may not able to provide clinical treatment for your particular condition via Video Therapy or Telephone Counseling. You may be required to seek alternative care. In this case, your Provider would offer you referral suggestions and resources to the best of her/his ability.
+           
            Delays in clinical evaluation/treatment could occur due to failures of the technology. 
+           
            Security protocols or safeguards could fail causing a breach of privacy.  If this were to occur, Care and Counseling would notify you promptly. 
+           
            Given regulatory requirements in certain jurisdictions, your Provider’s treatment options may be limited.  
            
            
            By accepting this Consent to Telehealth Services, you acknowledge your understanding and agreement to the following:  
            
            I understand that the delivery of health care services via Telehealth is an evolving field and that the use of Video Therapy or Telephone Counseling in my clinical care and treatment may include uses of technology not specifically described in this consent. 
+           
            I understand that while the use of Telehealth Services may provide potential benefits to me, as with any clinical care service no such benefits or specific results can be guaranteed. My condition may not be cured or improved, and in some cases, may get worse. 
+           
            It is my duty to inform my Therapist of other in-person or electronic interactions regarding my care that I may have with other health care providers.
+           
            I understand that my Therapist may determine in his or her sole discretion that my condition is not suitable for treatment using Telehealth Services, and that I may need to seek clinical care and treatment in-person or from an alternative source. 
+           
            A variety of alternative methods of mental health care may be available to me, and that I may choose one or more of these at any time. My Therapist has explained the alternatives to my satisfaction. 
+           
            I understand that the same confidentiality and privacy protections that apply to my other health care services also apply to these Telehealth services.  My Therapist cannot ensure my privacy at my location.
+           
            I agree that I will not record my sessions without prior written consent.  Instructions for accessing my medical record have been outlined for me in the Aryeh Schonfeld PMHNP Privacy Practices.
+           
            I agree and authorize my Therapist and Aryeh Schonfeld PMHNP to share information regarding my Telehealth treatment with other individuals for treatment, payment and health care operations purposes as allowed by law. 
+           
            I understand that I can withhold or withdraw my consent at any time by emailing or providing other such written notification to my Therapist with such instruction, without affecting my right to future care or treatment. 
+           
            If my health insurance provider does not reimburse for provision of Telehealth Services, I may be solely responsible for covering the costs of my Video Therapy or Telephone Counseling, as outlined in the form “Agreement for Payment and Financial Responsibilities.”
+           
            I understand that my Therapist may only utilize Video Therapy for my treatment when I am located in the state of my residence and/or in which the Therapist has authorization or licensure to practice in New York. As such, my Provider will ask to verify my location at the beginning of sessions.
+           
            I understand the need to participate in Telehealth Services from a secure, private location to the best of my ability. I will communicate any privacy limitations to my Therapist at the beginning of the session.
+           
            My Therapist and I have discussed a back-up plan if the technology fails to work during a session. 
            
            
@@ -194,10 +216,15 @@ sections:
            
            By clicking accept, I indicate agreement to the following: 
            
+           
            I have read this Consent to Telehealth Services form and understand the risks and benefits of the use of Video Therapy and/or Telephone Counseling in the course of my treatment. 
+           
            I have discussed Telehealth Services with my Therapist, and all my questions have been answered to my satisfaction. 
+           
            I hereby give my informed consent for the use of Video Therapy and/or Telephone Counseling in my mental health care.
+           
            I hereby authorize my Therapist to use Video Therapy and/or Telephone Counseling in the course of my diagnosis and/or treatment.  
+           
            THIS AGREEMENT/CONSENT WILL REMAIN IN EFFECT UNLESS REVOKED BY ME IN WRITING.
           required: true
 
