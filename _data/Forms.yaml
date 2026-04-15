@@ -71,6 +71,68 @@ sections:
            Special Situations
            As required by law. We will disclose Health Information when required to do so by international, federal, state, or local law.
            
+           To Avert a Serious Threat to Health of Safety. 
+           We will disclose Health Information when necessary to prevent a serious threat to your health and safety or the public, or another person. Disclosure, however, will be made only to someone who may be able to help provide treatment.
+
+           Business Associates.  
+           We may disclose Health Information to our business associates that perform functions on our behalf or to provide us with services if the information is necessary for such functions or services. For example, we may use another company to perform billing services on our behalf. All of our business associates are obligated to protect the privacy of your information and are not allowed to use or disclose any information other than that as specific in our contract.
+
+           Organ and Tissue Donation.  
+           If you are an organ donor, we may use or release Health Information to organizations that handle organ procurement or other entities engaged in procurement; banking or transportation of organs, eyes, or tissues to facilitate organ, eye, or tissue donation, and transplantation.
+
+           Military and Veterans. 
+           If you are a member of the army forces, we may use or release Health Information as required by military command authorities. We also may release Health Information to the appropriate foreign military authority if you are a member of a foreign military.
+
+           Worker's Compensation.
+           We may release Health Information for worker's compensation or similar programs. These programs provide benefits for work-related injuries or illness.
+
+           Public Health Risks. 
+           We may disclose Health Information for public health activities. These activities generally include disclosure to prevent or control disease, injury, or disability; report child abuse or neglect; report reactions to medications or problems with products; notify people of recalls of products they may be using; inform a person who may have been exposed to a disease or may be at risk for contracting or spreading a disease or condition; and report to the appropriate government authority if we believe a patient has been a victim of abuse, neglect, or domestic violence. We will only make this disclosure if you agree or when required by law.
+
+           Health Oversight Activities. 
+           We may disclose Health Information to a health oversight agency for activities authorized by law. These oversight activities include, for example, audits, investigations, inspections, and licensure. These activities are necessary for the government to monitor the health care system, government programs, and compliance with civil rights laws.
+
+           Lawsuits and Disputes.
+           If you are involved in a lawsuit of a dispute, we may disclose Health Information in response to a court or a court administrator order. We also may disclose Health Information in response to a subpoena, discovery request, or other lawful process by someone else involved in the dispute, but only if efforts have been made to tell you about the request or to obtain an order protecting the information requested.
+
+           Law Enforcement. 
+           We may release Health Information if asked by a law enforcement official if the information is: 1) in response to a court order, subpoena, warrant, summons, or similar process; 2) limited information to identify or locate a suspect, fugitive, material witness, or missing person; 3) about the victim of crime even if, under certain circumstances, we are unable to obtain the person's agreement; 4) about a death we believe may be the result of criminal conduct; 5) about criminal conduct on our premises and; 6)in an emergency to report a crime to the location of the crime if victims, or the identity, description, or location of the person who committed the crime.
+
+           Coroners, Medical Examiners, Funeral Directors. 
+           We may release Health Information to a coroner or medical examiner. This may be necessary, for example, to identify a deceased person or determine the cause of death. We may also release Health Information to funeral directors as necessary for their duties.
+
+           National Security and Intelligence Activities. 
+           We may release Health Information to authorized federal officials so they may provide protection to the President, other authorized persons, or foreign heads of state, or to conduct special investigations.
+
+           Protective Services and Intelligence Activities. 
+           We may release Health Information to authorized federal officials so they may provide protection to the President, other authorized persons, or foreign heads of state, or to conduct special investigations.
+
+           Inmates or Individuals in Custody. 
+           If you are an inmate of a correctional institution or other custody of a law enforcement official, we may release Health Information to the correctional institution or law enforcement official. This release would be made if necessary 1) for the institution to provide you with health care; 2) to protect your health and safety or the health and safety of others, or; 3) for the safety and security of the correctional institution.
+
+           Your Rights 
+           You have the following rights regarding Health Information we have about you: Right to Inspect and Copy. You have the right to inspect and copy Health Information that we may used to make decisions about your care or payment for your care. This includes medical and billing records, other than psychotherapy notes. To inspect and copy this information, you must make your request in writing, to our Privacy Officer.
+
+           Right to Amend. 
+           If you feel that Health Information we have is incorrect or incomplete, you may ask us to amend the information. You have the right to request an amendment for as long as the information is kept by or for our office. To request an amendment, you must make your request, in writing, to our Privacy Officer.
+
+           Right to an Accounting of Disclosures. 
+           You have the right to request a list of certain disclosures we made of Health Information for purposes other than treatment, payment, and health care operations or for which you provided written authorization. To request an accounting of disclosures, you must make your request, in writing, to our Privacy Officer.
+
+           Right to Request Restrictions. 
+           You have the right to request a restriction or limitation on the Health Information we use or disclose for treatment, payment, or health care operation. You also have a right to request a limit on the Health Information we disclose to someone involved in your care or the payment for your care, like a family member or friend. For example, you can ask that we not share information about your particular diagnosis or treatment with your spouse. To request a restriction, you must make your request, in writing, to our Privacy Officer. We are not required to agree with your request. If we agree, we will comply with your request unless the information is needed to provide you with emergency treatment.
+
+           Right to Request Confidential Communication. 
+           You have the right to request that we communicate with you about your medical matters in a certain way or at a certain location. For example, you can ask that we contact you only by mail or at work. To request confidential communications, you must make your request, in writing, to our Privacy Officer. Your request must specify how or where you wish to be contacted. We will accommodate reasonable requests.
+
+           Right to a Paper Copy of This Notice. 
+           You have the right to a paper copy of this notice. You must ask us to give you a copy of this notice at any time. Even if you have agreed to receive this notice electronically, you are still entitled to a paper copy of this notice. You may obtain a copy of this notice by contacting our office.
+
+           Changes to This Notice We reserve the right to change this notice and make the new notice apply to Health Information we already have as well as any information we receive in the future. We will post a current copy of our notice at our office. The notice will contain the effective date on the first page, in the top right hand corner.
+
+           Complaints If you believe your privacy has been violated, you may file a complaint with our office or with the Secretary of the Department of Health and Human Services. To file a complaint with our office, contact our Privacy Officer. All complaints must be made in writing. You will not be penalized for filing a complaint.
+
+           By clicking accept below, I acknowledge receipt of a copy of this notice, and my understanding and my agreement to its terms.
            
           required: true
           
@@ -81,7 +143,62 @@ sections:
           name: consentAccepted
           buttonText: View & Accept
           modalText: |
-           I
+           Telehealth Consent
+           
+           “Telehealth” (also known as “Video Therapy” and “Telephone Counseling”) involves the delivery of psychotherapy counseling services using electronic communications, information technology or other means between a mental health clinician employed by or otherwise contracted with Care and Counseling, Inc. (“Provider”) and a client who are not in the same physical location. Telehealth may be used for diagnosis, treatment, follow-up and/or education, and may include, but is not limited to:  
+           
+           Video Therapy: counseling sessions provided via video conferencing;
+           Telephone Counseling: counseling sessions provided via telephone ;
+           Electronic transmission of clinical records, photo images, personal health information or other data between a client and a Provider;  
+           Interactions between a client and Provider via audio, video and/or data communications; 
+           and Use of output data from clinical devices, sound and video files.  
+           The vendor of the electronic systems used in the provision of Video Therapy Services (Zoom) has represented that it incorporates industry standard network and software security protocols to protect the privacy and security of health information.  
+           
+           
+           
+           STATEMENT OF POTENTIAL RISKS AND BENEFITS 
+           
+           Potential Benefits of Telehealth Services:
+           
+           Can be easier and more efficient for you to access clinical care and treatment from a Provider. 
+           You can obtain clinical care and treatment at times that are convenient for you. 
+           You can interact with a Provider without the necessity of an in-office appointment.  
+           Potential Risks of Telehealth Services:
+           
+           Information transmitted to your Provider may not be sufficient to allow for appropriate clinical decision making by the Provider. 
+           The inability of your Provider to conduct certain tests or assessments in-person may in some cases prevent the Provider from providing a diagnosis or treatment or from identifying the need for emergency clinical care or treatment for you. 
+           Your Provider may not able to provide clinical treatment for your particular condition via Video Therapy or Telephone Counseling. You may be required to seek alternative care. In this case, your Provider would offer you referral suggestions and resources to the best of her/his ability.
+           Delays in clinical evaluation/treatment could occur due to failures of the technology. 
+           Security protocols or safeguards could fail causing a breach of privacy.  If this were to occur, Care and Counseling would notify you promptly. 
+           Given regulatory requirements in certain jurisdictions, your Provider’s treatment options may be limited.  
+           
+           
+           By accepting this Consent to Telehealth Services, you acknowledge your understanding and agreement to the following:  
+           
+           I understand that the delivery of health care services via Telehealth is an evolving field and that the use of Video Therapy or Telephone Counseling in my clinical care and treatment may include uses of technology not specifically described in this consent. 
+           I understand that while the use of Telehealth Services may provide potential benefits to me, as with any clinical care service no such benefits or specific results can be guaranteed. My condition may not be cured or improved, and in some cases, may get worse. 
+           It is my duty to inform my Therapist of other in-person or electronic interactions regarding my care that I may have with other health care providers.
+           I understand that my Therapist may determine in his or her sole discretion that my condition is not suitable for treatment using Telehealth Services, and that I may need to seek clinical care and treatment in-person or from an alternative source. 
+           A variety of alternative methods of mental health care may be available to me, and that I may choose one or more of these at any time. My Therapist has explained the alternatives to my satisfaction. 
+           I understand that the same confidentiality and privacy protections that apply to my other health care services also apply to these Telehealth services.  My Therapist cannot ensure my privacy at my location.
+           I agree that I will not record my sessions without prior written consent.  Instructions for accessing my medical record have been outlined for me in the Aryeh Schonfeld PMHNP Privacy Practices.
+           I agree and authorize my Therapist and Aryeh Schonfeld PMHNP to share information regarding my Telehealth treatment with other individuals for treatment, payment and health care operations purposes as allowed by law. 
+           I understand that I can withhold or withdraw my consent at any time by emailing or providing other such written notification to my Therapist with such instruction, without affecting my right to future care or treatment. 
+           If my health insurance provider does not reimburse for provision of Telehealth Services, I may be solely responsible for covering the costs of my Video Therapy or Telephone Counseling, as outlined in the form “Agreement for Payment and Financial Responsibilities.”
+           I understand that my Therapist may only utilize Video Therapy for my treatment when I am located in the state of my residence and/or in which the Therapist has authorization or licensure to practice in New York. As such, my Provider will ask to verify my location at the beginning of sessions.
+           I understand the need to participate in Telehealth Services from a secure, private location to the best of my ability. I will communicate any privacy limitations to my Therapist at the beginning of the session.
+           My Therapist and I have discussed a back-up plan if the technology fails to work during a session. 
+           
+           
+           CLIENT CONSENT TO THE USE OF VIDEO THERAPY 
+           
+           By signing below, I indicate agreement to the following: 
+           
+           I have read this Consent to Telehealth Services form and understand the risks and benefits of the use of Video Therapy and/or Telephone Counseling in the course of my treatment. 
+           I have discussed Telehealth Services with my Therapist, and all my questions have been answered to my satisfaction. 
+           I hereby give my informed consent for the use of Video Therapy and/or Telephone Counseling in my mental health care.
+           I hereby authorize my Therapist to use Video Therapy and/or Telephone Counseling in the course of my diagnosis and/or treatment.  
+           THIS AGREEMENT/CONSENT WILL REMAIN IN EFFECT UNLESS REVOKED BY ME IN WRITING.
           required: true
 
 
@@ -91,6 +208,6 @@ sections:
           name: consentAccepted
           buttonText: View & Accept
           modalText: |
-           I
+           I give permission to Aryeh Schonfeld PMHNP to speak with the following individuals regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
           required: true
 
