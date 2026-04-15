@@ -94,7 +94,7 @@
 
            
            {% elsif field.type == "modal_accept" %}
-
+      </div>
   <div class="modal-field">
 
     <button type="button" class="open-modal" data-target="{{ field.name }}">
@@ -123,6 +123,8 @@
     </div>
 
   </div>
+   <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+
 
 
         {% elsif field.type == "empty" %} {% else %}
