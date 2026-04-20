@@ -63,12 +63,36 @@
   button:hover {
     background-color: #3399ff;
   }
+  .tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+
+}
+
+.tabs button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column; /* 👈 forces vertical stacking */
+  align-items: center;
+}
+
+
 
 </style>
 </head>
 <body>
-
-<form  id="bookingForm" method="POST">
+<!-- Tabs -->
+  <div class="form-wrapper">
+<div class="tabs">
+  <button onclick="showForm('bookingForm')">Book an Appointment</button>
+  <button onclick="showForm('form2')">Cancel an Appointment</button>
+  <button onclick="showForm('billingForm')">Record Payment</button>
+</div>
+<form  id="bookingForm" class="tab-form" method="POST">
   <h2>Book an Appointment</h2>
 
   <label for="firstName">First Name</label>
@@ -119,13 +143,44 @@
 
   <button type="submit">Book Appointment</button>
 </form>
+    
+    
+    <!-- Form 3 -->
+
+    <form id="billingForm"  class="tab-form" method="POST" style="display:none;">
+  <h2>Record Payment</h2>
+
+  <label for="billFirstName">First Name</label>
+  <input name="firstName" id="billFirstName" placeholder="John" required>
+
+  <label for="billLastName">Last Name</label>
+  <input name="lastName" id="billLastName" placeholder="Doe" required>
+
+  <label for="billPhone">Phone</label>
+  <input type="tel" name="phone" id="billPhone" placeholder="123-456-7890" required>
+
+  <label for="amountPaid">Amount Paid ($)</label>
+  <input type="number" name="amountPaid" id="amountPaid" step="0.01" placeholder="0.00" required>
+
+  <label for="paymentMethod">Payment Method</label>
+  <select name="paymentMethod" id="paymentMethod" required>
+    <option value=""></option>
+    <option value="Cash">Cash</option>
+    <option value="Credit Card">Credit Card</option>
+    <option value="Zelle">Zelle</option>
+    <option value="Check">Check</option>
+  </select>
+
+  <button type="submit">Submit Payment</button>
+</form>
+  </div>
 
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHQlsJEihCzjYQRMLkTU8t_WGNpu8fmTDntie1GNEggNb3xa0LDMZplhheh8_SFqPJ/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
-  
+  document.getElementById("billingForm").action = `${SCRIPT_URL}?action=payBill&key=${encodeURIComponent(API_KEY)}`;
 document.getElementById("appointmentDate").addEventListener("change", loadTimes);
 document.querySelector("select[name='lengthMinutes']").addEventListener("change", loadTimes);
 
@@ -180,7 +235,14 @@ function loadTimes() {
 
   return `${displayHour}:${minute.toString().padStart(2, "0")} ${suffix}`;
 }
-    
+  
+function showForm(id) {
+  document.querySelectorAll(".tab-form")
+    .forEach(f => f.style.display = "none");
+
+  document.getElementById(id).style.display = "block";
+}
+  
 </script>
 
 </body>
