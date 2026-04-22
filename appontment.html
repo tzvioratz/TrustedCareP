@@ -89,7 +89,7 @@
   <div class="form-wrapper">
 <div class="tabs">
   <button onclick="showForm('bookingForm')">Book an Appointment</button>
-  <button onclick="showForm('form2')">Cancel an Appointment</button>
+  <button onclick="showForm('cancelForm')">Cancel an Appointment</button>
   <button onclick="showForm('billingForm')">Record Payment</button>
 </div>
 <form  id="bookingForm" class="tab-form" method="POST">
@@ -144,11 +144,36 @@
   <button type="submit">Book Appointment</button>
 </form>
     
-    
-    <!-- Form 3 -->
+    <form id="cancelForm" class="tab-form" method="POST" style="display:none;">
 
-    <form id="billingForm"  class="tab-form" method="POST" style="display:none;">
+  <h2>Cancel Appointment</h2>
+
+  <label>First Name</label>
+  <input name="firstName" id="cancelFirstName" required>
+
+  <label>Last Name</label>
+  <input name="lastName" id="cancelLastName" required>
+
+  <label>Phone</label>
+  <input name="phone" id="cancelPhone" required>
+
+  <label>Select Appointment</label>
+  <select name="appointmentId" id="appointmentSelect" required>
+    <option value="">Enter info first</option>
+  </select>
+        <input type="hidden" name="action" value="cancel">
+
+      <input type="hidden" id="canclAppointmentDate" name="appointmentDate">
+
+  <input type="hidden" name="action" value="cancelAppointment">
+  <input type="hidden" name="key" value="YOUR_API_KEY">
+
+  <button type="submit">Cancel Appointment</button>
+</form>
+    
+<form id="billingForm"  class="tab-form" method="POST" style="display:none;">
   <h2>Record Payment</h2>
+  <input type="hidden" name="action" value="payBill">
 
   <label for="billFirstName">First Name</label>
   <input name="firstName" id="billFirstName" placeholder="John" required>
@@ -169,6 +194,8 @@
     <option value="Credit Card">Credit Card</option>
     <option value="Zelle">Zelle</option>
     <option value="Check">Check</option>
+    <option value="Check">Waive Fee</option>
+    <option value="Check">Courtesy Credit</option>
   </select>
 
   <button type="submit">Submit Payment</button>
@@ -177,10 +204,13 @@
 
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHQlsJEihCzjYQRMLkTU8t_WGNpu8fmTDntie1GNEggNb3xa0LDMZplhheh8_SFqPJ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsb7TsQI1uqDuHuAYB0gIgryU6baUYtKIBLSSy1ogjJundR4CE10mDkXqwPPF9pefX/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
-  document.getElementById("billingForm").action = `${SCRIPT_URL}?action=payBill&key=${encodeURIComponent(API_KEY)}`;
+  document.getElementById("billingForm").action = SCRIPT_URL;
+  document.getElementById("cancelForm").action = SCRIPT_URL;
+  
+  
 document.getElementById("appointmentDate").addEventListener("change", loadTimes);
 document.querySelector("select[name='lengthMinutes']").addEventListener("change", loadTimes);
 
@@ -243,6 +273,74 @@ function showForm(id) {
   document.getElementById(id).style.display = "block";
 }
   
+  document.getElementById("cancelPhone").addEventListener("blur", loadAppointments);
+
+function loadAppointments() {
+  const firstName = document.getElementById("cancelFirstName").value;
+  const lastName = document.getElementById("cancelLastName").value;
+  const phone = document.getElementById("cancelPhone").value;
+
+  if (!firstName || !lastName || !phone) return;
+
+  const url = `${SCRIPT_URL}?action=getAppointments&firstName=${firstName}&lastName=${lastName}&phone=${phone}`;
+
+  const select = document.getElementById("appointmentSelect");
+  select.innerHTML = '<option>Loading...</option>';
+  select.disabled = true;
+  
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      select.innerHTML = '<option value="">Select appointment</option>';
+
+      if (data.length === 0) {
+        select.innerHTML = '<option>No upcoming appointments</option>';
+        return;
+      }
+
+      data.forEach(appt => {
+        const opt = document.createElement("option");
+
+        // value should be unique ID (IMPORTANT)
+        opt.value = appt.id;
+
+        // display date + time
+        const options = { 
+  weekday: 'long', // "Monday"
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric', 
+  hour: 'numeric', 
+  minute: 'numeric' 
+  // Omit 'second' to exclude it
+};
+        opt.textContent = new Date(appt.dateTime).toLocaleString(undefined, options);
+        opt.dataset.datetime = appt.dateTime; //  THIS is what you're missing
+        select.appendChild(opt);
+      });
+
+      select.disabled = false;
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Error loading appointments");
+    });
+  
+}
+function updateHiddenField() {
+  const select = document.getElementById("appointmentSelect");
+  const selected = select.options[select.selectedIndex];
+
+  document.getElementById("canclAppointmentDate").value =
+    selected?.dataset?.datetime || "";
+}
+
+document.getElementById("appointmentSelect")
+  .addEventListener("change", updateHiddenField);
+
+function formatDateTime(date, time) {
+  return `${date} at ${formatTime(time)}`;
+}
 </script>
 
 </body>
