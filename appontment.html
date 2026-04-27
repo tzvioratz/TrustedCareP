@@ -140,6 +140,8 @@
 
   <label for="extraNotes">Additional Notes</label>
   <textarea name="extraNotes" placeholder="Any extra notes..."></textarea>
+    <input type="hidden" name="action" value="createAppointment">
+
 
   <button type="submit">Book Appointment</button>
 </form>
@@ -165,7 +167,7 @@
 
       <input type="hidden" id="canclAppointmentDate" name="appointmentDate">
 
-  <input type="hidden" name="action" value="cancelAppointment">
+  <input type="hidden" name="action" value="cancel">
   <input type="hidden" name="key" value="YOUR_API_KEY">
 
   <button type="submit">Cancel Appointment</button>
@@ -204,7 +206,7 @@
 
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsb7TsQI1uqDuHuAYB0gIgryU6baUYtKIBLSSy1ogjJundR4CE10mDkXqwPPF9pefX/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm9LCLMEjaP_Sa384738BuZheOt5p_GcY99WFf1K2qey6phOtO0uylreMe0CdLnh_o/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
