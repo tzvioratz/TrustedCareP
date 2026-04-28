@@ -141,7 +141,7 @@
   <label for="extraNotes">Additional Notes</label>
   <textarea name="extraNotes" placeholder="Any extra notes..."></textarea>
     <input type="hidden" name="action" value="createAppointment">
-
+<input type="hidden" id="bookingIdToken" name="idToken" />
 
   <button type="submit">Book Appointment</button>
 </form>
@@ -168,15 +168,15 @@
       <input type="hidden" id="canclAppointmentDate" name="appointmentDate">
 
   <input type="hidden" name="action" value="cancel">
-  <input type="hidden" name="key" value="YOUR_API_KEY">
-
+    <input type="hidden"  id="CancelIdToken" name="token" />
   <button type="submit">Cancel Appointment</button>
 </form>
     
 <form id="billingForm"  class="tab-form" method="POST" style="display:none;">
   <h2>Record Payment</h2>
   <input type="hidden" name="action" value="payBill">
-
+<input type="hidden" id="payIdToken" name="idToken" />
+  
   <label for="billFirstName">First Name</label>
   <input name="firstName" id="billFirstName" placeholder="John" required>
 
@@ -204,9 +204,10 @@
 </form>
   </div>
 
+  <script src="https://accounts.google.com/gsi/client"></script>
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydCZ-VKpBwjJp3q4sl5qczPE3Nswc4qjAqRT9m86G6hkwn1kMpyfa-LlU1fGWC_ICI/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxr6fPXDcJImsDSGr1hbCkDGIHuUa9n3Ee93ZECbHzF3Z_zTgE1vqbWTLZbuGUlPdmy/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
@@ -216,6 +217,48 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydCZ-VKpBwjJp3q4sl5
 document.getElementById("appointmentDate").addEventListener("change", loadTimes);
 document.querySelector("select[name='lengthMinutes']").addEventListener("change", loadTimes);
 
+  
+ let idToken = null;
+
+      // 1. Get token from Google Identity Services
+      function handleCredentialResponse(response) {
+        idToken = response.credential;
+        document.getElementById("bookingIdToken").value = idToken;
+      }
+
+      // 2. Initialize GIS
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+
+        // Auto prompt login (optional but useful internally)
+        google.accounts.id.prompt();
+      };
+
+      // 3. Submit form
+      document.getElementById("bookingForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const formData = {
+          request: e.target.request.value,
+          idToken: document.getElementById("bookingIdToken").value
+        };
+
+        //document.getElementById("status").innerText = "Submitting...";
+
+        google.script.run
+          .withSuccessHandler(() => {
+            //document.getElementById("status").innerText = "Submitted!";
+          })
+          .withFailureHandler(err => {
+            //document.getElementById("status").innerText = err.message;
+          })
+          .submitForm(formData);
+      });
+  
+  
 function loadTimes() {
   const date = document.getElementById("appointmentDate").value;
   const length = document.querySelector("select[name='lengthMinutes']").value;
