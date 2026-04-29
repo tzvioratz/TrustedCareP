@@ -79,6 +79,34 @@
   flex-direction: column; /* 👈 forces vertical stacking */
   align-items: center;
 }
+  
+  
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  /* We use flex to center, but JS will toggle 'none' vs 'flex' */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 
@@ -141,7 +169,6 @@
   <label for="extraNotes">Additional Notes</label>
   <textarea name="extraNotes" placeholder="Any extra notes..."></textarea>
     <input type="hidden" name="action" value="createAppointment">
-<input type="hidden" id="bookingIdToken" name="idToken" />
 
   <button type="submit">Book Appointment</button>
 </form>
@@ -168,14 +195,12 @@
       <input type="hidden" id="canclAppointmentDate" name="appointmentDate">
 
   <input type="hidden" name="action" value="cancel">
-    <input type="hidden"  id="CancelIdToken" name="token" />
   <button type="submit">Cancel Appointment</button>
 </form>
     
 <form id="billingForm"  class="tab-form" method="POST" style="display:none;">
   <h2>Record Payment</h2>
   <input type="hidden" name="action" value="payBill">
-<input type="hidden" id="payIdToken" name="idToken" />
   
   <label for="billFirstName">First Name</label>
   <input name="firstName" id="billFirstName" placeholder="John" required>
@@ -203,11 +228,38 @@
   <button type="submit">Submit Payment</button>
 </form>
   </div>
+  
+<!-- Add this anywhere in your <body> -->
+<div id="loading-overlay" style="display: none;">
+  <div class="spinner"></div>
+</div>
+  
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('form');
+  const loader = document.getElementById('loading-overlay');
 
-  <script src="https://accounts.google.com/gsi/client"></script>
+  forms.forEach((form) => {
+    form.addEventListener('submit', () => {
+      // Force the display to flex
+      loader.style.display = 'flex';
+      console.log("Form submitted, loader should show.");
+    });
+  });
+
+  // Fix for the 'Back' button
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      loader.style.display = 'none';
+    }
+  });
+});
+  
+  
+  </script>
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxr6fPXDcJImsDSGr1hbCkDGIHuUa9n3Ee93ZECbHzF3Z_zTgE1vqbWTLZbuGUlPdmy/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAe1mxp3J2tTCmZugRmEXSi_68V75A89cng-DFX6j9xDvxZT_bqRT8ODg9O__x_kA/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
@@ -217,46 +269,6 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxr6fPXDcJImsDSGr1hb
 document.getElementById("appointmentDate").addEventListener("change", loadTimes);
 document.querySelector("select[name='lengthMinutes']").addEventListener("change", loadTimes);
 
-  
- let idToken = null;
-
-      // 1. Get token from Google Identity Services
-      function handleCredentialResponse(response) {
-        idToken = response.credential;
-        document.getElementById("bookingIdToken").value = idToken;
-      }
-
-      // 2. Initialize GIS
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com",
-          callback: handleCredentialResponse
-        });
-
-        // Auto prompt login (optional but useful internally)
-        google.accounts.id.prompt();
-      };
-
-      // 3. Submit form
-      document.getElementById("bookingForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const formData = {
-          request: e.target.request.value,
-          idToken: document.getElementById("bookingIdToken").value
-        };
-
-        //document.getElementById("status").innerText = "Submitting...";
-
-        google.script.run
-          .withSuccessHandler(() => {
-            //document.getElementById("status").innerText = "Submitted!";
-          })
-          .withFailureHandler(err => {
-            //document.getElementById("status").innerText = err.message;
-          })
-          .submitForm(formData);
-      });
   
   
 function loadTimes() {
