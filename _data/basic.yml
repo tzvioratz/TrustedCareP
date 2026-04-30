@@ -4,30 +4,30 @@ sections:
     - rows:
       - fields:
           - label: First Name
-            name: entry.1435399985
+            name: entry.2044461386
             type: text
             flex: 2
             required: true
 
           - label: Middle Initial
-            name: entry.1026473721
+            name: entry.1116109313
             type: text
             
 
           - label: Last Name
-            name: entry.23368150
+            name: entry.2034718005
             type: text
             flex: 2
             required: true
 
       - fields:
           - label: Date of Birth
-            name: entry.1402861957
+            name: entry.1967213364
             type: date
             required: true
 
           - label: Gender
-            name: entry.1535975907
+            name: entry.624364199
             type: select
             options: [Male, Female]
             required: true
@@ -36,33 +36,33 @@ sections:
           
       - fields:
           - label: Mailing Address
-            name: entry.1611862080
+            name: entry.779138054
             type: text
             required: true
 
           - label: City
-            name: entry.1587024577
+            name: entry.2133057634
             type: text
             required: true
             
           - label: State
-            name: entry.702093942
+            name: entry.1053317455
             type: text
             required: true
 
           - label: Zip Code
-            name: entry.317684973
+            name: entry.1625073487
             type: text
             required: true
             
       - fields:
           - label: Home Phone
-            name: entry.501984800
+            name: entry.1759163588
             type: text
             required: true
 
           - label: Cell Phone
-            name: entry.120404958
+            name: entry.2235666
             type: text
             
           - label: Work Phone
