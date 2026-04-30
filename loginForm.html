@@ -301,8 +301,7 @@ form.addEventListener("submit", () => {
 
 iframe.addEventListener("load", () => {
   if (submitted) {
-    btn.innerText = "Submitted!";
-    form.reset();
+    form.innerHTML = "<h2>Thank you!</h2>";
     submitted = false;
   }
 });
