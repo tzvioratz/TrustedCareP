@@ -252,14 +252,14 @@ button.loading {
         <div id="error"></div>
     </div>
 </div>
-
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <!-- =========================
      REAL FORM (HIDDEN INITIALLY)
      ========================= -->
 <div id="formContainer" class="container">
     
-    <form id="mainForm" method="POST">
+    <form id="mainForm" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       <input type="hidden" name="password" id="hiddenPassword">
             {% include form-container.html step="1" data=site.data.basic %}
             {% include form-container.html step="2" data=site.data.EmergencyContact %}
@@ -277,13 +277,36 @@ button.loading {
                 <div class="section">
                   <div class="row">
                       <div class="field-wrapper">
-                          <button type="submit">Submit</button>
+                          <button id="submitBtn" type="submit">Submit</button>
                       </div>
                   </div>
               </div>
             </div>
         </form>
 </div>
+  
+  
+  <script>
+let submitted = false;
+
+const form = document.getElementById("myForm");
+const btn = document.getElementById("submitBtn");
+const iframe = document.querySelector("iframe[name='hidden_iframe']");
+
+form.addEventListener("submit", () => {
+  submitted = true;
+  btn.innerText = "Submitting...";
+  btn.disabled = true;
+});
+
+iframe.addEventListener("load", () => {
+  if (submitted) {
+    btn.innerText = "Submitted!";
+    form.reset();
+    submitted = false;
+  }
+});
+</script>
 
 <script>
   function setLoading(isLoading) {
