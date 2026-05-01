@@ -261,6 +261,7 @@ button.loading {
     
     <form id="mainForm" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       <input type="hidden" name="password" id="hiddenPassword">
+      <input type="hidden" name="ip" id="ipAddress">
             {% include form-container.html step="1" data=site.data.basic %}
             {% include form-container.html step="2" data=site.data.EmergencyContact %}
             {% include form-container.html step="3" data=site.data.ProblemDetails %}
@@ -302,6 +303,8 @@ form.addEventListener("submit", () => {
 iframe.addEventListener("load", () => {
   if (submitted) {
     form.innerHTML = "<h2>Thank you!</h2>";
+    //redirect to a thank you page
+    //setTimeout(() => {  window.location.href = "/thank-you.html";}, 500);
     submitted = false;
   }
 });
@@ -337,7 +340,7 @@ async function login() {
     setLoading(true);
   
     const url =
-        `https://script.google.com/macros/s/AKfycbxTdFG5cyXMalpXfn5UxHdn9MeHCx14MZI8YgmmVV6kEuWWfx0ZgjHcYsHZ7FE7u9Zz2A/exec?action=login` +
+        `https://script.google.com/macros/s/AKfycbxhwVB4Ma_3RSdeBXjWkVLB8AMmWgfofSka5I4l-hyiHB4Mxz29u06GywYPxr_9Acl5/exec?action=login` +
         `&firstName=${encodeURIComponent(firstName)}` +
         `&lastName=${encodeURIComponent(lastName)}` +
         `&password=${encodeURIComponent(password)}`;
