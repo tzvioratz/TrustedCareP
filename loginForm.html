@@ -259,7 +259,7 @@ button.loading {
      ========================= -->
 <div id="formContainer" class="container">
     
-    <form id="mainForm" method="POST"  onsubmit="submitted=true;">
+    <form id="mainForm" method="POST"  action="" onsubmit="submitted=true;">
       <input type="hidden" name="password" id="hiddenPassword">
       <input type="hidden" name="ip" id="ipAddress">
             {% include form-container.html step="1" data=site.data.basic %}
@@ -287,28 +287,7 @@ button.loading {
 </div>
   
   
-<!--  <script>
-let submitted = false;
 
-const form = document.getElementById("mainForm");
-const btn = document.getElementById("submitBtn");
-const iframe = document.querySelector("iframe[name='hidden_iframe']");
-
-form.addEventListener("submit", () => {
-  submitted = true;
-  btn.innerText = "Submitting...";
-  btn.disabled = true;
-});
-
-iframe.addEventListener("load", () => {
-  if (submitted) {
-    form.innerHTML = "<h2>Thank you!</h2>";
-    //redirect to a thank you page
-    //setTimeout(() => {  window.location.href = "/thank-you.html";}, 500);
-    submitted = false;
-  }
-});
-</script>-->
 
 <script>
   function setLoading(isLoading) {
