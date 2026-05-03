@@ -287,7 +287,7 @@ button.loading {
 </div>
   
   
-  <script>
+<!--  <script>
 let submitted = false;
 
 const form = document.getElementById("mainForm");
@@ -308,7 +308,7 @@ iframe.addEventListener("load", () => {
     submitted = false;
   }
 });
-</script>
+</script>-->
 
 <script>
   function setLoading(isLoading) {
@@ -340,7 +340,7 @@ async function login() {
     setLoading(true);
   
     const url =
-        `https://script.google.com/macros/s/AKfycbxhwVB4Ma_3RSdeBXjWkVLB8AMmWgfofSka5I4l-hyiHB4Mxz29u06GywYPxr_9Acl5/exec?action=login` +
+        `https://script.google.com/macros/s/AKfycbyXcDtzX_ELFes9FsocFMGDEj5sfrHgvGCVAMDovXVSMkD_bGF1mTnWNzpfMSWZlF5TVw/exec` +
         `&firstName=${encodeURIComponent(firstName)}` +
         `&lastName=${encodeURIComponent(lastName)}` +
         `&password=${encodeURIComponent(password)}`;
