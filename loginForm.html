@@ -340,7 +340,8 @@ async function login() {
     setLoading(true);
   
     const url =
-        `https://script.google.com/macros/s/AKfycbyQxHTRRHMAV4copkZqB5QojSDoXUYDDxQhuk-wcz8GWZ2io3lytMjwN85bXBYpyINiwQ/exec?action=login` +
+        `https://script.google.com/macros/s/AKfycbyGiq5jXeXh9a11Oz-y5a4ytp0bsjIx021cAxOXFhzpq2NDUiXdDSuZZzTK9wGsgdEP/exec`+
+        `?action=login` +
         `&firstName=${encodeURIComponent(firstName)}` +
         `&lastName=${encodeURIComponent(lastName)}` +
         `&password=${encodeURIComponent(password)}`;
