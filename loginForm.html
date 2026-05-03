@@ -259,7 +259,7 @@ button.loading {
      ========================= -->
 <div id="formContainer" class="container">
     
-    <form id="mainForm" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <form id="mainForm" method="POST"  onsubmit="submitted=true;">
       <input type="hidden" name="password" id="hiddenPassword">
       <input type="hidden" name="ip" id="ipAddress">
             {% include form-container.html step="1" data=site.data.basic %}
