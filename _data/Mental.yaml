@@ -8,155 +8,155 @@ sections:
             name: mentalHealthServices
             type: yesnopast_with_details
             flex: 1
-            detailsName: mentalHealthDetails
+            detailsName: mentalHealthServicesdetails
             
   - title: Do you have (or have you had) any of these concerns
     rows:
       - fields:
           - label: Difficulty falling or staying asleep
-            name: sleepIssues
+            name: chart*d*sleepIssues
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*sleepIssuesdetails
 
       - fields:
           - label: Sleeping too little or too much
-            name: sleepAmount
+            name: chart*d*sleepAmount
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*sleepAmountdetails
 
 
       - fields:
           - label: Daily feeling of sadness that doesn’t go away
-            name: sadness
+            name: chart*d*sadness
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*saddnessdetails
 
       - fields:
           - label: Panic / Anxiety attacks
-            name: anxiety
+            name: chart*d*anxiety
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*anxietydetails
 
       - fields:
           - label: Problems concentrating
-            name: concentration
+            name: chart*d*concentration
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*concentratindetails
 
 
       - fields:
           - label: Mood fluctuates up and down
-            name: mood
+            name: chart*d*mood
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*mooddetails
 
       - fields:
           - label: Remembering upsetting things constantly
-            name: intrusiveMemories
+            name: chart*d*intrusiveMemories
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*intrusiveMemoriesdetails
 
       - fields:
           - label: Upsetting thoughts I can’t get out of my head
-            name: intrusiveThoughts
+            name: chart*d*intrusiveThoughts
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*intrusiveThoughtsdetails
 
       - fields:
           - label: Repetitive behaviors I can’t stop
-            name: repetitiveBehaviors
+            name: chart*d*repetitiveBehaviors
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*repetitiveBehaviorsdetails
 
       - fields:
           - label: Constant worrying
-            name: worrying
+            name: chart*d*worrying
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*worryingdetails
 
       - fields:
           - label: Disordered eating / purging
-            name: eatingDisorder
+            name: chart*d*eatingDisorder
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*eatingDisorderdetails
 
       - fields:
           - label: Physical / Verbal Abuse
-            name: abuse
+            name: chart*d*abuse
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*abusedetails
 
       - fields:
           - label: Feeling tired almost every day
-            name: fatigue
+            name: chart*d*fatigue
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*fatiguedetails
 
       - fields:
           - label: Feelings of low self-worth
-            name: selfWorth
+            name: chart*d*selfWorth
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*selfWorthdetails
 
       - fields:
           - label: Risky behaviors
-            name: riskyBehavior
+            name: chart*d*riskyBehavior
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*riskyBehaviordetails
 
       - fields:
           - label: Difficulty controlling my temper
-            name: temper
+            name: chart*d*temper
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*temperdetails
 
       - fields:
           - label: Difficulty maintaining a job
-            name: jobDifficulty
+            name: chart*d*jobDifficulty
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*jobDifficultydetails
 
       - fields:
           - label: Difficulty paying for basic expenses
-            name: expenses
+            name: chart*d*expenses
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*expensesdetails
 
       - fields:
           - label: Thoughts of killing or harming myself
-            name: selfHarmThoughts
+            name: chart*d*selfHarmThoughts
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*selfHarmThoughtsdetails
 
       - fields:
           - label: Attempts to kill or harm myself
-            name: selfHarmAttempts
+            name: chart*d*selfHarmAttempts
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*selfHarmAttemptsdetails
 
       - fields:
           - label: Hear or see things that other people do not
-            name: hallucinations
+            name: chart*d*hallucinations
             type: yesnopast_with_details
             flex: 1
-            detailsName: 
+            detailsName: chart*d*hallucinationsdetails

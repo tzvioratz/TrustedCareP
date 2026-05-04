@@ -5,44 +5,44 @@ sections:
     rows:
       - fields:
           - label: Emergency Contact Name
-            name: entry.2054668027
+            name: ec_name
             type: text
             required: true
             
           - label: Relationship
-            name: entry.1111
+            name: ec_relationship
             type: text
             required: true
             
       - fields:
           - label: Address
-            name: entry.1111
+            name: ec_address
             type: text
             required: true
 
           - label: City
-            name: entry.1111
+            name: ec_city
             type: text
             required: true
             
           - label: State
-            name: entry.1111
+            name: ec_state
             type: text
             required: true
 
           - label: Zip Code
-            name: entry.1111
+            name: ec_zip
             type: text
             required: true
             
       - fields:
           - label: Phone Number
-            name: entry.1111
+            name: ec_phone
             type: text
             required: true
 
           - label: Alt. Phone Number
-            name: entry.1111
+            name: ec_alt_phone
             type: text
             required: true
             

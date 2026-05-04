@@ -5,7 +5,7 @@ sections:
       - fields:
           - label: Consent for Counseling
             type: modal_accept
-            name: Counseling
+            name: counseling_form
             buttonText: View & Accept
             modalText: |
              Consent for Counseling
@@ -35,7 +35,7 @@ sections:
       - fields:
         - label: HIPAA Privacy Notice
           type: modal_accept
-          name: HIPAA
+          name: HIPAA_form
           buttonText: View & Accept
           modalText: |
            HIPAA Notice of Privacy Practices
@@ -144,7 +144,7 @@ sections:
       - fields:
         - label: Telehealth Consent
           type: modal_accept
-          name: Telehealth
+          name: Telehealth_form
           buttonText: View & Accept
           modalText: |
            Telehealth Consent
@@ -234,7 +234,7 @@ sections:
       - fields:
         - label: Permission for information
           type: modal_accept
-          name: information
+          name: information_form
           buttonText: View & Accept
           modalText: |
            Permission for information

@@ -5,78 +5,73 @@ sections:
     rows:
       - fields:
           - label: ADHD
-            name: familyADHD
+            name: chart*a*ADHD
             type: yesno_with_details
             flex: 1
-            detailsName: familyADHDWho
+            detailsName: chart*a*ADHDdetails
 
       - fields:
           - label: Anxiety
-            name: familyAnxiety
+            name: chart*a*Anxiety
             type: yesno_with_details
             flex: 1
-            detailsName: familyAnxietyWho
+            detailsName: chart*a*Anxietydetails
 
       - fields:
           - label: Depression
-            name: familyDepression
+            name: chart*a*Depression
             type: yesno_with_details
             flex: 1
-            detailsName: familyDepressionWho
+            detailsName: chart*a*Depressiondetails
 
       - fields:
           - label: Obsessive Compulsive Disorder
-            name: familyOCD
+            name: chart*a*OCD
             type: yesno_with_details
             flex: 1
-            detailsName: familyOCDWho
+            detailsName: chart*a*OCDdetails
 
       - fields:
           - label: Eating Disorder
-            name: familyEating
+            name: chart*a*Eating
             type: yesno_with_details
             flex: 1
-            detailsName: familyEatingWho
+            detailsName: chart*a*Eatingdetails
 
       - fields:
           - label: Schizophrenia
-            name: familySchizophrenia
+            name: chart*a*Schizophrenia
             type: yesno_with_details
             flex: 1
-            detailsName: familySchizophreniaWho
+            detailsName: chart*a*Schizophreniadetails
 
       - fields:
           - label: Bipolar
-            name: familyBipolar
+            name: chart*a*Bipolar
             type: yesno_with_details
             flex: 1
-            detailsName: familyBipolarWho
+            detailsName: chart*a*Bipolardetails
 
       - fields:
           - label: Alcohol / Substance Abuse
-            name: familySubstance
+            name: chart*a*Substance
             type: yesno_with_details
             flex: 1
-            detailsName: familySubstanceWho
+            detailsName: chart*a*Substancedetails
 
       - fields:
           - label: Suicide
-            name: familySuicide
+            name: chart*a*Suicide
             type: yesno_with_details
             flex: 1
-            detailsName: familySuicideWho
+            detailsName: chart*a*Suicidedetails
 
       - fields:
           - label: Other
-            name: familyOther
+            name: chart*a*Other
             type: yesno_with_details
             flex: 1
-            detailsName: familyOtherWho
+            detailsName: chart*a*Otherdetails
 
       - fields:
 
-      - fields:
-          - label: If other, please specify
-            name: familyOtherSpecify
-            type: text
-            flex: 2

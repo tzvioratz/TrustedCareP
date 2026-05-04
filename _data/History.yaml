@@ -5,11 +5,11 @@ sections:
     rows:
       - fields:
           - label: Do you have any concerns about sleep?
-            name: sleepConcern
+            name: chart*b*sleep
             type: yesno_with_details
             layout: inline
             flex: 1
-            detailsName: sleep
+            detailsName: chart*b*sleepdetails
 
 
       - fields:
@@ -32,103 +32,103 @@ sections:
 
       - fields:
           - label: Do you have any known allergies?
-            name: allergies
+            name: chart*b*allergies
             type: yesno_with_details
             flex: 1
-            detailsName: allergiesDetails
+            detailsName: chart*b*allergiesDetails
 
       - fields:
           - label: Do you smoke or vape?
-            name: smoke
+            name: chart*b*smoke
             type: yesno_with_details
             flex: 1
-            detailsName: smokeAmount
+            detailsName: chart*b*smokedetails
 
       - fields:
           - label: Do you drink alcohol?
-            name: alcohol
+            name: chart*b*alcohol
             type: yesno_with_details
             flex: 1
-            detailsName: alcoholAmount
+            detailsName: chart*b*alcoholdetails
 
       - fields:
           - label: Do you drink caffeine?
-            name: caffeine
+            name: chart*b*caffeine
             type: yesno_with_details
             flex: 1
-            detailsName: caffeineAmount
+            detailsName: chart*b*caffeindetails
 
   - title: Do you have any of the following
     rows:
       - fields:
           - label: Diabetes
-            name: diabetes
+            name: chart*c*diabetes
             type: yesno_with_details
             flex: 1
-            detailsName: diabetesDetails
+            detailsName: chart*c*diabetesDetails
 
       - fields:
           - label: Cancer
-            name: cancer
+            name: chart*c*cancer
             type: yesno_with_details
             flex: 1
-            detailsName: cancerDetails
+            detailsName: chart*c*cancerDetails
 
       - fields:
           - label: Headache / Migraines
-            name: headaches
+            name: chart*c*headaches
             type: yesno_with_details
             flex: 1
             detailsName: headachesDetails
 
       - fields:
           - label: Heart Disease / Stroke
-            name: heart
+            name: chart*c*heart
             type: yesno_with_details
             flex: 1
-            detailsName: heartDetails
+            detailsName: chart*c*heartDetails
 
       - fields:
           - label: High Blood Pressure
-            name: bp
+            name: chart*c*HighBloodPressure
             type: yesno_with_details
             flex: 1
-            detailsName: bpDetails
+            detailsName: chart*c*HighBloodPressureDetails
 
       - fields:
           - label: Liver Disease
-            name: liver
+            name: chart*c*liver
             type: yesno_with_details
             flex: 1
-            detailsName: liverDetails
+            detailsName: chart*c*liverDetails
 
       - fields:
           - label: Thyroid Disease
-            name: thyroid
+            name: chart*c*thyroid
             type: yesno_with_details
             flex: 1
-            detailsName: thyroidDetails
+            detailsName: chart*c*thyroidDetails
 
       - fields:
           - label: Substance Abuse
-            name: substance
+            name: chart*c*substance
             type: yesno_with_details
             flex: 1
-            detailsName: substanceDetails
+            detailsName: chart*c*substanceDetails
 
       - fields:
           - label: Chronic Pain
-            name: chronicPain
+            name: chart*c*chronicPain
             type: yesno_with_details
             flex: 1
-            detailsName: chronicPainDetails
+            detailsName: chart*c*chronicPainDetails
 
       - fields:
           - label: Any other medical conditions?
-            name: otherConditions
+            name: chart*c*otherConditions
             type: yesno_with_details
             flex: 1
-            detailsName: otherConditionsDetails
+            detailsName: chart*c*otherConditionsDetails
 
   - title:  List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
     rows:
