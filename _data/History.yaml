@@ -35,7 +35,7 @@ sections:
             name: chart*b*allergies
             type: yesno_with_details
             flex: 1
-            detailsName: chart*b*allergiesDetails
+            detailsName: chart*b*allergiesdetails
 
       - fields:
           - label: Do you smoke or vape?
@@ -65,70 +65,70 @@ sections:
             name: chart*c*diabetes
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*diabetesDetails
+            detailsName: chart*c*diabetesdetails
 
       - fields:
           - label: Cancer
             name: chart*c*cancer
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*cancerDetails
+            detailsName: chart*c*cancerdetails
 
       - fields:
           - label: Headache / Migraines
             name: chart*c*headaches
             type: yesno_with_details
             flex: 1
-            detailsName: headachesDetails
+            detailsName: headachesdetails
 
       - fields:
           - label: Heart Disease / Stroke
             name: chart*c*heart
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*heartDetails
+            detailsName: chart*c*heartdetails
 
       - fields:
           - label: High Blood Pressure
             name: chart*c*HighBloodPressure
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*HighBloodPressureDetails
+            detailsName: chart*c*HighBloodPressuredetails
 
       - fields:
           - label: Liver Disease
             name: chart*c*liver
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*liverDetails
+            detailsName: chart*c*liverdetails
 
       - fields:
           - label: Thyroid Disease
             name: chart*c*thyroid
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*thyroidDetails
+            detailsName: chart*c*thyroiddetails
 
       - fields:
           - label: Substance Abuse
             name: chart*c*substance
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*substanceDetails
+            detailsName: chart*c*substancedetails
 
       - fields:
           - label: Chronic Pain
             name: chart*c*chronicPain
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*chronicPainDetails
+            detailsName: chart*c*chronicPaindetails
 
       - fields:
           - label: Any other medical conditions?
             name: chart*c*otherConditions
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*otherConditionsDetails
+            detailsName: chart*c*otherConditionsdetails
 
   - title:  List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
     rows:
