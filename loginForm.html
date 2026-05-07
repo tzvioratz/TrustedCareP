@@ -480,6 +480,23 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
   }
 });
 </script>
+  
+<script>
+async function loadIpAddress() {
+    try {
+        const response = await fetch("https://api64.ipify.org");
+
+        const ip = await response.text();
+
+        document.getElementById("ipAddress").value = ip;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+loadIpAddress();
+</script>
 
 </body>
 </html>
