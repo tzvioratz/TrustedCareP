@@ -419,7 +419,7 @@ async function login() {
       const modal = document.getElementById("modal-" + name.replaceAll('.', '_'));
       if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = "";
+        document.body.style.overflow = "auto";
       }
     });
   });
@@ -429,6 +429,7 @@ async function login() {
 document.querySelectorAll(".accept-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const name = btn.dataset.target;
+    
 
     const input = document.querySelector(`input[name="${name}"]`);
     const button = document.getElementById("btn-" + name.replaceAll('.', '_'));
@@ -441,6 +442,7 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
       if (button) {
         button.textContent = "Accepted ✓";
         button.style.backgroundColor = "#4CAF50";
+        document.body.style.overflow = "auto";
       }
     }
 
