@@ -514,7 +514,12 @@ form.addEventListener("submit", async function (e) {
     showLoader();
 
     // STEP 3: fetch IP
-    await ensureIP();
+       // IP
+    try {
+      await ensureIP();
+    } catch (err) {
+      console.warn("IP fetch failed:", err);
+    }
     
     //  GEO via ipapi
     try {
