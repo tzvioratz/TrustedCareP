@@ -31,9 +31,14 @@ sections:
             type: select
             options: [Male, Female]
             required: true
+            
+          - label: Marital Status
+            name: married
+            type: select
+            options: [Married, Single, Divorced , Widowed]
+            required: true            
 
-          - type: empty
-          
+
       - fields:
           - label: Mailing Address
             name: mailing_address
