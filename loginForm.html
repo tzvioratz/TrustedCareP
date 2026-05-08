@@ -464,6 +464,7 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
     
     function showLoader() {
       loader.style.display = "flex";
+      await new Promise(resolve => setTimeout(resolve, 50));
     }
 
     function hideLoader() {
