@@ -122,6 +122,21 @@ sections:
             type: yesno_with_details
             flex: 1
             detailsName: chart*c*chronicPaindetails
+            
+      - fields:
+          - label: Lyme disease
+            name: chart*c*Lymedisease
+            type: yesno_with_details
+            flex: 1
+            detailsName: chart*c*Lymediseasedetails
+            
+      - fields:
+          - label: A lot of strep
+            name: chart*c*strep
+            type: yesno_with_details
+            flex: 1
+            detailsName: chart*c*strepdetails
+            
 
       - fields:
           - label: Any other medical conditions?
