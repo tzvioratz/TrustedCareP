@@ -79,7 +79,7 @@ sections:
             name: chart*c*headaches
             type: yesno_with_details
             flex: 1
-            detailsName: headachesdetails
+            detailsName: chart*c*headachesdetails
 
       - fields:
           - label: Heart Disease / Stroke

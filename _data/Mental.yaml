@@ -32,7 +32,7 @@ sections:
             name: chart*d*sadness
             type: yesnopast_with_details
             flex: 1
-            detailsName: chart*d*saddnessdetails
+            detailsName: chart*d*sadnessdetails
 
       - fields:
           - label: Panic / Anxiety attacks
@@ -46,7 +46,7 @@ sections:
             name: chart*d*concentration
             type: yesnopast_with_details
             flex: 1
-            detailsName: chart*d*concentratindetails
+            detailsName: chart*d*concentrationdetails
 
 
       - fields:

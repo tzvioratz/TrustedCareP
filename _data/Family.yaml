@@ -33,10 +33,10 @@ sections:
 
       - fields:
           - label: Eating Disorder
-            name: chart*a*Eating
+            name: chart*a*EatingDisorder
             type: yesno_with_details
             flex: 1
-            detailsName: chart*a*Eatingdetails
+            detailsName: chart*a*EatingDisorderdetails
 
       - fields:
           - label: Schizophrenia
@@ -54,10 +54,10 @@ sections:
 
       - fields:
           - label: Alcohol / Substance Abuse
-            name: chart*a*Substance
+            name: chart*a*SubstanceAbuse
             type: yesno_with_details
             flex: 1
-            detailsName: chart*a*Substancedetails
+            detailsName: chart*a*SubstanceAbusedetails
 
       - fields:
           - label: Suicide
