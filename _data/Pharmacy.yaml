@@ -13,3 +13,8 @@ sections:
             name: pharmacyNumber
             type: tel
             flex: 1
+            
+          - label: Pharmacy Zip Code
+            name: pharmacyZip
+            type: tel
+            flex: 1
