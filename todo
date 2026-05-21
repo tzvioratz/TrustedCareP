@@ -1,12 +1,6 @@
 times - 24hr 
 
 
-Have you received mental health service(s) in the past? -> have you ever been seen by a phycagist cycatist or any therapist for any reision? -> rec
-
-
-
-
-Pharmacy Information -> rec
 
 
 Permission for information -> add box for name -> add to intake doc
@@ -15,11 +9,8 @@ add animation for intake
 
 intake - fix caps
 
-notes doc -> add pharm zip
 
-merge Have you been diagnosed with a psychiatric condition? {{intakea}}
-Received mental health services? Past 
-- have you ever recived mental heath serv
+
 
 cap first let of conditions
 

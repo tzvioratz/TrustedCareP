@@ -4,7 +4,7 @@ sections:
   - title: null
     rows:
       - fields:
-          - label: Have you received mental health service(s) in the past?
+          - label: Have you ever been seen by a Psychologist, Psychiatrist, or any therapist for any reason?
             name: mentalHealthServices
             type: yesnopast_with_details
             flex: 1
