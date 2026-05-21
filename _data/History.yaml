@@ -125,17 +125,17 @@ sections:
             
       - fields:
           - label: Lyme disease
-            name: chart*c*Lymedisease
+            name: chart*c*LymeDisease
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*Lymediseasedetails
+            detailsName: chart*c*LymeDiseasedetails
             
       - fields:
-          - label: A lot of strep
-            name: chart*c*strep
+          - label: Recurrin Strep
+            name: chart*c*Strep
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*strepdetails
+            detailsName: chart*c*Strepdetails
             
 
       - fields:
@@ -153,3 +153,4 @@ sections:
             type: textarea
             flex: 1
             placeholder: null
+            required: true

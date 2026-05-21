@@ -9,6 +9,7 @@ sections:
             type: textarea
             flex: 1
             placeholder: null
+            required: true
 
       - fields: []
 
@@ -17,12 +18,14 @@ sections:
             name: DoneToHelp
             type: textarea
             flex: 1
+            required: true
 
       - fields:
           - label: How long have you had this problem?
             name: ProbLength
             type: text
             flex: 1
+            required: true
 
           - label: How severe is this problem?
             name: Severity
@@ -34,6 +37,7 @@ sections:
               - Moderate
               - Severe
               - Very severe
+            required: true
 
           - label: Is this problem affecting your family life, work or sleep?
             name: affect
@@ -42,6 +46,7 @@ sections:
             options:
               - "Yes"
               - "No"
+            required: true
 
       - fields:
           - label: If yes, please explain
