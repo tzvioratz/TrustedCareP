@@ -243,7 +243,7 @@ sections:
             required: true
 
       - fields:
-          - label: Chronic Pain
+          - label: Person 2
             name: chart*f*Person2
             type: yesno_with_details
             flex: 1
@@ -251,7 +251,7 @@ sections:
             required: true
             
       - fields:
-          - label: Lyme disease
+          - label: Person 3
             name: chart*f*Person3
             type: yesno_with_details
             flex: 1
