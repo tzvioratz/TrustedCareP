@@ -229,8 +229,35 @@ sections:
            
            THIS AGREEMENT/CONSENT WILL REMAIN IN EFFECT UNLESS REVOKED BY ME IN WRITING.
           required: true
+          
+          
+      - fields:
+          - label: Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
+          
+      - fields:
+          - label: Person 1
+            name: chart*f*Person1
+            type: yesno_with_details
+            flex: 1
+            detailsName: chart*f*Person1details
+            required: true
 
-
+      - fields:
+          - label: Chronic Pain
+            name: chart*f*Person2
+            type: yesno_with_details
+            flex: 1
+            detailsName: chart*f*Person2details
+            required: true
+            
+      - fields:
+          - label: Lyme disease
+            name: chart*f*Person3
+            type: yesno_with_details
+            flex: 1
+            detailsName: chart*f*Person3details
+            required: true
+            
       - fields:
         - label: Permission for information
           type: modal_accept
@@ -239,6 +266,6 @@ sections:
           modalText: |
            Permission for information
            
-           I give permission to Aryeh Schonfeld PMHNP to speak with the following individuals regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
+           I give permission to Aryeh Schonfeld PMHNP to speak with the individuals listed above regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. 
           required: true
 
