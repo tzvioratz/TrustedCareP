@@ -5,11 +5,11 @@ sections:
     rows:
       - fields:
           - label: Do you have any concerns about sleep?
-            name: chart*b*sleep
+            name: chart*b*Sleep
             type: yesno_with_details
             layout: inline
             flex: 1
-            detailsName: chart*b*sleepdetails
+            detailsName: chart*b*Sleepdetails
 
 
       - fields:

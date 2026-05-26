@@ -118,7 +118,8 @@
 <div class="tabs">
   <button onclick="showForm('bookingForm')">Book an Appointment</button>
   <button onclick="showForm('cancelForm')">Cancel an Appointment</button>
-  <button onclick="showForm('billingForm')">Record Payment</button>
+  <button onclick="showForm('billingForm')">Record Payment <br> Follow Up</button>
+  <button onclick="window.open('https://example.com', '_blank');">Open Billing <br> Dashboard</button>
 </div>
 <form  id="bookingForm" class="tab-form" method="POST">
   <h2>Book an Appointment</h2>
@@ -222,11 +223,84 @@
     <option value="Credit Card">Credit Card</option>
     <option value="Zelle">Zelle</option>
     <option value="Check">Check</option>
-    <option value="Check">Waive Fee</option>
-    <option value="Check">Courtesy Credit</option>
+    <option value="Waive Fee">Waive Fee</option>
+    <option value="Courtesy Credit">Courtesy Credit</option>
   </select>
+  
+<hr style="margin:20px 0;">
 
-  <button type="submit">Submit Payment</button>
+<button
+  type="button"
+  id="addFollowUpBtn"
+  style="
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  "
+>
+  + Add Follow Up
+</button>
+
+<div
+  id="followUpSection"
+  style="
+    display:none;
+  "
+>
+
+  <h2 style="margin-top:0;">Follow Up</h2>
+
+  <div style="display:flex; gap:10px; align-items:end; flex-wrap:wrap;">
+
+    <div>
+      <label for="followUpAmount">In</label>
+      <input
+        type="number"
+        id="followUpAmount"
+        name="followUpAmount"
+        value="1"
+        min="0"
+        disabled
+        style="width:80px;"
+      >
+    </div>
+
+    <div>
+      <label for="followUpUnit">Unit</label>
+      <select
+        id="followUpUnit"
+        name="followUpUnit"
+        disabled
+      >
+        <option value="days">Day(s)</option>
+        <option value="weeks" selected>Week(s)</option>
+        <option value="months">Month(s)</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="followUpTimes">Repeat</label>
+      <input
+        type="number"
+        id="followUpTimes"
+        name="followUpTimes"
+        value="1"
+        min="0"
+        disabled
+        style="width:80px;"
+      >
+    </div>
+
+    <div style="padding-bottom:8px;">
+      time(s)
+    </div>
+
+  </div>
+
+</div>
+
+  <button type="submit">Submit</button>
 </form>
   </div>
   
@@ -234,6 +308,24 @@
 <div id="loading-overlay" style="display: none;">
   <div class="spinner"></div>
 </div>
+  
+<script>
+document
+  .getElementById("addFollowUpBtn")
+  .addEventListener("click", function () {
+
+    // show section
+    document.getElementById("followUpSection").style.display = "block";
+
+    // enable fields so they submit
+    document.getElementById("followUpAmount").disabled = false;
+    document.getElementById("followUpUnit").disabled = false;
+    document.getElementById("followUpTimes").disabled = false;
+
+    // hide button
+    this.style.display = "none";
+});
+</script>
   
   <script>
   window.addEventListener('DOMContentLoaded', () => {
@@ -260,7 +352,7 @@
   </script>
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx050Lb8LaAmZSWo5yfV5oGjEq_IXR2fnjCymUpU9qYGCBmjCXQgnVAoxSICZkHDiWD/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxRMc0NzxMj3zdUiLNBYQBLKxI80AbBgXVl41NbXZcxwqkNKSnBso49e2prpnqlYJkw/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
