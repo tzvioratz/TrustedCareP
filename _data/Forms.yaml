@@ -229,59 +229,56 @@ sections:
            
            THIS AGREEMENT/CONSENT WILL REMAIN IN EFFECT UNLESS REVOKED BY ME IN WRITING.
           required: true
-          
-          
-      - fields:
-          - title: Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
-          
-      - fields:
-          - label: Name
-            name: Person1Name
-            type: text
-            flex: 1
-            required: true
+    - title: Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
+      rows:
+         - fields:
+            - label: Name
+              name: Person1Name
+              type: text
+              flex: 1
+              required: true
             
-          - label: Number
-            name: Person1Number
-            type: text
-            flex: 1
-            required: true
+            - label: Number
+              name: Person1Number
+              type: text
+              flex: 1
+              required: true
 
-      - fields:
-          - label: Name
-            name: Person2Name
-            type: text
-            flex: 1
-            required: true
+         - fields:
+            - label: Name
+              name: Person2Name
+              type: text
+              flex: 1
+              required: true
             
-          - label: Number
-            name: Person2Number
-            type: text
-            flex: 1
-            required: true
+            - label: Number
+              name: Person2Number
+              type: text
+              flex: 1
+              required: true
 
-      - fields:
-          - label: Name
-            name: Person3Name
-            type: text
-            flex: 1
-            required: true
+         - fields:
+            - label: Name
+              name: Person3Name
+              type: text
+              flex: 1
+              required: true
             
-          - label: Number
-            name: Person4Number
-            type: text
-            flex: 1
-            required: true
+            - label: Number
+              name: Person3Number
+              type: text
+              flex: 1
+              required: true
 
             
-      - fields:
-        - label: Permission for information
-          type: modal_accept
-          name: information_form
-          buttonText: View & Accept
-          modalText: |
-           Permission for information
-           
-           I give permission to Aryeh Schonfeld PMHNP to speak with the individuals listed above regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. 
-          required: true
+         - fields:
+           - label: Permission for information
+             type: modal_accept
+             name: information_form
+             buttonText: View & Accept
+             modalText: |
+               Permission for information
+               
+               I give permission to Aryeh Schonfeld PMHNP to speak with the individuals listed above regarding my care/ the care of my child. I authorize Aryeh Schonfeld PMHNP to disclose any information that was shared with him to the individuals listed. This includes the release of any documents or notes pertaining to my care/ the care of my child. 
+             required: true
 
