@@ -232,31 +232,47 @@ sections:
           
           
       - fields:
-          - label: Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
+          - title: Please list any individuals you may wish Aryeh Schonfeld PMHNP to speak with including Psychologists, Social Workers, Physicians, Teachers, Rebbiem, Principals, Spouse, exc... 
           
       - fields:
-          - label: Person 1
-            name: chart*f*Person1
-            type: yesno_with_details
+          - label: Name
+            name: Person1Name
+            type: text
             flex: 1
-            detailsName: chart*f*Person1details
+            required: true
+            
+          - label: Number
+            name: Person1Number
+            type: text
+            flex: 1
             required: true
 
       - fields:
-          - label: Person 2
-            name: chart*f*Person2
-            type: yesno_with_details
+          - label: Name
+            name: Person2Name
+            type: text
             flex: 1
-            detailsName: chart*f*Person2details
             required: true
             
-      - fields:
-          - label: Person 3
-            name: chart*f*Person3
-            type: yesno_with_details
+          - label: Number
+            name: Person2Number
+            type: text
             flex: 1
-            detailsName: chart*f*Person3details
             required: true
+
+      - fields:
+          - label: Name
+            name: Person3Name
+            type: text
+            flex: 1
+            required: true
+            
+          - label: Number
+            name: Person4Number
+            type: text
+            flex: 1
+            required: true
+
             
       - fields:
         - label: Permission for information
