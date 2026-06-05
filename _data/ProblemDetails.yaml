@@ -21,7 +21,7 @@ sections:
             required: true
 
       - fields:
-          - label: How long have you had this problem?
+          - label: How long has this been going on?
             name: ProbLength
             type: text
             flex: 1
