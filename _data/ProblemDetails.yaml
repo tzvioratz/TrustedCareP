@@ -14,7 +14,7 @@ sections:
       - fields: []
 
       - fields:
-          - label: Please list anything that you have done to help with this. (Please including previous psycholgests, psychiatrists, and therapists.)
+          - label: Please list anything that you have done to help with this. (Please including previous Psychologists, Psychiatrists, and Therapists.)
             name: DoneToHelp
             type: textarea
             flex: 1

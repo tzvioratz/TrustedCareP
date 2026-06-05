@@ -18,22 +18,21 @@ sections:
           - label: Address
             name: ec_address
             type: text
-            required: true
+
 
           - label: City
             name: ec_city
             type: text
-            required: true
+
             
           - label: State
             name: ec_state
             type: text
-            required: true
+
 
           - label: Zip Code
             name: ec_zip
             type: text
-            required: true
             
       - fields:
           - label: Phone Number
@@ -44,7 +43,6 @@ sections:
           - label: Alt. Phone Number
             name: ec_alt_phone
             type: text
-            required: true
             
             
             

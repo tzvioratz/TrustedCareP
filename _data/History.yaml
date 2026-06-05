@@ -131,7 +131,7 @@ sections:
             detailsName: chart*c*LymeDiseasedetails
             
       - fields:
-          - label: Recurrin Strep
+          - label: Recurring Strep
             name: chart*c*Strep
             type: yesno_with_details
             flex: 1
