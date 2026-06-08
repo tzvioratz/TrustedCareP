@@ -233,39 +233,39 @@ sections:
       rows:
          - fields:
             - label: Name
-              name: chart*f*Person1
+              name: p1Name
               type: text
               flex: 1
               required: true
             
             - label: Number
-              name: chart*f*Person1details
+              name: p1Phone
               type: text
               flex: 1
               required: true
 
          - fields:
             - label: Name
-              name: chart*f*Person2
+              name: p2Name
               type: text
               flex: 1
               required: true
             
             - label: Number
-              name: chart*f*Person2details
+              name: p2Phone
               type: text
               flex: 1
               required: true
 
          - fields:
             - label: Name
-              name: chart*f*Person3
+              name: p3Name
               type: text
               flex: 1
               required: true
             
             - label: Number
-              name: chart*f*Person3details
+              name: p3Phone
               type: text
               flex: 1
               required: true
