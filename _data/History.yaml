@@ -145,7 +145,7 @@ sections:
             flex: 1
             detailsName: chart*c*otherConditionsdetails
 
-  - title:  List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)
+  - title:  List all medications you are taking and dosage. (Please include OTC, herbs, and vitamins.)*
     rows:
       - fields:
           - label:

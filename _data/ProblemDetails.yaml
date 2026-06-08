@@ -33,10 +33,10 @@ sections:
             flex: 1
             options:
               - Minor
-              - Mildly
+              - Mild
               - Moderate
               - Severe
-              - Very severe
+              - Very Severe
             required: true
 
           - label: Is this problem affecting your family life, work or sleep?
