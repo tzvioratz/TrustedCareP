@@ -504,7 +504,7 @@ async function ensureIP() {
     // 3. Main submit pipeline
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
-
+showLoader();
   try {
     // STEP 1: validate
     if (!validateForm()) {
@@ -544,6 +544,7 @@ form.addEventListener("submit", async function (e) {
     hideLoader();
     alert("Something went wrong. Please try again.");
   }
+  hideLoader();
 });
     
   </script>
