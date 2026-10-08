@@ -236,39 +236,33 @@ sections:
               name: p1Name
               type: text
               flex: 1
-              required: true
             
             - label: Number
               name: p1Phone
               type: text
               flex: 1
-              required: true
 
          - fields:
             - label: Name
               name: p2Name
               type: text
               flex: 1
-              required: true
             
             - label: Number
               name: p2Phone
               type: text
               flex: 1
-              required: true
 
          - fields:
             - label: Name
               name: p3Name
               type: text
               flex: 1
-              required: true
             
             - label: Number
               name: p3Phone
               type: text
               flex: 1
-              required: true
 
             
          - fields:
