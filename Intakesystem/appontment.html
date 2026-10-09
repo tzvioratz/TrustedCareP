@@ -494,6 +494,145 @@ function formatDateTime(date, time) {
 }
 </script>
 
+<script>
+  //support for url paramitors
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // Support both firstName and first_name URL parameters.
+  function getParam(camelCase, snakeCase) {
+    return params.get(camelCase) ?? params.get(snakeCase);
+  }
+
+  const firstName = getParam("firstName", "first_name");
+  const lastName  = getParam("lastName", "last_name");
+  const phone     = params.get("phone");
+  const email     = params.get("email");
+
+  // Choose which form to display.
+  const formChoice = (params.get("form") || "booking").toLowerCase();
+
+  const formIds = {
+    booking: "bookingForm",
+    cancel: "cancelForm",
+    cancellation: "cancelForm",
+    billing: "billingForm",
+    payment: "billingForm"
+  };
+
+  const selectedFormId = formIds[formChoice];
+
+  if (!selectedFormId) {
+    console.warn("Unknown form type:", formChoice);
+    return;
+  }
+
+  // Display the selected form using your existing function.
+  showForm(selectedFormId);
+
+  // Fill fields by their name attribute.
+  function fillField(formId, fieldName, value) {
+    if (value === null || value === "") return;
+
+    const form = document.getElementById(formId);
+    const field = form.querySelector(
+      `[name="${fieldName}"]`
+    );
+
+    if (field) {
+      field.value = value;
+      field.dispatchEvent(
+        new Event("input", { bubbles: true })
+      );
+      field.dispatchEvent(
+        new Event("change", { bubbles: true })
+      );
+    }
+  }
+
+  // Fill the selected form.
+  fillField(selectedFormId, "firstName", firstName);
+  fillField(selectedFormId, "lastName", lastName);
+  fillField(selectedFormId, "phone", phone);
+
+  if (selectedFormId === "bookingForm") {
+    fillField("bookingForm", "email", email);
+    fillField(
+      "bookingForm",
+      "lengthMinutes",
+      params.get("lengthMinutes")
+    );
+    fillField(
+      "bookingForm",
+      "appointmentDate",
+      params.get("appointmentDate")
+    );
+    fillField(
+      "bookingForm",
+      "teleHealth",
+      params.get("teleHealth")
+    );
+    fillField(
+      "bookingForm",
+      "extraNotes",
+      params.get("extraNotes")
+    );
+
+    // Load available times if the date and appointment type
+    // were included in the URL.
+    if (
+      params.has("appointmentDate") &&
+      params.has("lengthMinutes")
+    ) {
+      const requestedTime = params.get("appointmentTime");
+
+      loadTimes();
+
+      // Select the requested time after available times load.
+      if (requestedTime) {
+        const timeSelect =
+          document.getElementById("appointmentTime");
+
+        const observer = new MutationObserver(() => {
+          const matchingOption = Array.from(
+            timeSelect.options
+          ).find(option => option.value === requestedTime);
+
+          if (matchingOption) {
+            timeSelect.value = requestedTime;
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(timeSelect, { childList: true });
+      }
+    }
+  }
+
+  if (selectedFormId === "cancelForm") {
+    // Your existing appointment loader uses these fields.
+    // Call it after filling them instead of waiting for blur.
+    if (firstName && lastName && phone) {
+      loadAppointments();
+    }
+  }
+
+  if (selectedFormId === "billingForm") {
+    fillField(
+      "billingForm",
+      "amountPaid",
+      params.get("amountPaid")
+    );
+    fillField(
+      "billingForm",
+      "paymentMethod",
+      params.get("paymentMethod")
+    );
+  }
+})();
+</script>
+
+
 </body>
   
   
