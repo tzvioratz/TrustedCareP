@@ -634,13 +634,14 @@ function formatDateTime(date, time) {
   //if used ID, get first,last,phone
   
   async function loadClientFromURL() {
-    const loader = document.getElementById('loading-overlay');
-    loader.style.display = 'flex';
+    
   const params = new URLSearchParams(window.location.search);
   const clientId = params.get("clientId");
 
   if (!clientId) return;
-
+   //If client ID show loader 
+  const loader = document.getElementById('loading-overlay');
+  loader.style.display = 'flex';
   const formChoice = (params.get("form") || "booking").toLowerCase();
 
   const formIds = {
