@@ -353,7 +353,7 @@ document
   </script>
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwRMM2tGSl29LnGPXKfIMUAq3HjH1Fu50wr91YaSl0_8iR5cYtukTL0JJPqUAYJv1bL/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEuZlhOiLhnSCoQ1sLyyGdHSn6oAPPTZ_IaEmi3o392XfCrJ6FxMUwkTe1AREzLkwW/exec";
 
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
@@ -630,6 +630,80 @@ function formatDateTime(date, time) {
     );
   }
 })();
+  
+  //if used ID, get first,last,phone
+  
+  async function loadClientFromURL() {
+    const loader = document.getElementById('loading-overlay');
+    loader.style.display = 'flex';
+  const params = new URLSearchParams(window.location.search);
+  const clientId = params.get("clientId");
+
+  if (!clientId) return;
+
+  const formChoice = (params.get("form") || "booking").toLowerCase();
+
+  const formIds = {
+    booking: "bookingForm",
+    cancel: "cancelForm",
+    billing: "billingForm"
+  };
+
+  const formId = formIds[formChoice];
+
+  if (!formId) {
+    alert("Invalid form type.");
+    return;
+  }
+
+  showForm(formId);
+
+  try {
+    const url = new URL(SCRIPT_URL);
+    url.searchParams.set("action", "getClient");
+    url.searchParams.set("clientId", clientId);
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Lookup failed");
+
+    const client = await response.json();
+
+    if (!client) {
+      alert("Client not found.");
+      return;
+    }
+
+    const form = document.getElementById(formId);
+
+    // Update these mappings to match your actual columns A-C.
+    const fieldMap = {
+      colA: "firstName",
+      colB: "lastName",
+      colC: "phone"
+    };
+
+    for (const [column, fieldName] of Object.entries(fieldMap)) {
+      const field = form.querySelector(`[name="${fieldName}"]`);
+
+      if (field && client[column] != null) {
+        field.value = client[column];
+        field.dispatchEvent(new Event("input", { bubbles: true }));
+        field.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    }
+
+    if (formId === "cancelForm") {
+      loadAppointments();
+    }
+
+  } catch (error) {
+    console.error("Client lookup failed:", error);
+    alert("Unable to load client information. Please try again.");
+  }
+    loader.style.display = 'none';
+}
+
+window.addEventListener("DOMContentLoaded", loadClientFromURL);
 </script>
 
 
