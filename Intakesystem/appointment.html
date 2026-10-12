@@ -303,6 +303,18 @@
 
   <button type="submit">Submit</button>
 </form>
+    
+    <form id="perscribeForm" class="tab-form" method="POST" style="display:none;">
+
+  <h2>Perscription Information</h2>
+      <label for="extraNotes">Notes</label>
+  <textarea name="extraNotes" placeholder="notes"></textarea>
+      
+      
+      <input type="hidden" id="clientID" name="clientID">
+  <input type="hidden" name="action" value="perscribe">
+  <button type="submit">Send to Secretary</button>
+</form>
   </div>
   
 <!-- Add this anywhere in your <body> -->
@@ -358,7 +370,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwoHwcJ_lF1Df88m6gUz
   document.getElementById("bookingForm").action = SCRIPT_URL;
   document.getElementById("billingForm").action = SCRIPT_URL;
   document.getElementById("cancelForm").action = SCRIPT_URL;
-  
+  document.getElementById("perscribeForm").action = SCRIPT_URL;
   
 document.getElementById("appointmentDate").addEventListener("change", loadTimes);
 document.querySelector("select[name='lengthMinutes']").addEventListener("change", loadTimes);
@@ -508,7 +520,7 @@ function formatDateTime(date, time) {
   const lastName  = getParam("lastName", "last_name");
   const phone     = params.get("phone");
   const email     = params.get("email");
-
+  
   // Choose which form to display.
   const formChoice = (params.get("form") || "booking").toLowerCase();
 
@@ -516,6 +528,7 @@ function formatDateTime(date, time) {
     booking: "bookingForm",
     cancel: "cancelForm",
     billing: "billingForm",
+    persc: "perscribeForm",
   };
 
   const selectedFormId = formIds[formChoice];
@@ -627,6 +640,15 @@ function formatDateTime(date, time) {
       params.get("paymentMethod")
     );
   }
+    if (selectedFormId === "perscribeForm"){
+    fillField(
+      "perscribeForm",
+      "clientID",
+      params.get("client")
+    );
+  }
+  
+
 })();
   
   //if used ID, get first,last,phone
