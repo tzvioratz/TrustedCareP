@@ -329,8 +329,7 @@ button.loading {
 });
   
 async function login() {
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
+
     const password = document.getElementById("password").value;
 
     const error = document.getElementById("error");
@@ -341,8 +340,7 @@ async function login() {
     const url =
         `https://script.google.com/macros/s/AKfycbxPPfZvQ7iJNeiZ4idYORWohH-mZAUPZrSWU1S1fSX9MpxfsxT7SNN2lJwaHjsm0PoWIg/exec`+
         `?action=login` +
-        `&firstName=${encodeURIComponent(firstName)}` +
-        `&lastName=${encodeURIComponent(lastName)}` +
+        `&clientID=${encodeURIComponent(clientID)}` +
         `&password=${encodeURIComponent(password)}`;
 
     try {
