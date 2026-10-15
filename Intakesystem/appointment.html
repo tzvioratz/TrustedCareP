@@ -216,11 +216,14 @@
   <label for="billPhone">Phone</label>
   <input type="tel" name="phone" id="billPhone" placeholder="123-456-7890" required>
 
-  <label for="amountPaid">Amount Paid ($)</label>
-  <input type="number" name="amountPaid" id="amountPaid" step="0.01" placeholder="0.00" >
-
+  <div style="display:flex; gap:10px; align-items:end; flex-wrap:wrap;">
+  <div>
+    <label for="amountPaid">Amount Paid ($)</label>
+  <input type="number" name="amountPaid" id="amountPaid" step="0.01" placeholder="0.00"  >
+  </div>
+    <div>
   <label for="paymentMethod">Payment Method</label>
-  <select name="paymentMethod" id="paymentMethod" required>
+  <select name="paymentMethod" id="paymentMethod" >
     <option value=""></option>
     <option value="Cash">Cash</option>
     <option value="Credit Card">Credit Card</option>
@@ -229,28 +232,10 @@
     <option value="Waive Fee">Waive Fee</option>
     <option value="Courtesy Credit">Courtesy Credit</option>
   </select>
+      </div>
+  </div>
   
 <hr style="margin:20px 0;">
-
-<button
-  type="button"
-  id="addFollowUpBtn"
-  style="
-    padding:10px 16px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-  "
->
-  + Add Follow Up
-</button>
-
-<div
-  id="followUpSection"
-  style="
-    display:none;
-  "
->
 
   <h2 style="margin-top:0;">Follow Up</h2>
 
@@ -262,9 +247,9 @@
         type="number"
         id="followUpAmount"
         name="followUpAmount"
-        value="1"
+        value=""
         min="0"
-        disabled
+        
         style="width:80px;"
       >
     </div>
@@ -274,34 +259,20 @@
       <select
         id="followUpUnit"
         name="followUpUnit"
-        disabled
-      >
+        
+      > 
+        <option value="" selected></option>
         <option value="days">Day(s)</option>
-        <option value="weeks" selected>Week(s)</option>
+        <option value="weeks" >Week(s)</option>
         <option value="months">Month(s)</option>
       </select>
     </div>
 
-    <div>
-      <label for="followUpTimes">Repeat</label>
-      <input
-        type="number"
-        id="followUpTimes"
-        name="followUpTimes"
-        value="1"
-        min="0"
-        disabled
-        style="width:80px;"
-      >
-    </div>
-
-    <div style="padding-bottom:8px;">
-      time(s)
-    </div>
+    
 
   </div>
 
-</div>
+
 
   <button type="submit">Submit</button>
 </form>
@@ -318,7 +289,7 @@
   <button type="submit">Send to Secretary</button>
 </form>
     
-        <form id="accsessForm" class="tab-form" method="POST" style="display:none;">
+<form id="accsessForm" class="tab-form" method="POST" style="display:none;">
 
   <h2>Access Request</h2>
       <input type="hidden" name="action" value="access">
@@ -342,7 +313,7 @@
       
           <label for="accessReasonOther">If other, Why?</label>
   <input name="accessReasonOther" id="accessReasonOther"  >
-  <button type="submit">Requeest Access</button>
+  <button type="submit">Request Access</button>
 </form>
   </div>
   
