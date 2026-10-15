@@ -238,20 +238,9 @@ button.loading {
 <div id="loginBox" class="container">
     <h2>Login</h2>
 
-    <div class="section">
-        <div class="row">
-            <div class="field-wrapper">
-                <label>First Name</label>
-                <input id="firstName" type="text">
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="field-wrapper">
-                <label>Last Name</label>
-                <input id="lastName" type="text">
-            </div>
-        </div>
+<input type="hidden" id="clientID" name="clientID">
+
 
         <div class="row">
             <div class="field-wrapper">
@@ -312,7 +301,12 @@ button.loading {
   <div class="spinner"></div>
 </div>
 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const clientID = params.get("id");
 
+  document.getElementById("clientID").value = clientID || "";
+</script>
 <script>
   //This is the login
   
