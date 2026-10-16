@@ -260,7 +260,7 @@ button.loading {
      ========================= -->
 <div id="formContainer" class="container">
 <form id="mainForm" method="POST" action="" onsubmit="submitted=true;">
-  <input type="hidden" name="ID" id="ID" />
+  <input type="hidden" name="clientID" id="ID" />
   <input type="hidden" name="action" id="action" value="submit" />
 
   <input type="hidden" name="password" id="hiddenPassword" />
@@ -302,10 +302,14 @@ button.loading {
 </div>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const clientID = params.get("id");
+const params = new URLSearchParams(window.location.search);
+const clientID = params.get("id") || "";
 
-  document.getElementById("clientID").value = clientID || "";
+// Fill the client ID field on the login screen
+document.getElementById("clientID").value = clientID;
+
+// Fill the client ID field in the main form
+document.getElementById("ID").value = clientID;
 </script>
 <script>
   //This is the login
@@ -357,6 +361,10 @@ async function login() {
 
       
         document.getElementById("mainForm").action = text.trim();
+      
+      document.getElementById("clientID").value = clientID;
+document.getElementById("ID").value = clientID;
+      
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("formContainer").style.display = "block";
 
