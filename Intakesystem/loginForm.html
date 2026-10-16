@@ -359,6 +359,11 @@ async function login() {
 
       
         document.getElementById("mainForm").action = text.trim();
+      const mainForm = document.getElementById("mainForm");
+
+console.log("Login response:", JSON.stringify(text));
+console.log("Form action attribute:", mainForm.getAttribute("action"));
+console.log("Resolved form action:", mainForm.action);
       
       document.getElementById("clientID").value = clientID;
       document.getElementById("ID").value = clientID;
