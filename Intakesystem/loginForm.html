@@ -252,14 +252,12 @@ button.loading {
         <button id="loginBtn" onclick="login()">Login</button>
         <div id="error"></div>
     </div>
-</div>
-<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <!-- =========================
      REAL FORM (HIDDEN INITIALLY)
      ========================= -->
 <div id="formContainer" class="container">
-<form id="mainForm" method="POST" action="" onsubmit="submitted=true;">
+<form id="mainForm" method="POST" action="" >
   <input type="hidden" name="clientID" id="ID" />
   <input type="hidden" name="action" id="action" value="submit" />
 
@@ -363,7 +361,7 @@ async function login() {
         document.getElementById("mainForm").action = text.trim();
       
       document.getElementById("clientID").value = clientID;
-document.getElementById("ID").value = clientID;
+      document.getElementById("ID").value = clientID;
       
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("formContainer").style.display = "block";
