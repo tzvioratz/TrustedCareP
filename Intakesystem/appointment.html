@@ -108,7 +108,23 @@
   100% { transform: rotate(360deg); }
 }
 
+.chk-record-btn {
+  background-color: #4da6ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: inherit;
+}
 
+.chk-record-btn.active {
+  background-color: #28a745;
+}
+
+.chk-record-btn:hover {
+  opacity: 0.9;
+}
 
 </style>
 </head>
@@ -118,7 +134,7 @@
 <div class="tabs">
   <button onclick="showForm('bookingForm')">Book an Appointment</button>
   <button onclick="showForm('cancelForm')">Cancel an Appointment</button>
-  <button onclick="showForm('billingForm')">Record Payment <br> Follow Up</button>
+  <button onclick="showForm('billingForm')">Record Payment </button>
   <button onclick="showForm('accsessForm')">Patients Records</button>
   
   <button onclick="window.open('https://docs.google.com/spreadsheets/d/1SmYfM0ZKdau_irxJ7lJfsMk21UMJ8TioTruhSXSBJR8/', '_blank');">Open Billing <br> Dashboard</button>
@@ -215,7 +231,10 @@
 
   <label for="billPhone">Phone</label>
   <input type="tel" name="phone" id="billPhone" placeholder="123-456-7890" required>
+  
 
+
+  
   <div style="display:flex; gap:10px; align-items:end; flex-wrap:wrap;">
   <div>
     <label for="amountPaid">Amount Paid ($)</label>
@@ -235,66 +254,107 @@
       </div>
   </div>
   
-<hr style="margin:20px 0;">
 
-  <h2 style="margin-top:0;">Follow Up</h2>
-
-  <div style="display:flex; gap:10px; align-items:end; flex-wrap:wrap;">
-
-    <div>
-      <label for="followUpAmount">In</label>
-      <input
-        type="number"
-        id="followUpAmount"
-        name="followUpAmount"
-        value=""
-        min="0"
-        
-        style="width:80px;"
-      >
-    </div>
-
-    <div>
-      <label for="followUpUnit">Unit</label>
-      <select
-        id="followUpUnit"
-        name="followUpUnit"
-        
-      > 
-        <option value="" selected></option>
-        <option value="days">Day(s)</option>
-        <option value="weeks" >Week(s)</option>
-        <option value="months">Month(s)</option>
-      </select>
-    </div>
 
     
 
-  </div>
+
 
 
 
   <button type="submit">Submit</button>
 </form>
     
-    <form id="perscribeForm" class="tab-form" method="POST" style="display:none;">
+    
+   <form id="post" method="POST" style="display:none;">
 
-  <h2>Perscription Information</h2>
-      <label for="extraNotes">Notes</label>
-  <textarea name="extraNotes" placeholder="notes"></textarea>
-      
-      
-      <input type="hidden" id="clientID" name="clientID">
-  <input type="hidden" name="action" value="perscribe">
-  <button type="submit">Send to Secretary</button>
+  <h2>Post Appointment Notes</h2>
+
+  <input type="hidden" name="action" value="postNotes">
+  <input type="hidden" id="clientID" name="clientID">
+  <input type="hidden" name="chkRecord" id="chkRecord" value="false">
+
+  <label> </label>
+
+  <button type="button" id="chkRecordBtn" class="chk-record-btn">
+    Don't Check Notes
+  </button>
+
+  <hr style="margin:25px 0; border:0; border-top:1px solid #ddd;">
+
+  <h2>Payment Details</h2>
+
+  <div style="display:flex; gap:10px; align-items:end; flex-wrap:wrap;">
+
+    <div style="flex:1; min-width:120px;">
+      <label for="postAmountPaid">Amount Paid ($)</label>
+      <input
+        type="number"
+        name="amountPaid"
+        id="postAmountPaid"
+        step="0.01"
+        placeholder="0.00"
+      >
+    </div>
+
+    <div style="flex:1; min-width:150px;">
+      <label for="postPaymentMethod">Payment Method</label>
+      <select name="paymentMethod" id="postPaymentMethod">
+        <option value=""></option>
+        <option value="Cash">Cash</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Zelle">Zelle</option>
+        <option value="Check">Check</option>
+        <option value="Waive Fee">Waive Fee</option>
+        <option value="Courtesy Credit">Courtesy Credit</option>
+      </select>
+    </div>
+
+  </div>
+
+  <hr style="margin:25px 0; border:0; border-top:1px solid #ddd;">
+
+  <h2>Follow Up</h2>
+
+  <div style="display:flex; gap:10px; align-items:end;">
+
+    <div style="width:100px;">
+      <label for="followUpAmount">In</label>
+      <input
+        type="number"
+        id="followUpAmount"
+        name="followUpAmount"
+        min="0"
+        placeholder="e.g. 2"
+      >
+    </div>
+
+    <div style="flex:1;">
+      <label for="followUpUnit">Unit</label>
+      <select id="followUpUnit" name="followUpUnit">
+        <option value="" selected></option>
+        <option value="days">Day(s)</option>
+        <option value="weeks">Week(s)</option>
+        <option value="months">Month(s)</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button type="submit">Submit</button>
+
 </form>
+    
+    
+    
     
 <form id="accsessForm" class="tab-form" method="POST" style="display:none;">
 
   <h2>Access Request</h2>
       <input type="hidden" name="action" value="access">
-  
-  <label for="accessirstName">First Name</label>
+      <input type="hidden" name="clientID" id="accsessFormClientID">
+  <div id="clientInfoContainer">
+  <label for="accessFirstName">First Name</label>
   <input name="firstName" id="accessFirstName" placeholder="John" required>
 
   <label for="accessLastName">Last Name</label>
@@ -302,11 +362,11 @@
 
   <label for="accessPhone">Phone</label>
   <input type="tel" name="phone" id="accessPhone" placeholder="123-456-7890" required>
-          
+   </div>       
   <label for="accessReason">Why do you need this persons records?</label>
       <select id="accessReason" name="accessReason" required>
-        <option value="Reason1">Reason1</option>
-        <option value="Reason2" >Reason2</option>
+        <option ></option>
+        <option value="Post-appointment administration" >Post-appointment administration</option>
         <option value="Reason3">Reason3</option>
         <option value="other">other</option>
       </select>
@@ -349,6 +409,23 @@
   
   </script>
   -->
+  
+  <script>
+//post appontment  chk doc button
+    const chkRecordBtn = document.getElementById("chkRecordBtn");
+const chkRecordInput = document.getElementById("chkRecord");
+
+chkRecordBtn.addEventListener("click", function () {
+  const isActive = chkRecordInput.value !== "true";
+
+  chkRecordInput.value = isActive ? "true" : "false";
+
+  chkRecordBtn.classList.toggle("active", isActive);
+  chkRecordBtn.textContent = isActive
+    ? "✓ Check Notes"
+    : "Don't Check Notes";
+});
+</script>
 <script>
   const API_KEY = "N&ls4d7C$dRf0N1Di2b&7KfaYW&ah^SBy$WT#!xCbhef1jqkc#zPcKO32HGPLlq$O4%DaXeW4!L8ZZlc!RdEgmCrYMmuMkRIq7i^MB*AONX*d83r31F^7$h9D4QxvpTp"
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzpGUopl-8lB2nlN-UvmLQJlaVYwaas5zE7h3naCH1hUX_2mtepJLY92jVnzDzzEijD/exec";
@@ -562,8 +639,8 @@ function formatDateTime(date, time) {
     booking: "bookingForm",
     cancel: "cancelForm",
     billing: "billingForm",
-    persc: "perscribeForm",
     access: "accsessForm",
+    post: "post",
   };
 
   const selectedFormId = formIds[formChoice];
@@ -675,16 +752,30 @@ function formatDateTime(date, time) {
       params.get("paymentMethod")
     );
   }
-    if (selectedFormId === "perscribeForm"){
+ 
+  if (selectedFormId === "post"){
     fillField(
-      "perscribeForm",
+      "post",
       "clientID",
       params.get("client")
     );
   }
-  
+  if (selectedFormId === "accsessForm"){
+    fillField(
+      "accsessForm",
+      "clientID",
+      params.get("client")
+    );
+    
+    if (params.get("reason") == 1 ) {
+      document.getElementById("accessReason").value = "Post-appointment administration";
+    }
+    if (params.get("client") !=""){
+      document.getElementById('clientInfoContainer').style.display = 'none';
+    }
+  }
 
-})();
+}());
   
   //if used ID, get first,last,phone
   

@@ -340,7 +340,7 @@ async function login() {
     setLoading(true);
   
     const url =
-        `https://script.google.com/macros/s/AKfycbxPPfZvQ7iJNeiZ4idYORWohH-mZAUPZrSWU1S1fSX9MpxfsxT7SNN2lJwaHjsm0PoWIg/exec`+
+        `https://script.google.com/macros/s/AKfycbxT0FlMLQ3l29bltH_2Cjq-1TGIBXRHTqetc7GMD1qrxTQyDnJdAzVAMN7atZAct3UkjA/exec`+
         `?action=login` +
         `&clientID=${encodeURIComponent(clientID)}` +
         `&password=${encodeURIComponent(password)}`;
@@ -359,11 +359,16 @@ async function login() {
 
       
         document.getElementById("mainForm").action = text.trim();
+      
+      const f = document.getElementById("mainForm");
+
+console.log("Raw response:", text);
+console.log("Action attribute:", f.getAttribute("action"));
+console.log("Action property:", f.action);
+console.log("Input named action:", f.elements.namedItem("action"));
+      
       const mainForm = document.getElementById("mainForm");
 
-console.log("Login response:", JSON.stringify(text));
-console.log("Form action attribute:", mainForm.getAttribute("action"));
-console.log("Resolved form action:", mainForm.action);
       
       document.getElementById("clientID").value = clientID;
       document.getElementById("ID").value = clientID;
@@ -567,7 +572,7 @@ form.addEventListener("submit", async function (e) {
         const formData = new FormData(form);
     
 // STEP 6: send to the Apps Script URL
-        const response = await fetch(form.action, {
+        const response = await fetch(form.getAttribute("action"), {
             method: "POST",
             body: new URLSearchParams(formData)
         });
