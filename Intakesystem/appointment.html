@@ -266,7 +266,7 @@
 </form>
     
     
-   <form id="post" method="POST" style="display:none;">
+   <form id="post" class="tab-form" method="POST" style="display:none;">
 
   <h2>Post Appointment Notes</h2>
 
@@ -772,6 +772,9 @@ function formatDateTime(date, time) {
     }
     if (params.get("client") !=""){
       document.getElementById('clientInfoContainer').style.display = 'none';
+       document.getElementById('clientInfoContainer').querySelectorAll("input").forEach(field => {
+    field.required = false;
+  });
     }
   }
 
