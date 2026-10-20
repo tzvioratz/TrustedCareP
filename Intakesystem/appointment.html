@@ -458,7 +458,13 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwT8LjUr8B0hvUHhUy11
 
         // Display the response in a popup
         //alert(message || "Request completed.");
-        showResult(message);
+        alert(message || "Request completed.");
+
+        const match = message.match(/https?:\/\/[^\s]+/);
+
+        if (match) {
+          window.open(match[0], "_blank");
+        }
 
       } catch (error) {
         console.error("Form submission failed:", error);
@@ -859,61 +865,7 @@ function formatDateTime(date, time) {
 
 window.addEventListener("DOMContentLoaded", loadClientFromURL);
 </script>
-  <script>
-  function showResult(message) {
-  const popup = document.getElementById("resultPopup");
-  const messageElement = document.getElementById("resultMessage");
-  const link = document.getElementById("resultLink");
 
-  messageElement.textContent = "";
-  link.style.display = "none";
-  link.removeAttribute("href");
-
-  // Check whether the response is a URL.
-  try {
-    const url = new URL(message.trim());
-
-    if (url.protocol === "https:" || url.protocol === "http:") {
-      messageElement.textContent = "Access granted successfully.";
-
-      link.href = url.href;
-      link.textContent = "Open Patient Record";
-      link.style.display = "inline-block";
-    } else {
-      messageElement.textContent = message;
-    }
-  } catch {
-    messageElement.textContent = message || "Request completed.";
-  }
-
-  popup.style.display = "block";
-}
-  </script>
-<div id="resultPopup" style="
-  display:none;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:white;
-  padding:25px;
-  border-radius:10px;
-  box-shadow:0 5px 25px rgba(0,0,0,0.3);
-  z-index:10000;
-  width:320px;
-  text-align:center;
-">
-  <h3 id="resultTitle">Request Complete</h3>
-  <p id="resultMessage"></p>
-  <a id="resultLink" href="#" target="_blank" rel="noopener noreferrer"
-     style="display:none; color:#1675cc; word-break:break-word;">
-    Open Patient Record
-  </a>
-  <br>
-  <button type="button" onclick="document.getElementById('resultPopup').style.display='none'">
-    Close
-  </button>
-</div>
 
 </body>
   
