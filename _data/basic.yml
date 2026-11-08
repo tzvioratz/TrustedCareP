@@ -59,7 +59,8 @@ sections:
             name: mailing_zip
             type: text
             required: true
-            
+      - fields:      
+        - label:  By submitting a Cell Phone Number below you consent to text messages regarding your appointments. Messaging rates may apply. You can opt-out at any time by replying STOP.
       - fields:
           - label: Home Phone
             name: home_phone
