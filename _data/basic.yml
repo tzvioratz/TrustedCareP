@@ -1,7 +1,8 @@
 title: Patient Demographics
 
 sections:
-    - rows:
+  - title: null
+    rows:
       - fields:
           - label: First Name
             name: fn
@@ -59,8 +60,8 @@ sections:
             name: mailing_zip
             type: text
             required: true
-      - fields:      
-        - label:  By submitting a Cell Phone Number below you consent to text messages regarding your appointments. Messaging rates may apply. You can opt-out at any time by replying STOP.
+  - title:  By submitting a Cell Phone Number below you consent to text messages regarding your appointments. Messaging rates may apply. You can opt-out at any time by replying STOP.
+    rows:
       - fields:
           - label: Home Phone
             name: home_phone
