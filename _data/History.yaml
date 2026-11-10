@@ -76,17 +76,17 @@ sections:
 
       - fields:
           - label: Headache / Migraines
-            name: chart*c*headaches
+            name: chart*c*headaches&Migraines
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*headachesdetails
+            detailsName: chart*c*headaches&Migrainesdetails
 
       - fields:
           - label: Heart Disease / Stroke
-            name: chart*c*heart
+            name: chart*c*heartDiseaseOrStroke
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*heartdetails
+            detailsName: chart*c*heartDiseaseOrStrokedetails
 
       - fields:
           - label: High Blood Pressure
@@ -111,10 +111,10 @@ sections:
 
       - fields:
           - label: Substance Abuse
-            name: chart*c*substance
+            name: chart*c*substanceAbuse
             type: yesno_with_details
             flex: 1
-            detailsName: chart*c*substancedetails
+            detailsName: chart*c*substanceAbusedetails
 
       - fields:
           - label: Chronic Pain
